@@ -1,0 +1,371 @@
+.main-bar-cnt {
+  height: 100%;
+  position: relative;
+}
+
+.main-bar-cnt .main-title {
+  width: 370px;
+  height: 114px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 10px 5px 0px rgba(3, 21, 36, 0.1);
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: 240px center;
+  padding: 24px 40px
+}
+
+.main-bar-cnt .main-title::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 22px;
+  top: 28px;
+  left: 0;
+}
+
+.main-bar-cnt .main-title.title-l {
+  left: 0;
+  background-image: url(../images/t-l.png)
+}
+
+.main-bar-cnt .main-title.title-l::after {
+  background: #dd000c
+}
+
+.main-bar-cnt .main-title.title-c::after {
+  background: #0086d6
+}
+
+.main-bar-cnt .main-title.title-r::after {
+  background: #3e505e
+}
+
+.main-bar-cnt .main-title.title-c {
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../images/t-c.png)
+}
+
+.main-bar-cnt .main-title.title-r {
+  right: 0;
+  background-image: url(../images/t-r.png)
+}
+
+/* 公告 */
+
+.notice-wapperbox {
+  width: 100%;
+  height: 60px;
+  background-color: #fafafa;
+  border-bottom: 4px solid #e6d9b1;
+}
+
+.notice-title,
+.notice-more {
+  position: relative;
+  font-size: 18px;
+  line-height: 56px;
+  width: 160px;
+}
+
+.notice-title::after {
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 32px;
+  top: 14px;
+  left: 50px;
+  background: url(../images/notice.png) no-repeat center
+}
+
+.notice {
+  margin: 0 160px;
+}
+
+.als-item {
+  height: 56px;
+  line-height: 56px;
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.als-container {
+  position: relative;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.als-viewport {
+  height: 56px;
+  position: relative;
+  overflow: hidden;
+  margin: 0px auto;
+}
+
+.als-wrapper {
+  position: relative;
+  list-style: none;
+}
+
+.als-prev,
+.als-next {
+  position: absolute;
+  cursor: pointer;
+  clear: both;
+}
+
+/* 项目 */
+
+.porject-title {
+  margin: 30px 0;
+}
+
+.project-item {
+  float: left;
+  width: 370px;
+  height: 404px;
+  background-color: #ffffff;
+  border: solid 1px rgba(215, 216, 214, 0.95);
+  padding: 23px 42px 42px 40px;
+}
+
+.project-dl {
+  position: relative;
+}
+
+.project-dl::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 44px;
+  width: 37px;
+  background: url(../images/dy-logo.png) no-repeat center
+}
+
+.project-dl dt h3 {
+  /* padding: 32px 0 40px */
+  line-height: 80px;
+}
+
+.project-dl .project-val {
+  font-size: 18px;
+  color: #3f3b3c;
+}
+
+.project-dl .project-val em {
+  color: #dd000c
+}
+
+.project-sum {
+  display: inline-block;
+  position: relative;
+  margin-top: 70px;
+  width: 270px;
+  height: 85px;
+  color: #e6d9b1;
+  font-size: 60px;
+  padding-right: 40px
+}
+
+.data-total::after {
+  content: "万元";
+  position: absolute;
+  font-size: 14px;
+  color: #e6d9b1;
+  font-style: normal;
+  bottom: 20px;
+  right: 0;
+}
+
+.project-tip {
+  font-size: 14px;
+  color: #c5c4c4;
+}
+
+.project-enter {
+  display: block;
+  color: #fff !important;
+  text-decoration: none !important;
+  margin-top: 30px;
+  font-size: 16px;
+  width: 175px;
+  height: 48px;
+  line-height: 48px;
+}
+
+.project-item:nth-of-type(2) {
+  margin: 0 30px;
+}
+
+/* 信息披露 */
+
+.info-link-container {
+  margin: 40px 0;
+  height: 330px;
+  color: #263039;
+}
+
+.info-link-titel {
+  display: inline-block;
+  font-size: 18px;
+  color: #263039;
+  padding-right: 30px;
+  border-right: 3px solid #ff4c4c;
+  margin-right: 30px;
+}
+
+.info-box {
+  margin-top: 30px;
+  height: 272px;
+  background-color: #ffffff;
+  padding: 42px 20px 44px 60px;
+  border: solid 1px rgba(231, 219, 181, 0.95);
+}
+
+.info-list {
+  margin-right: 500px;
+  padding-left: 40px;
+  height: 100%;
+}
+
+.info-list li {
+  height: 20%;
+  position: relative;
+}
+
+.info-list li::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 18px;
+  background: url(../images/tip.png) no-repeat center center;
+  left: -40px;
+  top: 0
+}
+
+.info-item {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  line-height: 22px;
+  display: inline-block;
+  padding: 7px 12px;
+  margin-bottom: 0;
+  color: #3f3b3c !important;
+}
+
+.info-img {
+  width: 467px;
+  height: 100%;
+}
+
+/*公司新闻 */
+
+.dynamic-item {
+  position: relative;
+  min-height: 54px;
+  padding-left: 104px;
+  margin-bottom: 15px;
+  border: solid 1px #c9c9c9;
+}
+
+.dynamic-h {
+  position: relative;
+  line-height: 54px;
+  font-size: 18px;
+}
+
+.dy-h4 {
+  display: inline-block;
+}
+
+.dynamic-plus {
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.dynamic-well {
+  position: relative;
+  padding-right: 70px;
+  padding-bottom: 20px
+}
+
+.dynamic-item.shown::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 30px;
+  width: 37px;
+  height: 44px;
+  background: url('../images/dy-logo.png') no-repeat center;
+}
+
+.dynamic-well p {
+  font-size: 16px;
+  color: #313940;
+  line-height: 28px;
+}
+
+.dynamic-text {
+  text-indent: 2em
+}
+
+.more-btn {
+  margin-top: 20px;
+  width: 180px;
+  height: 36px;
+  background-color: #dd000c;
+  color: #fff;
+  padding: 0 !important;
+  line-height: 36px !important;
+}
+
+.more-btn:hover {
+  color: #fff !important
+}
+
+/* 友情链接 */
+
+.friendLink {
+  position: relative;
+  padding: 45px 0;
+  background: #decd75
+}
+
+.friendLink h3 {
+  line-height: 48px;
+}
+
+/* .link-ul {
+    height: 48px;
+}*/
+
+.link-ul li {
+  float: left;
+  height: 48px;
+  width: 158px;
+  background: #fff;
+  margin-right: 36px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat
+}
+
+.link-ul li a {
+  display: block;
+}
+
+.link-bar {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  background: url(../images/linkbar.png) no-repeat center
+}

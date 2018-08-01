@@ -1,0 +1,34 @@
+<table id="tb_project">
+    <thead>
+        <tr>
+            <th class="text-left">项目名称</th>
+            <th class="text-left">会员名称</th>
+            <th class="text-left">备案日期</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data.projects.data %}
+        <tr data-link={{ '/p/'+type+ '/detail/'+item.pid}}>
+            <td>{{item.borrow_name}}</td>
+            <td>{{item.member_name}}</td>
+            <td>{{item.record_date}}</td>
+        </tr>
+
+        {% else %}
+        <tr class="no-item text-center">
+            <td colspan="5">暂无数据</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<!-- 分页 S-->
+<div id="Pagination" class="pagination">
+</div>
+<script>
+    $(function () {
+
+
+
+    });
+</script>

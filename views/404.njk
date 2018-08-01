@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>很遗憾，您访问的页面出错了</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #F6F7F9;
+            font-family: "Microsoft YaHei";
+        }
+
+        #error404_main {
+            height: 100%;
+            text-align: center;
+        }
+
+        #error404_main .error-box {
+            width: 450px;
+            height: 279px;
+            background: url(/images/404.png) no-repeat top center;
+            position: absolute;
+            left: 50%;
+            margin-left: -225px;
+            top: 50%;
+            margin-top: -139.5px;
+        }
+
+        #error404_main .error-box .errtxt {
+            width: 100%;
+            position: absolute;
+            bottom: 64px;
+            font-size: 16px;
+            color: #666666;
+        }
+
+        .back_btn {
+            background: url(/images/back_btn.png) no-repeat center center;
+            width: 92px;
+            height: 34px;
+            position: absolute;
+            left: 50%;
+            margin-left: -46px;
+            bottom: 0;
+            font-size: 0;
+            text-indent: -9999px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="error404_main" class="main-content">
+        <div class="error-box">
+            <div class="errtxt">很遗憾，您访问的页面出错了...</div>
+            <a href="/" class="back_btn">返回首页</a>
+        </div>
+    </div>
+</body>
+
+</html>

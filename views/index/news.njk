@@ -1,0 +1,31 @@
+<a href="javascript:;" class="pull-right more-link">
+  查看更多
+</a>
+<h3 class="" style="margin-bottom: 36px">公司动态</h3>
+{% for item in data.plat.data %}
+<div class=" dynamic-item">
+  <div class="dynamic-h" data-toggle="collapse" data-target="{{'#collapseExample'+loop.index}}" aria-expanded="false">
+    <h4 class="dy-h4">{{item.notice_title}}</h4>
+    <div class="dy-h4 dynamic-plus">
+      <span class="  glyphicon glyphicon-plus
+        "></span>
+    </div>
+
+  </div>
+  <div class="collapse" id="{{'collapseExample'+loop.index}}">
+    <div class="dynamic-well">
+      <p class="dynamic-date">{{item.startDate}}</p>
+      <p class="dynamic-text"> {{item.notice_detail}}</p>
+      <a class="btn  btn-lg more-btn" role="button">查看更多</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<script>
+  // shown.bs.collapse
+  $('.collapse').on('show.bs.collapse hide.bs.collapse', function () {
+    $(this).parents('.dynamic-item').toggleClass('shown')
+    $(this).siblings('.dynamic-h').find('.dynamic-plus>.glyphicon').toggleClass('glyphicon-plus glyphicon-minus')
+
+  })
+</script>

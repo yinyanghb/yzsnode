@@ -1,0 +1,23 @@
+<div class="info-list-box ">
+    <div class="info-list-head row">
+        {% set menuData = { "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+        } %} {% include "common/menu.njk" %}
+
+        <div class="info-list-h col-lg-12">
+            <h3>公告列表</h3>
+        </div>
+    </div>
+    <!-- {{data | dump}} -->
+    <ul class="info-list-ul  ">
+        {% for item in data.notice.data %}
+        <li class="info-list-li">
+            <a href="javascript:;" class="info-list-link">{{item.notice_title}}
+                <span class="info-list-date pull-right">{{item.startDate}}</span>
+            </a>
+        </li>
+        {%endfor%}
+    </ul>
+</div>
+<!-- 分页 S-->
+<div id="Pagination" class="pagination">
+</div>

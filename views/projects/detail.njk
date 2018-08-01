@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>亚租所</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="亚租所" />
+    <meta name="description" content="亚租所" />
+
+    <link rel="stylesheet" href="/css/projects.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <!-- DataTables -->
+
+</head>
+<style>
+</style>
+
+<body>
+    {% include "common/header.njk" %}
+    <div class="container-fluid main-bg" style="height: 625px;background-image: url(/images/organ_bg.png)">
+
+        <div class="main-bar" style="height: 174px;background: #3e505e">
+
+
+            <div class="container porject-select">
+                {% set type = params.type %}
+                <div class="porject-sign detail-sign">
+                    <h2>挂牌交易项目</h2>
+
+                </div>
+            </div>
+            <div class="container select-box">
+
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="protitlebar ">
+            <h2 class='prolist-title'>项目详情</h2>
+        </div>
+
+    </div>
+
+    <!-- footer -->
+    {% include 'common/footer.njk'%}
+</body>
+
+{{data.detail | dump}}
+
+</html>

@@ -1,0 +1,438 @@
+﻿/* navbar */
+
+.container {
+    padding: 0
+}
+
+.header-top.navbar-fixed-top {
+    height: 108px;
+    background-image: repeating-linear-gradient(180deg, #263039, #263039 35px, #fff 35px, #fff 109px);
+    box-shadow: 0px 10px 5px 0px rgba(3, 21, 36, 0.11);
+    border: none
+}
+
+.topbar-nav li {
+    float: left;
+    padding: 0 10px
+}
+
+.topbar {
+    height: 35px;
+    line-height: 35px;
+    color: #ccc
+}
+
+.top-nav-container,
+.top-nav-container h1 {
+    line-height: 70px;
+}
+
+.logo {
+    float: left;
+}
+
+.layui-nav.main-nav {
+    margin-left: 620px;
+    background: #fff;
+}
+
+.nav-item:hover {
+    background: #d7d8d6
+}
+
+.layui-nav-more {
+    display: none
+}
+
+.layui-nav .nav-item-line.layui-nav-item {
+    width: 1px;
+    height: 42px;
+    background: #999
+}
+
+.layui-nav .layui-nav-item {
+    line-height: 73px !important;
+}
+
+.layui-nav .layui-nav-item a:hover,
+.layui-nav .layui-this a,
+.layui-nav .layui-nav-item a {
+    text-decoration: none;
+    padding: 0 30px;
+    color: #333
+}
+
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after {
+    background-color: #dd000c;
+    transition: all .15s;
+    -webkit-transition: all .15s;
+}
+
+.layui-nav-child {
+    top: 73px;
+}
+
+.nav-item .layui-nav-child {
+    width: 224px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 2px 0px rgba(3, 21, 36, 0.05);
+    border: solid 1px rgba(206, 206, 206, 0.95);
+}
+
+.nav-item .layui-nav-child dd {
+    text-align: left !important
+}
+
+.layui-nav-child.organization::after {
+    content: '  Deal ';
+}
+
+.layui-nav-child.Information::after {
+    content: 'Information';
+}
+
+.layui-nav-child.about::after {
+    content: 'About';
+}
+
+.layui-nav-child::after {
+    /* content: 'Information'; */
+    position: absolute;
+    top: 32px;
+    left: 26px;
+    width: 125px;
+    height: 23px;
+    font-family: 'HelveticaNeueLTStd-LtCn';
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 0px;
+    letter-spacing: 0px;
+    color: rgba(82, 90, 102, 0.5);
+}
+
+.nav-item .layui-nav-child dd {
+    line-height: 36px;
+    font-size: 16px;
+    text-align: center
+}
+
+/* main-bg */
+
+.main-bg {
+    position: relative;
+    height: 588px;
+    margin-top: 78px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center top;
+}
+
+.main-bar {
+    position: absolute;
+    height: 130px;
+    width: 100%;
+    background: #decd75;
+    left: 0;
+    bottom: 0
+}
+
+.yzs-btn {
+    color: #fff;
+    background-color: #3e505e !important;
+}
+
+/* 风险 */
+
+.risk {
+    min-height: 72px;
+    border-bottom: 8px solid #e6d9b1;
+    margin-bottom: 50px
+}
+
+.risk-h::after {
+    content: '';
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    top: 20px;
+    left: 55px;
+    background: url(../images/risk.png) no-repeat center
+}
+
+.risk-h {
+    position: relative;
+    padding-left: 116px;
+    height: 72px;
+    line-height: 72px;
+    background: #ededed
+}
+
+.risk-h3 {
+    display: inline-block;
+    line-height: unset;
+}
+
+.risk-down {
+    position: absolute;
+    width: 124px;
+    font-size: 24px;
+    right: 0;
+    text-align: center
+}
+
+.risk-down::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    left: 0;
+    top: 16px;
+    background: #ccc
+}
+
+.risk-well {
+    padding: 49px 75px 48px 63px;
+    border: 1px solid rgba(218, 218, 218, 0.95)
+}
+
+.risk-text {
+    text-indent: 2em;
+    line-height: 30px;
+}
+
+/* 底部 */
+
+.footer-box {
+    padding-top: 8px;
+    padding-bottom: 26px;
+    background: #313940;
+    color: #fff;
+}
+
+.footer-logo {
+    margin-top: 38px
+}
+
+.footer-info {
+    position: relative;
+    height: 253px;
+}
+
+#foot_temx {
+    padding: 45px;
+}
+
+#foot_temx dl {
+    float: left;
+    width: 33%;
+}
+
+#foot_temx dl dt {
+    padding-bottom: 20px;
+    font-size: 18px;
+    color: #fff
+}
+
+#foot_temx dl dd {
+    padding: 10px 0
+}
+
+#foot_temx dl dd a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-address-copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.custom-service {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.code-list {
+    padding-top: 36px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.code-list dl {
+    margin-left: 60px;
+}
+
+.custom,
+.service_no {
+    display: inline-block;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.custom {
+    font-size: 18px;
+    margin-right: 28px
+}
+
+.icon {
+    display: inline-block;
+}
+
+.icon.icon-call {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+    background: url(../images/tel.png) no-repeat
+}
+
+.callNo {
+    color: #fff
+}
+
+.icon.icon-wx,
+.icon-phone {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.icon.icon-wx {
+    background: url(../images/weixin.png) no-repeat center
+}
+
+.icon-phone {
+    background: url(../images/phone.png)no-repeat center
+}
+
+/* menu */
+
+.info-menu {
+    line-height: 58px;
+    position: relative;
+    background: #263039;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 35px !important;
+}
+
+.info-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 83px;
+    height: 58px;
+    background: url(../images//infoicon.png) no-repeat center center
+}
+
+.info-menu:hover {
+    background: #13181c
+}
+
+.info-menu-ul {
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    z-index: 10;
+    padding-top: 26px;
+    padding-bottom: 62px;
+    left: 0;
+    width: 368px;
+    height: auto;
+    background-color: #f8f8f8;
+    box-shadow: 2px 4px 5px 0px rgba(228, 228, 228, 0.65);
+    border: solid 1px rgba(218, 218, 218, 0.95);
+}
+
+.info-menu-ul.menu-show {
+    display: block !important;
+    -webkit-animation-name: layui-upbit;
+    animation-name: layui-upbit;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.menu-bar {
+    position: absolute;
+    width: 6px;
+    height: 58px;
+    background-color: #dd000c;
+    left: 0;
+    opacity: 0;
+    transition: all .15s;
+    -webkit-transition: all .15s;
+}
+
+.info-menu-ul li {
+    position: relative;
+    padding-left: 46px;
+    padding-right: 36px;
+}
+
+.info-menu-ul .menu-this::after {
+    content: '';
+    top: 0;
+    position: absolute;
+    width: 6px;
+    height: 58px;
+    background-color: #dd000c;
+    left: 0;
+}
+
+.info-menu-ul li:hover,
+.info-menu-ul li.active {
+    background: #ededed
+}
+
+.info-menu-ul li a {
+    display: block;
+    color: #373737;
+    text-decoration: none !important;
+    font-size: 16px;
+    line-height: 58px;
+    border-bottom: 1px solid #d2d2d2
+}
+
+.info-title {
+    position: relative;
+    background: #3e505e;
+    line-height: 58px;
+    font-size: 24px;
+    color: #ffffff;
+    text-indent: 1em;
+}
+
+.info-title::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+}
+
+.info-list-head {
+    position: relative;
+    padding: 15px 20px;
+    margin: 0 !important;
+    border-bottom: 1px solid #f8f8f8
+}
+
+.about-bg {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: -10;
+}
+
+table.dataTable {
+    border-collapse: collapse
+}

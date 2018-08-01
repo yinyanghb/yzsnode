@@ -1,0 +1,72 @@
+.information-content {
+    margin-top: -558px
+}
+
+.info-top-bar {
+    position: relative;
+    width: 870px;
+    height: 333px;
+    padding: 54px 45px;
+    background: #fff;
+}
+
+.info-top-bar h2,
+.info-top-bar h3 {
+    line-height: 45px;
+}
+
+.qrcode {
+    width: 367px;
+    height: 170px;
+    background: url(../images/qrcode.png)
+}
+
+.app-logo {
+    position: absolute;
+    height: 88px;
+    width: 88px;
+    background: url(../images/app-logo.png);
+    right: 54px;
+    top: 34px;
+}
+
+.info-list-box {
+    position: relative;
+    margin-top: 92px;
+    width: 100%;
+    background: #fff;
+}
+
+.info-list-h {
+    margin-top: 30px;
+}
+
+.info-list-h h3 {
+    position: relative;
+    padding-left: 60px;
+    line-height: 80px;
+}
+
+.info-list-h h3::before {
+    position: absolute;
+    content: "";
+    height: 80px;
+    width: 38px;
+    left: 0;
+    top: 0;
+    background: url(../images/pro.png) no-repeat center
+}
+
+.info-list-li {
+    padding: 20px 86px 20px 59px;
+    line-height: 58px;
+}
+
+.info-list-li:nth-of-type(even) {
+    background: #f8f8f8
+}
+
+.info-list-link {
+    display: block;
+    color: #333;
+}

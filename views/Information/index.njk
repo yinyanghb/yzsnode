@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>亚租所</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="亚租所" />
+    <meta name="description" content="亚租所" />
+    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+</head>
+
+<body>
+    {% include "common/header.njk" %}
+    <div class="container-fluid main-bg" style="height: 625px;background-image: url(/images/info-bg.png)">
+        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+    </div>
+    <div class="container information-content">
+        {% include "Information/infobar.njk" %} {%include "Information/infolist.njk"%}
+
+        <div style="height: 83px; width: 100%"></div>
+        <!-- 风险揭示 -->
+        {% include 'common/riskWarning.njk'%}
+    </div>
+    <!-- footer -->
+    {% include 'common/footer.njk'%}
+</body>
+
+
+</html>

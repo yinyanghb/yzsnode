@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>亚租所</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="亚租所" />
+  <meta name="description" content="亚租所" />
+  <link rel="stylesheet" href="/css/index.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+</head>
+
+<body>
+  {% include "common/header.njk" %}
+  <div class="container-fluid main-bg" style="background-image: url(images/bg.png)">
+    <div class="main-bar">
+      <div class="container main-bar-cnt">
+        <div class="main-title title-l pull-left">
+          <h3>专业交易服务</h3>
+        </div>
+        <div class="main-title title-c">
+          <h3>优质资产来源</h3>
+        </div>
+        <div class="main-title title-r pull-right">
+          <h3>丰富投资资金</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- 平台动态 -->
+    {% include 'index/notice.njk' %}
+    <!-- 项目专区 -->
+    <h2 class="text-center porject-title">机构专区</h2>
+    <div class="porject-wrap ">
+      <ul class="product_list clearfix">
+        {% include 'index/item.njk'%}
+      </ul>
+    </div>
+    <!-- 信息披露 -->
+    {% include 'index/info.njk'%}
+    <!-- 公司动态 -->
+    {% include 'index/news.njk'%}
+    <div style="height: 83px; width: 100%"></div>
+    <!-- 风险揭示 -->
+    {% include 'common/riskWarning.njk'%}
+  </div>
+  <!-- 合作伙伴  -->
+  {% include 'index/friendLink.njk'%}
+  <!-- footer -->
+  {% include 'common/footer.njk'%}
+</body>
+
+</html>

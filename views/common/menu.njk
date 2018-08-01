@@ -1,0 +1,34 @@
+{% set pathname =getPath(path).join('/') %}
+<div class="info-menu text-right col-lg-2">
+    {{menuData.title}}
+    <ul class="info-menu-ul " id="infoMenu">
+        {% for item in menuData.navlist %}
+        <li>
+            <a href="{{item.path}}" class="text-left {% if pathname == item.path %} menu-this{% endif %}">{{item.title}}</a>
+        </li>
+        {% endfor%}
+        <span class=" menu-bar"></span>
+    </ul>
+
+</div>
+
+
+<div class="info-title col-lg-10"> {% for item in menuData.navlist %} {% if pathname == item.path %} {{item.title}} {%endif%} {% endfor%}</div>
+<script>
+    $('.info-menu').hover(function () {
+        $('#infoMenu').toggleClass('menu-show')
+    }, function () {
+        $('#infoMenu').toggleClass('menu-show')
+    })
+    $('#infoMenu li').hover(function () {
+        $('.menu-bar').css({
+            'top': $(this).position().top,
+            "opacity": 1
+        })
+    }, function () {
+        $('.menu-bar').css({
+            'top': $('.menu-this').position(),
+            "opacity": 0
+        })
+    })
+</script>

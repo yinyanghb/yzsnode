@@ -1,0 +1,16 @@
+{
+  "name": "Front_end_Compress",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "^0.5.1"
+  },
+  "dependencies": {
+    "countup": "^1.8.2"
+  }
+}

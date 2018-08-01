@@ -1,0 +1,29 @@
+<div class="info-link-container">
+    <a href="javascript:;" class="pull-right more-link"> 查看更多</a>
+    <span class="info-link-titel ">
+        信息披露
+    </span>
+    <h3 style="display: inline-block;">本所公告</h3>
+    <div class=" info-box">
+        <div class="info-img pull-right">
+            <img src="../images/bg.png" width="100%" height="100%" alt="">
+        </div>
+        <ul class="info-list clearfix">
+            {% for item in data.news.data %}
+            <li>
+                <a href="javascript:;" class=" info-item text-left">
+                    二零一八年年度之全年业绩公告
+                    <span class="info-date pull-right">
+                        07-15
+                    </span>
+                </a>
+            </li>
+            {% else %}
+
+            <h3 class="text-center" style="line-height: 180px">暂无公告</h3>
+
+            {% endfor%}
+        </ul>
+
+    </div>
+</div>

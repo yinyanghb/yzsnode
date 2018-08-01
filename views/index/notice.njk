@@ -1,0 +1,39 @@
+<div class="notice-wapperbox">
+    <div class="notice-title text-right pull-left">
+        公告&nbsp;
+        <span>|</span>
+    </div>
+    <div class=" pull-right  text-center notice-more">
+        <a class="more-notice" href="/about/notice">查看更多</a>
+    </div>
+    <div class="notice" id="als-container_0" data-id="als-container_0">
+        <div class="als-viewport">
+            <ul class="als-wrapper">
+                {% for item in data.notice.data%}
+                <li class="als-item">
+                    <a href="{{item.pid}}">
+                        {{item.notice_title}}
+                    </a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        if ($(".notice ul li").length > 1) {
+            // 轮播滑动
+            $(".notice").als({
+                visible_items: 1,
+                scrolling_items: 1,
+                orientation: "vertical",
+                circular: "yes",
+                autoscroll: "yes",
+                direction: "up",
+                start_from: 0
+            });
+        }
+    })
+</script>

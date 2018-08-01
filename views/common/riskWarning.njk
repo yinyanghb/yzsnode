@@ -1,0 +1,23 @@
+<div class=" risk">
+    <div class="risk-h" data-toggle="collapse" data-target="#risk-collapse" aria-expanded="false" aria-controls="collapseExample">
+        <h3 class="risk-h3">重要风险揭示</h3>
+        <div class="risk-h3 risk-down">
+            <span class="  glyphicon glyphicon-chevron-up"></span>
+        </div>
+
+    </div>
+    <div class="collapse" id="risk-collapse">
+        <div class="risk-well">
+            <p class="risk-text">本网站刊登的产品信息只作为投资参考，不作为亚租所对投资收益的承诺与保证。 投资方需自行判断投资风险并承担一切法律后果。特别提示：进入本网站及浏览其任何网页，即表示知悉并接受上述条款。</p>
+        </div>
+    </div>
+</div>
+<script>
+    // shown.bs.collapse
+    $('#risk-collapse').on('show.bs.collapse hide.bs.collapse', function () {
+
+        $(this).siblings('.risk-h').find('.risk-down>.glyphicon').toggleClass(
+            ' glyphicon-chevron-up glyphicon-chevron-down')
+
+    })
+</script>

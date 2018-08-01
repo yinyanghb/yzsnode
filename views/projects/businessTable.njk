@@ -1,0 +1,29 @@
+<table id="tb_project">
+    <thead>
+        <tr>
+            <th class="text-left">项目名称</th>
+            <th class="text-left">项目总额</th>
+            <th class="text-left">项目期限</th>
+            <th class="text-left">预期年化收益率</th>
+            <th class="text-left">状态</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data.projects.data %}
+        <tr data-link={{ '/p/'+type+ '/detail/'+item.pid}}>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+        </tr>
+        {% else %}
+        <tr class="no-item text-center">
+            <td colspan="5">暂无数据</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+</table>
+<!-- 分页 S-->
+<div id="Pagination" class="pagination">
+</div>
