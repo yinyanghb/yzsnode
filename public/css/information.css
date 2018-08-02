@@ -70,3 +70,25 @@
     display: block;
     color: #333;
 }
+
+.details-container {
+    margin-top: 60px
+}
+
+.notice_title {
+    line-height: 90px;
+    font-size: 30px;
+}
+
+.line {
+    height: 1px;
+    background: #f8f8f8
+}
+
+.detail-box {
+    padding: 0 40px
+}
+
+.startDate {
+    line-height: 80px;
+}

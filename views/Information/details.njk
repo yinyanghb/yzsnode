@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>亚租所</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="亚租所" />
+    <meta name="description" content="亚租所" />
+    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+</head>
+
+<body>
+    {% include "common/header.njk" %}
+    <div class="container-fluid main-bg about-bg" style="height: 625px;background-image: url(/images/info-bg.png)">
+        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+    </div>
+    <div class="container details-container">
+        <div class="info-list-box ">
+            <div class="info-list-head row">
+                {% set menuData = {type:'公告详情', "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+                } %} {% include "common/menu.njk" %}
+
+                <h2 class="notice_title text-center">{{data.details.data.notice_title}}</h2>
+                <div class="line row"></div>
+                <div class="detail-box">
+                    <p class="startDate text-right">日期：{{data.details.data.startDate}}</p>
+                    <div class=" notice_detail lead">
+                        {{data.details.data.notice_detail |safe }}
+                    </div>
+                </div>
+            </div>
+            <div style="height: 83px; width: 100%"></div>
+            <!-- 风险揭示 -->
+            {% include 'common/riskWarning.njk'%}
+
+        </div>
+    </div>
+    <!-- footer -->
+    {% include 'common/footer.njk'%}
+</body>
+
+
+</html>

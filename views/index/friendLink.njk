@@ -4,14 +4,47 @@
             <div class="col-lg-2">
                 <h3 class="">合作机构</h3>
             </div>
-            <ul class="col-md-12 col-lg-10 link-ul">
+            <div class="notice col-lg-9 " style="margin: 0">
+                <div class="als-viewport" style="height: 52px;">
+                    <ul class="als-wrapper">
+                        {% for item in ['a','b','c','d','e']%}
+
+                        <ul class="link-ul als-item">
+                            {% for num in [1,2,3,4]%}
+                            <li class="" style="background-image: url(../images/friendLink/{{item+num}}.jpg)">
+                                <a href="javascript:;">
+
+                                </a>
+                            </li>
+
+                            {%endfor%}
+                        </ul>
+                        {% endfor%}
+                    </ul>
+                </div>
+            </div>
+            <!-- <ul class="col-md-12 col-lg-10 link-ul">
+                <li style="background-image: url(../images/friendLink/)">
+                    <a href="javascript:;">
+
+                    </a>
+                </li>
                 <li style="background-image: url(../images/bg.png)">
                     <a href="javascript:;">
 
                     </a>
                 </li>
+                <li style="background-image: url(../images/bg.png)">
+                    <a href="javascript:;">
 
-            </ul>
+                    </a>
+                </li>
+                <li style="background-image: url(../images/bg.png)">
+                    <a href="javascript:;">
+
+                    </a>
+                </li>
+            </ul> -->
         </div>
     </div>
     <div class="link-bar"></div>

@@ -17,7 +17,7 @@ router.get('/projects/:type', function (req, res, next) {
     }
 });
 // 资产登记业务详情
-router.get('/p/:type/detail/:projectId', function (
+router.get('/projects/:type/detail/:projectId', function (
     req,
     res,
     next
@@ -29,25 +29,6 @@ router.get('/p/:type/detail/:projectId', function (
         return;
     }
 });
-// 机构专区根据分类
-// router.get('/projects/:type', function (req, res, next) {
-//     try {
-//         projectController.render(res, req, req.params.type);
-//     } catch (e) {
-//         error(req, res, next);
-//         return;
-//     }
-// });
 
-
-// // 项目类型
-// router.get('/projects/type/:productsLoanId', function (req, res, next) {
-//     try {
-//         projectController.render(res, req);
-//     } catch (e) {
-//         error(req, res, next);
-//         return;
-//     }
-// });
 
 module.exports = router;

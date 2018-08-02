@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         {% for item in data.projects.data %}
-        <tr data-link={{ '/p/'+type+ '/detail/'+item.pid}}>
+        <tr data-link={{ '/projects/'+type+ '/detail/'+item.pid}}>
             <td>{{item.borrow_name}}</td>
             <td>{{item.member_name}}</td>
             <td>{{item.record_date}}</td>

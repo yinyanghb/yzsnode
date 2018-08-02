@@ -1,4 +1,4 @@
-{% set pathname =getPath(path).join('/') %}
+{% set pathname =getPath(path).splice(0,3).join('/') %}
 <div class="info-menu text-right col-lg-2">
     {{menuData.title}}
     <ul class="info-menu-ul " id="infoMenu">
@@ -11,9 +11,13 @@
     </ul>
 
 </div>
+{% if menuData.type %}
 
+<div class="info-title col-lg-10">{{menuData.type}}</div>
+{% else %}
+<div class="info-title col-lg-10">{% for item in menuData.navlist %} {% if pathname == item.path %} {{item.title}} {%endif%} {% endfor%}</div>
 
-<div class="info-title col-lg-10"> {% for item in menuData.navlist %} {% if pathname == item.path %} {{item.title}} {%endif%} {% endfor%}</div>
+{% endif%}
 <script>
     $('.info-menu').hover(function () {
         $('#infoMenu').toggleClass('menu-show')

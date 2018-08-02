@@ -11,7 +11,7 @@
     <ul class="info-list-ul  ">
         {% for item in data.notice.data %}
         <li class="info-list-li">
-            <a href="javascript:;" class="info-list-link">{{item.notice_title}}
+            <a href="/Information/notice/{{item.pid}}" class="info-list-link">{{item.notice_title}}
                 <span class="info-list-date pull-right">{{item.startDate}}</span>
             </a>
         </li>

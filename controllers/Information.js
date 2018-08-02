@@ -20,6 +20,15 @@ module.exports = {
             }
         );
     },
-
+    detailsRender: function (res, req, id) {
+        return async.parallel({
+            //详情
+            details: function (callback) {
+                server.getById(appConfig.apiBasePath + Api.NoticeDetail, callback, id, req)
+            }
+        }, function (err, results) {
+            render('Information/details', results, res, req)
+        })
+    }
 
 };

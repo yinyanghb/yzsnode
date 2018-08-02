@@ -37,8 +37,7 @@
                 <div class=" form-group " style="margin-top:15px ">
                     <div class="col-sm-3 ">
                         {%set v = getPath(path)[2]%}
-                        <select type="text " class="form-control select-k " id="txt_search_departmentname
-                    " lay-verify=" ">
+                        <select class="form-control select-k " id="txt_search_departmentname">
                             {% if v==0 %}
                             <!-- 资产登记业务 -->
                             <option value="1">项目名称</option>
@@ -63,7 +62,7 @@
                     </div>
                     <label class="control-label col-sm-1 select-label " for="txt_search_statu ">输入</label>
                     <div class="col-sm-3 ">
-                        <input type="text " class="form-control select-v " id="txt_search_statu ">
+                        <input type="text " class="form-control select-v" id="txt_search_statu">
                     </div>
                     <div class="col-sm-4 " style="text-align:left; ">
                         <button style="margin-left:50px " class="select-btn " id="btn_query" class="btn btn-primary ">查询</button>
@@ -99,7 +98,9 @@
             "jQueryUI": false,
             "info": false,
             "lengthChange": false,
-            "searching": false,
+            // "bFilter": false,
+            dom: 'lBrtip',
+            // "searching": true,
             language: {
                 "oPaginate": {
                     "sFirst": "首页",
@@ -116,6 +117,12 @@
             location.href = link
 
         });
+        $('#btn_query').on('click', function () {
+            myTable.columns($('#txt_search_departmentname').val() - 1)
+                .search($('#txt_search_statu').val())
+                .draw();
+            // console.log('c=', , )
+        })
     })
 </script>
 {% endif%}
