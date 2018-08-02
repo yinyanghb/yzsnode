@@ -57,6 +57,18 @@
     background: url(../images/pro.png) no-repeat center
 }
 
+.info-list-h.ability h3::before {
+    background: url(../images/ability.png) no-repeat center
+}
+
+.info-list-h.aptitude h3::before {
+    background: url(../images/aptitude.png) no-repeat center
+}
+
+.info-list-h.flow h3::before {
+    background: url(../images/flow.png) no-repeat center
+}
+
 .info-list-li {
     padding: 20px 86px 20px 59px;
     line-height: 58px;
@@ -91,4 +103,66 @@
 
 .startDate {
     line-height: 80px;
+}
+
+.license {
+    height: 735px;
+    padding: 80px 90px 80px 84px;
+    background: url(../images/license.png) no-repeat center
+}
+
+.pdf-ul {
+    height: 100%;
+    padding-left: 355px;
+}
+
+.pdf-ul li {
+    height: 25%;
+}
+
+.pdf-ul li a {
+    display: block;
+    padding-top: 44px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.pdf-ul li p {
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.flow-bg {
+    height: 594px;
+    background: url(../images/flow-bg.png) no-repeat center center;
+    background-size: contain
+}
+
+.aptitude-box {
+    padding: 64px 0;
+}
+
+.aptitude-box p {
+    font-size: 18px;
+    color: #666666;
+    line-height: 20px;
+    max-width: 357px;
+    margin: 10px auto
+}
+
+.charter {
+    display: inline-block;
+    width: 230px;
+    height: 323px;
+    border: solid 1px #f0f0f0;
+    background: url(../images/charter.png) no-repeat center
+}
+
+.Reply {
+    display: inline-block;
+    width: 466px;
+    height: 321px;
+    border: solid 1px #f0f0f0;
+    background: url(../images/Reply.png) no-repeat center
 }

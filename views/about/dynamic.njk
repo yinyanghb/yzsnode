@@ -16,8 +16,25 @@
         <div class="main-bar" style="height: 174px;background: #3e505e"></div>
     </div>
     <div class="container about-container">
-        {%include "about/referral.njk"%}
+        <div class="info-list-head row">
+            {% set menuData = { "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'},{title:'管理团队',path:'/about/team'}]
+            } %} {% include "common/menu.njk" %}
+            <div class="info-list-h col-lg-12">
+                <h3>动态列表</h3>
+            </div>
 
+        </div>
+        <ul class=" row" style="padding:0 15px">
+            {%for item in data.dynamic.data%}
+            <li class="col-lg-12 dynamic-item read">
+                <div class="item-content row">
+                    <h3 class="col-lg-8 col-lg-offset-1 item-t">{{item.notice_title}}</h3>
+                    <p class="col-lg-3 text-right item-d">日期：{{item.startDate}}</p>
+                    <p class="item-txt col-lg-12 lead">{{item.notice_detail}}</p>
+                </div>
+            </li>
+            {%endfor%}
+        </ul>
         <div style="height: 83px; width: 100%"></div>
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
@@ -27,5 +44,6 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
+{{data|dump}}
 
 </html>

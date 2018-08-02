@@ -8,7 +8,7 @@ var error = require('../common/error');
 
 // 企业资质
 router.get('/Information/ability', function (req, res, next) {
-    render('Information/index', '', res, req);
+    render('Information/ability', '', res, req);
 });
 // 公告
 router.get('/Information/notice', function (req, res, next) {
