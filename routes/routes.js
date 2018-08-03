@@ -1,3 +1,3 @@
-let routes = ['home', 'projects', 'Information', 'about', 'robots', 'verify'];
+let routes = ['home', 'projects','download', 'Information', 'about', 'robots', 'verify'];
 
 module.exports = routes;

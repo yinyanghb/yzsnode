@@ -18,7 +18,7 @@ module.exports = {
   getById: function (url, callback, id, req) {
     // 通过id获取相关数据，公用方法
     var opt = this.getHeaders(req, url, id);
-    console.log('opt=' + opt.url)
+
     request(opt, function (error, response, body) {
       if (body) {
         var data = JSON.parse(body);

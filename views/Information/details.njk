@@ -18,8 +18,14 @@
     <div class="container details-container">
         <div class="info-list-box ">
             <div class="info-list-head row">
-                {% set menuData = {type:'公告详情', "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
-                } %} {% include "common/menu.njk" %}
+                {% set typeArr = ["本所公告","本所新闻","公司动态","政策法规"]%} 
+                {# {% set titleArr = ["信息披露","关于我们"]%} #}
+                {% set dataArr = [{type:typeArr[data.details.data.type-1], "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+                },{type:typeArr[data.details.data.type-1], "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
+                }] %}
+                
+                {% set menuData=dataArr[params.type]%}
+                 {% include "common/menu.njk" %}
 
                 <h2 class="notice_title text-center">{{data.details.data.notice_title}}</h2>
                 <div class="line row"></div>
@@ -39,6 +45,7 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
+
 
 
 </html>

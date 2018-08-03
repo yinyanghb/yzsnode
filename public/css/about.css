@@ -44,6 +44,10 @@
     text-indent: 2em
 }
 
+.dynamic-item:nth-of-type(even) {
+    background: #f8f8f8
+}
+
 .dynamic-item::before {
     content: "";
     position: absolute;
@@ -66,4 +70,63 @@
     height: 406px;
     background: url(../images/dynamic.png) no-repeat center center;
     background-size: cover
+}
+
+.template-box {
+    padding: 60px
+}
+
+.noticeUs {
+    padding: 60px 140px;
+}
+
+.template-box p {
+    line-height: 50px;
+}
+
+.noticeUs li {
+    line-height: 98px;
+    font-size: 24px;
+    color: #3f3b3c;
+}
+
+.icon-p::before {
+    content: "";
+    position: absolute;
+    height: 98px;
+    width: 58px;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -84px;
+}
+
+.site::before {
+    background-image: url(../images/site.png)
+}
+
+.hotLine::before {
+    background-image: url(../images/hotLine.png)
+}
+
+.weChat::before {
+    background-image: url(../images/weChat.png)
+}
+
+.email::before {
+    background-image: url(../images/email.png)
+}
+
+.qrcode-box {
+    margin-top: 40px;
+    padding-top: 50px;
+    height: 326px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: solid 1px #f0f0f0;
+}
+
+.qrcode-box dd {
+    height: 198px;
+    background-position: center;
+    background-repeat: no-repeat;
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>亚租所入会须知</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="亚租所" />
+    <meta name="description" content="亚租所" />
+    <link rel="stylesheet" href="/css/about.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+</head>
+
+<body>
+    {% include "common/header.njk" %}
+    <div class="container-fluid main-bg about-bg" style="height: 625px;background-image: url(/images/organ_bg.png)">
+        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+    </div>
+    <div class="container about-container">
+        <div class="info-list-head row">
+            {% set menuData = {type:'入会须知', "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
+            } %} {% include "common/menu.njk" %}
+            <h2 class="text-center about-title">入会须知</h2>
+        </div>
+        <div class="lead template-box">
+            {% include 'template/notify.njk'%}
+            <a href="/DownLoad" class="download" target="_blank">下载入会申请表</a>
+        </div>
+        <!-- 风险揭示 -->
+        {% include 'common/riskWarning.njk'%}
+    </div>
+
+
+    <!-- footer -->
+    {% include 'common/footer.njk'%}
+</body>
+
+</html>

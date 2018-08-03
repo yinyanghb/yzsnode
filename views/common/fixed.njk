@@ -1,0 +1,44 @@
+<ul class="fixed-download-goBack text-center">
+
+	<li class="fixed-download dropdown-has-content ">
+		<em class="fixed-icon glyphicon glyphicon-qrcode"></em>
+
+
+		<div class="download-app-wrap popover">
+			<div class="arrow"></div>
+
+			<div class="fn-clear color-white-text ">
+				<div class="fn-left">
+					<img src="" alt="二维码" width="130" height="130" />
+					<p class="orange">扫一扫</p>
+					<a class="blue" href="http://www.cashlai.com/activity/appload/index.jsp">下载山高金服APP</a>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li class="fixed-contact ">
+		<span class="fixed-icon glyphicon glyphicon-headphones" href="javascript:"></span>
+	</li>
+	<li class="fixed-goTop " style="display: none;">
+		<span class="fixed-icon glyphicon glyphicon-menu-up" href="javascript:"></span>
+	</li>
+</ul>
+<script>
+	//show and hide go-to-top Button
+	$(window).scroll(function () {
+		var r = $(this).scrollTop();
+		if (r >= 850) {
+			$(".fixed-goTop").show()
+		}
+		if (r < 850) {
+			$(".fixed-goTop").hide()
+		}
+	});
+	// click go-to-top
+	$('.fixed-goTop ').click(function () {
+		$("html,body").animate({
+			scrollTop: 0
+		}, 500);
+		return false;
+	});
+</script>

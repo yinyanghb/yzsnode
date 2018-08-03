@@ -6,12 +6,12 @@ var server = require("../models/index");
 var render = require("../common/render");
 
 module.exports = {
-    noticeRender: function (res, req) {
+    noticeRender: function (res, req,id) {
         return async.parallel({
 
                 // 公告
                 notice: function (callback) {
-                    server.getById(appConfig.apiBasePath + Api.NoticeList, callback, 1, req);
+                    server.getById(appConfig.apiBasePath + Api.NoticeList, callback, id, req);
                 },
             },
             function (err, results) {
@@ -29,6 +29,7 @@ module.exports = {
         }, function (err, results) {
             render('Information/details', results, res, req)
         })
-    }
+    },
+
 
 };

@@ -1,7 +1,13 @@
 <div class="info-list-box ">
     <div class="info-list-head row">
-        {% set menuData = { "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
-        } %} {% include "common/menu.njk" %}
+       {% if data.notice.data[0].notice_type==4 %}
+        {% set menuData = { type:data.notice.data[0].type, "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+        } %} 
+        {% else  %}
+        {% set menuData = {  "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+    } %} 
+    {%endif%}
+        {% include "common/menu.njk" %}
 
         <div class="info-list-h col-lg-12">
             <h3>公告列表</h3>
@@ -11,7 +17,7 @@
     <ul class="info-list-ul  ">
         {% for item in data.notice.data %}
         <li class="info-list-li">
-            <a href="/Information/notice/{{item.pid}}" class="info-list-link">{{item.notice_title}}
+            <a href="/Information/0/{{item.pid}}" class="info-list-link">{{item.notice_title}}
                 <span class="info-list-date pull-right">{{item.startDate}}</span>
             </a>
         </li>

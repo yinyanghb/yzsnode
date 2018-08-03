@@ -17,8 +17,12 @@ router.get('/about/dynamic', function (req, res, next) {
         return
     }
 });
-//管理团队
-router.get('/about/team', function (req, res, next) {
-    render('about/team', '', res, req);
+//联系我们
+router.get('/about/noticeUs', function (req, res, next) {
+    render('about/noticeUs', '', res, req);
+});
+// notify
+router.get('/about/notify', function (req, res, next) {
+    render('about/notify', '', res, req);
 });
 module.exports = router;

@@ -23,8 +23,46 @@
         {% include 'common/riskWarning.njk'%}
     </div>
     <!-- footer -->
-    {% include 'common/footer.njk'%}
+    {% include 'common/footer.njk'%} 
 </body>
-
+<script>
+    var infor = {
+        init: function () {
+            this.pageInit({{ data.notice.count }})
+        },
+        getHref: function () {
+            var url = location.search;
+            if (url.indexOf('page') != -1) {
+                return url.replace(/\page=\d+/, 'page=__id__')
+            } else {
+                if (url.indexOf('?') != -1) {
+                    return url += '&page=__id__';
+                } else {
+                    return url += '?page=__id__';
+                }
+            }
+        },
+        pageInit: function (data) {
+            var self = this,
+                href = this.getHref();
+            $("#Pagination").pagination(data, {
+                prev_text: "前一页",
+                next_text: "后一页",
+                num_edge_entries: 1,
+                current_page: '{{query.page}}' == '' ? 0 : '{{query.page}}' - 1,
+                num_display_entries: 4,
+                link_to: href,
+                scrollTop:false,
+                items_per_page: 10,
+                callback:function(page_index, jq){
+                    
+                }
+            });
+        },
+    }
+    $(function () {
+        infor.init();
+    })
+</script>
 
 </html>

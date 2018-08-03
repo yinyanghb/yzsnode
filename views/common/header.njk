@@ -2,16 +2,25 @@
     <div class="container ">
         <div class="topbar">
             <ul class="topbar-nav pull-right">
-                <li>
+                <li class="qrdown">
                     <em class="icon icon-wx"></em>
                     微信公众号
+                    <div class="dropdown-con text-center"  > <em class="sharp glyphicon glyphicon-triangle-top"></em>
+                        <img width="110" height="110" alt="微信公众号" src="/images/wx.png">
+                        <p>微信公众号</p>
+                    </div>
                 </li>
-                <li>
+                <li class="top-line"></li>
+                <li class="qrdown">
                     <em class="icon icon-phone"></em>
                     手机APP
+                    <div class="dropdown-con text-center" > <em class="sharp glyphicon glyphicon-triangle-top"></em>
+                        <img width="110" height="110" alt="手机APP下载" src="/images/app.png">
+                        <a href="javascrtp:;">立即下载</a>
+                    </div>
                 </li>
-                <li>
-                    机构登录入
+                <li class="top-login">
+                    机构登入
                 </li>
             </ul>
             欢迎访问深圳亚太租赁资产交易中心&nbsp;&nbsp;
@@ -27,3 +36,11 @@
 
     </div>
 </div>
+{% include "common/fixed.njk"%}
+<script>
+    $('.qrdown').hover(function(){
+        $(this).find('.dropdown-con').toggleClass('qrshow')
+    },function(){
+        $(this).find('.dropdown-con').toggleClass('qrshow')
+    })
+</script>

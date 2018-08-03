@@ -30,21 +30,36 @@
             </div>
             <div class="line "></div>
             <div class="license">
+                    <ul class="docs-pictures hide">
+                            <li>
+                                <img  data-original='/images/pdf/build.jpg' src="/images/pdf/build.jpg" alt="关于批准深圳亚太租赁资产交易中心有限公司筹建的函">
+                            </li>
+                            <li>
+                                <img data-original='/images/pdf/qualification.jpg' src="/images/pdf/qualification.jpg" alt="关于批准深圳亚太租赁资产交易中心有限公司业务资格的函">
+                            </li>
+                            <li>
+                                <img data-original='/images/pdf/range.jpg' src="/images/pdf/range.jpg" alt="《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》">
+                            </li>
+                            <li>
+                                <img data-original='/images/pdf/Reply.jpg' src="/images/pdf/Reply.jpg" alt="《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》">
+                            </li>
+                
+                        </ul>
                 <ul class="pdf-ul">
                     <li>
-                        <a href="javascript:;">《关于批准深圳亚太租赁资产交易中心有限公司筹建的函》</a>
+                        <a class="viewerBtn"  href="javascript:;" data-target='0'>《关于批准深圳亚太租赁资产交易中心有限公司筹建的函》</a>
                         <p>（深府金函 [2014] 309号）</p>
                     </li>
                     <li>
-                        <a href="javascript:;">《关于批准深圳亚太租赁资产交易中心有限公司业务资格的函》</a>
+                        <a class="viewerBtn"  href="javascript:;" data-target='1'>《关于批准深圳亚太租赁资产交易中心有限公司业务资格的函》</a>
                         <p>（深府金函 [2014] 480号））</p>
                     </li>
                     <li>
-                        <a href="javascript:;">《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》</a>
+                        <a class="viewerBtn"  href="javascript:;"data-target='2'>《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》</a>
                         <p>（深府金函 [2014] 508号）</p>
                     </li>
                     <li>
-                        <a href="javascript:;">《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》</a>
+                        <a class="viewerBtn"   href="javascript:;" data-target='3'>《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》</a>
                         <p>（深府金函 [2015] 111号）</p>
 
                     </li>
@@ -66,9 +81,9 @@
                 <div class="col-lg-5">
                     <dl>
                         <dt>
-                            <a href="javascript:;" class="charter">
 
-                            </a>
+                            <img id="charter" src="/images/pdf/charter.jpg" alt="营业执照" class="charter">
+
                         </dt>
                         <dd>
                             <p>营业执照</p>
@@ -78,9 +93,9 @@
                 <div class="col-lg-7 ">
                     <dl>
                         <dt>
-                            <a href="javascript:;" class="Reply">
 
-                            </a>
+                            <img id="Reply" src="/images/pdf/Reply.jpg" alt="关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复" class="Reply">
+
                         </dt>
                         <dd>
                             <p>关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复
@@ -90,6 +105,7 @@
                 </div>
             </div>
         </div>
+    
 
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
@@ -98,6 +114,18 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
-
+<script>
+    var v = $('#charter,#Reply,.docs-pictures').viewer(
+        {
+            navbar:false,
+            toolbar:false
+        }
+    )
+   $('.viewerBtn').on('click',function(){
+       var args = $(this).data('target');
+   
+        $('.docs-pictures').viewer('view',args)
+   })
+</script>
 
 </html>
