@@ -1,7 +1,7 @@
 <div class="info-list-box ">
     <div class="info-list-head row">
        {% if data.notice.data[0].notice_type==4 %}
-        {% set menuData = { type:data.notice.data[0].type, "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+        {% set menuData = { type:data.notice.data[0].type, "title":'会员服务',navlist:[{title:'入会须知',path:'/about/notify'},{title:'政策法规',path:'/about/policy'}]
         } %} 
         {% else  %}
         {% set menuData = {  "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]

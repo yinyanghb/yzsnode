@@ -17,13 +17,13 @@
     </div>
     <div class="container about-container">
         <div class="info-list-head row">
-            {% set menuData = {type:'入会须知', "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
+            {% set menuData = {type:'入会须知', "title":'会员服务',navlist:[{title:'入会须知',path:'/about/notify'},{title:'政策法规',path:'/about/policy'}]
             } %} {% include "common/menu.njk" %}
             <h2 class="text-center about-title">入会须知</h2>
         </div>
         <div class="lead template-box">
             {% include 'template/notify.njk'%}
-            <a href="/DownLoad" class="download" target="_blank">下载入会申请表</a>
+            <a href="/DownLoad" class="download" target="_blank" >下载入会申请表</a>
         </div>
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}

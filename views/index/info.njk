@@ -1,5 +1,6 @@
+<!-- 1 -->
 <div class="info-link-container">
-    <a href="javascript:;" class="pull-right more-link"> 查看更多</a>
+    <a href="/Information/notice" class="pull-right more-link"> 查看更多</a>
     
     <h3 style="display: inline-block;">本所公告</h3>
     <div class=" info-box">
@@ -9,11 +10,8 @@
         <ul class="info-list clearfix">
             {% for item in data.news.data %}
             <li>
-                <a href="javascript:;" class=" info-item text-left">
-                    二零一八年年度之全年业绩公告
-                    <span class="info-date pull-right">
-                        07-15
-                    </span>
+                <a href="/about/1/{{item.pid}}" class=" info-item text-left">
+                    {{item.notice_title}}
                 </a>
             </li>
             {% else %}

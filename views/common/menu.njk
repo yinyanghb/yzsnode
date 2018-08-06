@@ -4,7 +4,7 @@
     <ul class="info-menu-ul " id="infoMenu">
         {% for item in menuData.navlist %}
         <li>
-            <a href="{{item.path}}" class="text-left {% if pathname == item.path %} menu-this{% endif %}">{{item.title}}</a>
+            <a href="{{item.path}}" class="text-left {% if pathname == item.path or menuData.type == item.title %} menu-this{% endif %}">{{item.title}}</a>
         </li>
         {% endfor%}
         <span class=" menu-bar"></span>

@@ -79,18 +79,15 @@ module.exports = function (env) {
     .addGlobal("projectState", function (a) {
       var state = a;
       if (state === 1) {
-
-        return "募集中";
+        return "挂牌中";
       } else if (state === 2) {
 
-        return "交易完成";
+        return "已成交";
       } else if (state === 3) {
         // 已还清
         return "已兑付";
       } else {
         // 默认已结束
-
-
         return "已结束";
       }
     })
@@ -115,16 +112,7 @@ module.exports = function (env) {
         .substring(1)
         .split("/")[0];
     })
-    .addGlobal("activityLink", function (url, s) {
-      if (
-        (url.indexOf("activitys") !== -1 && s !== "") ||
-        (url.indexOf("hdmoney.cn") !== -1 && s !== "")
-      ) {
-        // 活动或者蝴蝶银域名下的
-        return url + s;
-      }
-      return url;
-    })
+
     .addGlobal("confusedMobile", function (m) {
       if (!m) {
         return "";

@@ -1,7 +1,7 @@
 <table id="tb_project">
     <thead>
         <tr>
-            <th class="text-left">项目编号</th>
+            <th class="text-left">项目名称</th>
             <th class="text-left">挂牌规模</th>
             <th class="text-left">项目期限</th>
             <th class="text-left">预期年化收益率</th>
@@ -11,10 +11,10 @@
 
     <tbody>
         {% for item in data.projects.data %}
-        <tr data-link={{ '/projects/'+type+ '/detail/'+item.pid}}>
-            <td>{{item.borrow_no}}</td>
+        <tr data-link={{'/projects/'+type+ '/detail/'+item.pid}}>
+            <td>{{item.borrow_name}}</td>
             <td>{{item.borrow_balance}}</td>
-            <td>{{item.borrow_term}}</td>
+            <td>{{item.borrow_deadline}}</td>
             <td>{{item.year_interest_rate}}</td>
             <td>{{projectState(item.status)}}
             </td>

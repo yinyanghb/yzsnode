@@ -82,7 +82,7 @@
                     <dl>
                         <dt>
 
-                            <img id="charter" src="/images/pdf/charter.jpg" alt="营业执照" class="charter">
+                            <img id="charter" data-original='/images/pdf/charter.jpg' src="/images/pdf/charter.jpg" alt="营业执照" class="charter">
 
                         </dt>
                         <dd>
@@ -94,7 +94,7 @@
                     <dl>
                         <dt>
 
-                            <img id="Reply" src="/images/pdf/Reply.jpg" alt="关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复" class="Reply">
+                            <img id="Reply" data-original='/images/pdf/Reply.jpg' src="/images/pdf/Reply.jpg" alt="关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复" class="Reply">
 
                         </dt>
                         <dd>
@@ -118,7 +118,8 @@
     var v = $('#charter,#Reply,.docs-pictures').viewer(
         {
             navbar:false,
-            toolbar:false
+            toolbar:false,
+            url : "data-original" 
         }
     )
    $('.viewerBtn').on('click',function(){

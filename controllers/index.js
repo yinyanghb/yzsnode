@@ -13,7 +13,7 @@ module.exports = {
 
                 notice: function (callback) {
                     // 公告
-                    server.getById(appConfig.apiBasePath + Api.NoticeList, callback, '1', req);
+                    server.getById(appConfig.apiBasePath + Api.NoticeList, callback, 1, req);
                 },
                 plat: function (callback) {
                     // 公司动态
@@ -21,8 +21,8 @@ module.exports = {
                 },
 
                 news: function (callback) {
-                    // 公司新闻
-                    server.getById(appConfig.apiBasePath + Api.NoticeList, callback, '2&length=5', req);
+                    // 本所公告
+                    server.getById(appConfig.apiBasePath + Api.NoticeList, callback, '1&length=5', req);
                 },
 
                 AssetInfo: function (callback) {

@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="亚租所" />
     <meta name="description" content="亚租所" />
-    
-    
+
+
     <link rel="stylesheet" href="/css/projects.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
     <!-- DataTables -->
-    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+    <!-- <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script> -->
 </head>
 
 <body>
@@ -83,6 +83,10 @@
         {% include "projects/dealTable.njk" %} {% elif type == 2 %}
         <!-- 直融项目专区 -->
         {% include "projects/businessTable.njk" %}{% endif %}
+        <!-- 分页 S-->
+        <div id="Pagination" class="pagination">
+        </div>
+
         <div style="height: 83px; width: 100% "></div>
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
@@ -93,36 +97,56 @@
 </body>
 {% if data.projects.data.length != 0%}
 <script>
-    $(function () {
-        myTable = $('#tb_project').DataTable({
-            "jQueryUI": false,
-            "info": false,
-            "lengthChange": false,
-            // "bFilter": false,
-            dom: 'lBrtip',
-            // "searching": true,
-            language: {
-                "oPaginate": {
-                    "sFirst": "首页",
-                    "sPrevious": "上页",
-                    "sNext": "下页",
-                    "sLast": "末页"
+    var project = {
+        myTable: '',
+        init: function () {
+            var self = this;
+            self.myTable = $('#tb_project').DataTable({
+                dom: 't',
+                "pageLength": 10,
+                language: {
+                    "sZeroRecords": "没有匹配结果"
                 },
-            },
-            "ordering": false,
-        })
-        $('#tb_project tbody tr').on('click', function () {
-            var link = $(this).data('link')
-
-            location.href = link
-
-        });
-        $('#btn_query').on('click', function () {
-            myTable.columns($('#txt_search_departmentname').val() - 1)
-                .search($('#txt_search_statu').val())
-                .draw();
-            // console.log('c=', , )
-        })
+                "ordering": false,
+        
+            });
+            self.bindEvents();
+            self.pageInit({{data.projects.count}})
+        },
+        bindEvents: function () {
+            var self = this;
+            // 跳转
+            $('#tb_project').on('click', 'tbody tr', function () {
+                var link = $(this).data('link')
+                location.href = link
+            });
+            // 搜索
+            $('#btn_query').on('click', function () {
+                self.myTable.columns($('#txt_search_departmentname').val() - 1)
+                    .search($('#txt_search_statu').val())
+                    .draw();
+                    $("#Pagination").empty();
+                    self.pageInit(self.myTable.page.info().recordsDisplay)
+              
+            })
+      
+        },
+        pageInit:function(data){
+            var self = this;
+            $("#Pagination").pagination(data, {
+              
+                num_edge_entries: 1,
+                num_display_entries: 4,
+                scrollTop:false,
+                items_per_page: 10,
+                callback:function(page_index, jq){
+                    self.myTable.page(page_index).draw('page');
+                }
+            });
+        }
+    }
+    $(function () {
+        project.init();
     })
 </script>
 {% endif%}

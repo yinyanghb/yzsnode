@@ -29,7 +29,8 @@
 }
 
 .item-t {
-    line-height: 80px;
+    /* line-height: 80px; */
+    padding: 30px 0
 }
 
 .about-title {
@@ -80,7 +81,7 @@
     padding: 60px 140px;
 }
 
-.template-box p {
+.template-box span {
     line-height: 50px;
 }
 
@@ -129,4 +130,15 @@
     height: 198px;
     background-position: center;
     background-repeat: no-repeat;
+}
+.download{
+    display: inline-block;
+    line-height: 50px;
+    color: #00f;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline !important
+}
+.download:hover{
+    color:#00f
 }
