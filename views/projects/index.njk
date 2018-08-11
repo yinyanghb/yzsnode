@@ -6,88 +6,92 @@
     <title>亚租所</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
+    <meta name="description" content="亚租所" /> {% include "common/css.njk" %} {% include "common/js.njk" %}
 
-
-    <link rel="stylesheet" href="/css/projects.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <link rel="stylesheet" href="/css/projects.css">
     <!-- DataTables -->
     <!-- <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script> -->
 </head>
 
 <body>
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg" style="height: 625px;background-image: url(/images/organ_bg.png)">
+    <div class="container-fluid main-bg" style="height: 520px;background-image: url(/images/organ_bg.png)">
 
-        <div class="main-bar" style="height: 174px;background: #3e505e">
+        <div class="main-bar" style="height: 120px;background: #3e505e"></div>
 
 
-            <div class="container porject-select">
-                {% set type = params.type %}
-                <div class="porject-sign">
-                    <div class="prologo"></div>
-                    {% if type == 0 %}
-                    <!-- 资产登记专区 -->{% include "projects/asset.njk" %} {% elif type == 1 %}
-                    <!-- 挂牌交易专区 -->{% include "projects/deal.njk" %} {% elif type == 2 %}
-                    <!-- 直融项目专区 -->
-                    {% include "projects/business.njk" %} {% endif %}
-                </div>
-            </div>
-            <div class="container select-box">
-                <!-- <form id="formSearch" class="form-horizontal "> -->
-                <div class=" form-group " style="margin-top:15px ">
-                    <div class="col-sm-3 ">
-                        {%set v = getPath(path)[2]%}
-                        <select class="form-control select-k " id="txt_search_departmentname">
-                            {% if v==0 %}
-                            <!-- 资产登记业务 -->
-                            <option value="1">项目名称</option>
-                            <option value="2">会员名称</option>
-                            <option value="3">备案日期</option>
-                            {% elif v == 1%}
-                            <!-- 挂牌交易专区 -->
-                            <option value="1">项目编号</option>
-                            <option value="2">挂牌规模</option>
-                            <option value="3">项目期限</option>
-                            <option value="4">预期年化收益率</option>
-                            <option value="5">状态</option>
-                            {% elif v == 2%}
-                            <!-- 直融业务专区 -->
-                            <option value="1">项目名称</option>
-                            <option value="2">项目总额</option>
-                            <option value="3">项目期限</option>
-                            <option value="4">预期年化收益率</option>
-                            <option value="5">状态</option>
-                            {% endif%}
-                        </select>
-                    </div>
-                    <label class="control-label col-sm-1 select-label " for="txt_search_statu ">输入</label>
-                    <div class="col-sm-3 ">
-                        <input type="text " class="form-control select-v" id="txt_search_statu">
-                    </div>
-                    <div class="col-sm-4 " style="text-align:left; ">
-                        <button style="margin-left:50px " class="select-btn " id="btn_query" class="btn btn-primary ">查询</button>
-                    </div>
-                </div>
-                <!-- </form> -->
-            </div>
-        </div>
     </div>
-    <div class="container ">
-        <div class="protitlebar ">
-            <h2 class='prolist-title'>项目列表</h2>
-        </div>
-        {% if type == 0 %}
-        <!-- 资产登记专区 -->
-        {% include "projects/assetTable.njk"%} {% elif type == 1 %}
-        <!-- 挂牌交易专区 -->
-        {% include "projects/dealTable.njk" %} {% elif type == 2 %}
-        <!-- 直融项目专区 -->
-        {% include "projects/businessTable.njk" %}{% endif %}
-        <!-- 分页 S-->
-        <div id="Pagination" class="pagination">
-        </div>
 
-        <div style="height: 83px; width: 100% "></div>
+    <div class="container porject-container">
+        
+            <div class=" porject-select">
+                    {% set type = params.type %}
+                    <div class="porject-sign">
+                        <div class="prologo"></div>
+                        {% if type == 0 %}
+                        <!-- 资产登记专区 -->{% include "projects/asset.njk" %} {% elif type == 1 %}
+                        <!-- 挂牌交易专区 -->{% include "projects/deal.njk" %} {% elif type == 2 %}
+                        <!-- 直融项目专区 -->
+                        {% include "projects/business.njk" %} {% endif %}
+                    </div>
+                </div>
+                <div class=" select-box">
+        
+                    <div class="row">
+                        <div class="col-sm-3">
+                            {%set v = getPath(path)[2]%}
+                            <select class="form-control select-k " id="txt_search_departmentname">
+                                {% if v==0 %}
+                                <!-- 资产登记业务 -->
+                                <option value="1">项目名称</option>
+                                <option value="2">会员名称</option>
+                                <option value="3">备案日期</option>
+                                {% elif v == 1%}
+                                <!-- 挂牌交易专区 -->
+                                <option value="1">项目编号</option>
+                                <option value="2">挂牌规模</option>
+                                <option value="3">项目期限</option>
+                                <option value="4">预期年化收益率</option>
+                                <option value="5">状态</option>
+                                {% elif v == 2%}
+                                <!-- 直融业务专区 -->
+                                <option value="1">项目名称</option>
+                                <option value="2">项目总额</option>
+                                <option value="3">项目期限</option>
+                                <option value="4">预期年化收益率</option>
+                                <option value="5">状态</option>
+                                {% endif%}
+                            </select>
+                        </div>
+                        <label class="control-label col-sm-1 select-label text-right" for="txt_search_statu ">输入：</label>
+                        <div class="col-sm-3 ">
+                            <input type="text " class="form-control select-v" id="txt_search_statu">
+                        </div>
+                        <div class="col-sm-4 " style="text-align:left; ">
+                            <button class="select-btn " id="btn_query" class="btn btn-primary ">查询</button>
+                        </div>
+                    </div>
+        
+                </div>
+        <div class="protitlebar portlet">
+            <h2 class='prolist-title'>
+                <i class="before"></i> 项目列表</h2>
+        </div>
+        <div class="portlet-body">
+                {% if type == 0 %}
+            <!-- 资产登记专区 -->
+            {% include "projects/assetTable.njk"%} {% elif type == 1 %}
+            <!-- 挂牌交易专区 -->
+            {% include "projects/dealTable.njk" %} {% elif type == 2 %}
+            <!-- 直融项目专区 -->
+            {% include "projects/businessTable.njk" %}{% endif %}
+            <!-- 分页 S-->
+            <div id="Pagination" class="pagination">
+            </div>
+        </div>
+       
+   
+
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
     </div>
@@ -107,8 +111,9 @@
                 language: {
                     "sZeroRecords": "没有匹配结果"
                 },
+                "stripeClasses": ['strip1', 'strip2'],
                 "ordering": false,
-        
+
             });
             self.bindEvents();
             self.pageInit({{data.projects.count}})
@@ -125,21 +130,21 @@
                 self.myTable.columns($('#txt_search_departmentname').val() - 1)
                     .search($('#txt_search_statu').val())
                     .draw();
-                    $("#Pagination").empty();
-                    self.pageInit(self.myTable.page.info().recordsDisplay)
-              
+                $("#Pagination").empty();
+                self.pageInit(self.myTable.page.info().recordsDisplay)
+
             })
-      
+
         },
-        pageInit:function(data){
+        pageInit: function (data) {
             var self = this;
             $("#Pagination").pagination(data, {
-              
+
                 num_edge_entries: 1,
                 num_display_entries: 4,
-                scrollTop:false,
+                scrollTop: false,
                 items_per_page: 10,
-                callback:function(page_index, jq){
+                callback: function (page_index, jq) {
                     self.myTable.page(page_index).draw('page');
                 }
             });

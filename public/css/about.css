@@ -1,7 +1,8 @@
 .about-container {
     position: relative;
-    margin-top: 570px;
+    margin-top: -380px;
     background: #fff;
+    padding: 30px !important
 }
 
 .info-list-h {
@@ -14,7 +15,7 @@
     line-height: 80px;
 }
 
-.info-list-h h3::before {
+.info-list-h h3>.before {
     position: absolute;
     content: "";
     height: 80px;
@@ -25,44 +26,49 @@
 }
 
 .item-content {
-    padding: 0 47px
+    padding: 30px;
 }
 
 .item-t {
-    /* line-height: 80px; */
-    padding: 30px 0
+    padding: 0  0 0 42px !important;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
-
-.about-title {
-    padding-top: 80px
-}
-
-.item-d {
-    padding-top: 38px
-}
-
-.item-txt {
-    text-indent: 2em
-}
-
-.dynamic-item:nth-of-type(even) {
-    background: #f8f8f8
-}
-
-.dynamic-item::before {
-    content: "";
+.item-t>.before{
     position: absolute;
-    width: 18px;
-    height: 21px;
-    background-image: url(../images/dy-logo.png);
+    width: 14px;
+    height: 16px;
+    background-image: url(../images/dy-read.png);
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    top: 28px;
-    left: 62px;
+    left: 0;
+   
+}
+.about-title {
+    /*padding-top: 80px*/
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.item-txt{
+    padding: 0 !important
 }
 
-.read.dynamic-item::before {
+.item-txt p {
+    text-indent: 2em;
+    word-break: break-all;
+    /*font-size: 18px;*/
+    color: #666666;
+    /*line-height: 36px;*/
+}
+
+.dynamic-item.even {
+    background: #f8f8f8
+}
+
+
+
+.read>.before {
     background-image: url(../images/read.png);
 }
 
@@ -74,7 +80,8 @@
 }
 
 .template-box {
-    padding: 60px
+    text-indent: 2em;
+    padding: 0 60px
 }
 
 .noticeUs {
@@ -131,7 +138,8 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.download{
+
+.download {
     display: inline-block;
     line-height: 50px;
     color: #00f;
@@ -139,6 +147,7 @@
     font-size: 16px;
     text-decoration: underline !important
 }
-.download:hover{
-    color:#00f
+
+.download:hover {
+    color: #00f
 }

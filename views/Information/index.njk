@@ -9,11 +9,13 @@
     <meta name="description" content="亚租所" />
     <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
 </head>
-
+   
 <body>
+
+
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg" style="height: 625px;background-image: url(/images/info-bg.png)">
-        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+    <div class="container-fluid main-bg detail-main-bg" style="height: 520px;background-image: url(/images/info-bg.png)">
+
     </div>
     <div class="container information-content">
         {% include "Information/infobar.njk" %} {%include "Information/infolist.njk"%}
@@ -23,12 +25,12 @@
         {% include 'common/riskWarning.njk'%}
     </div>
     <!-- footer -->
-    {% include 'common/footer.njk'%} 
+    {% include 'common/footer.njk'%}
 </body>
 <script>
     var infor = {
         init: function () {
-            this.pageInit({{ data.notice.count }})
+            this.pageInit({{data.notice.count}})
         },
         getHref: function () {
             var url = location.search;
@@ -46,16 +48,14 @@
             var self = this,
                 href = this.getHref();
             $("#Pagination").pagination(data, {
-                prev_text: "前一页",
-                next_text: "后一页",
                 num_edge_entries: 1,
                 current_page: '{{query.page}}' == '' ? 0 : '{{query.page}}' - 1,
                 num_display_entries: 4,
                 link_to: href,
-                scrollTop:false,
+                scrollTop: false,
                 items_per_page: 10,
-                callback:function(page_index, jq){
-                    
+                callback: function (page_index, jq) {
+
                 }
             });
         },

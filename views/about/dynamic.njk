@@ -12,7 +12,7 @@
 
 <body>
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg about-bg" style="height: 625px;background-image: url(/images/dynamic.png)">
+    <div class="container-fluid main-bg about-bg" style="height: 520px;background-image: url(/images/dynamic.png)">
         <div class="main-bar" style="height: 174px;background: #3e505e"></div>
     </div>
     <div class="container about-container">
@@ -20,18 +20,19 @@
             {% set menuData = { "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
             } %} {% include "common/menu.njk" %}
             <div class="info-list-h col-lg-12">
-                <h3>动态列表</h3>
+                <h3> <span class="before"></span> 动态列表</h3>
             </div>
 
         </div>
         <ul class=" row" style="padding:0 15px">
             {%for item in data.dynamic.data%}
-            <li class="col-lg-12 dynamic-item {% if item.flag==0 %} read{% endif%}">
+            <li class="col-lg-12 dynamic-item {% if loop.index%2 == 0 %}even {%endif%}">
+              
                 <a href="/about/1/{{item.pid}}">
-                    <div class="item-content row">
-                        <h3 class="col-lg-8 col-lg-offset-1 item-t">{{item.notice_title}}</h3>
-                        <p class="col-lg-3 text-right item-d">日期：{{item.startDate}}</p>
-                        <p class="item-txt col-lg-12 lead">{{item.notice_detail}}</p>
+                    <div class="item-content clearfix">
+                        <h3 class="col-lg-10 {% if item.flag==0 %} read{% endif%}  item-t"><span class="before"></span>{{item.notice_title}}</h3>
+                        <p class="pull-right  item-d">日期：{{item.startDate}}</p>
+                        <div class="item-txt col-lg-12 "><p class="clemp">{{subStringFn(item.notice_detail)}} <span class="after" >...</span></p></div>
                     </div>
                 </a>
             </li>
@@ -40,7 +41,7 @@
         <!-- 分页 S-->
         <div id="Pagination" class="pagination">
         </div>
-        <div style="height: 83px; width: 100%"></div>
+     
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
     </div>
@@ -52,6 +53,16 @@
 <script>
     var dynamic = {
         init: function () {
+                $('.clemp').each(function(i,obj){
+                var lh = parseInt($(this).css('line-height'));
+                var height = parseInt($(this).height());
+                if((height / lh) >3 ){
+                    $(this).addClass("p-after").css({"height":lh*3+'px',"overflow":"hidden"})
+                    $(this).find('.after').show().css('background-color',$(this).parents('li').css('background-color'))
+                }else{
+                    $(this).removeClass("p-after");
+                }
+            })
             this.pageInit({{data.dynamic.count}})
         },
         getHref: function () {

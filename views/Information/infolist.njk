@@ -9,14 +9,14 @@
     {%endif%}
         {% include "common/menu.njk" %}
 
-        <div class="info-list-h col-lg-12">
-            <h3>公告列表</h3>
-        </div>
+     
     </div>
-
-    <ul class="info-list-ul  ">
+    <div class="info-list-h portlet">
+        <h3> <i class="before"></i>{%if getPath(path)[2] == 'policy'%} 政策法规列表{%else%} 公告列表{%endif%}</h3>
+    </div>
+    <ul class="info-list-ul  portlet-body">
         {% for item in data.notice.data %}
-        <li class="info-list-li">
+        <li class="info-list-li {%if loop.index%2 ==0%} even  {%endif%}">
             <a href="/Information/0/{{item.pid}}" class="info-list-link">{{item.notice_title}}
                 <span class="info-list-date pull-right">{{item.startDate}}</span>
             </a>
@@ -26,4 +26,5 @@
 </div>
 <!-- 分页 S-->
 <div id="Pagination" class="pagination">
+ 
 </div>

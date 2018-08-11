@@ -16,7 +16,7 @@ module.exports = function (env) {
     })
     .addGlobal("subStringFn", function (str, len) {
       // 截取文本
-
+      str = str.replace(/<[^>]+>/g,"").replace(/\&nbsp;/g,"");
       if (!str) {
         return "";
       }
@@ -27,7 +27,7 @@ module.exports = function (env) {
         .replace(/&ldquo;/g, "“")
         .replace(/&mdash;/g, "—");
       var s = str.replace(/<(?:.|\n)*?>/gm, "").trim();
-      if (s.length > len) {
+      if (s.length > len&&len) {
         return s.substring(0, len) + "...";
       }
       return s;

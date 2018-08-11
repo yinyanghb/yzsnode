@@ -8,7 +8,14 @@
 
 .pagination a,
 .pagination span {
-	text-decoration: none;
+	font-size: 16px;
+	color: #4e4e4e;
+	width: 300px;
+	height: 48px;
+	line-height: 48px;
+	background-color: #ffffff;
+	border: solid 1px rgb(215, 216, 214);
+	/* text-decoration: none;
 	margin-right: 5px;
 	display: inline-block;
 	font-size: 14px;
@@ -20,7 +27,7 @@
 	background: #fff;
 	overflow: hidden;
 	border: 1px solid #eee;
-	border-radius: 3px;
+	border-radius: 3px; */
 }
 
 .pagination a:hover {
@@ -36,8 +43,31 @@
 
 .pagination .current.prev,
 .pagination .current.next {
+	display: none;
 	color: #999;
 	cursor: not-allowed;
 	background: #eee;
 	border-color: #eee;
+}
+.pagination .centerbox{
+	position: absolute;
+	
+	left: 50%;
+	margin-left: -45px;
+}
+.pagination .centerbox input{
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	background-color: #ffffff;
+	border: solid 1px rgba(215, 216, 214, 0.95);
+	font-size: 18px;
+	color: #dd000c;
+	
+}
+.pagination .centerbox p{
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 18px;
+	color: #4e4e4e;
 }

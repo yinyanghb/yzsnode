@@ -29,6 +29,7 @@ jQuery.fn.pagination = function (maxentries, opts) {
 		/**
 		 * 计算最大分页显示数目
 		 */
+		
 		function numPages() {
 			return Math.ceil(maxentries / opts.items_per_page);
 		}
@@ -91,7 +92,7 @@ jQuery.fn.pagination = function (maxentries, opts) {
 					classes: ""
 				}, appendopts || {});
 				if (page_id == current_page) {
-					var lnk = jQuery("<span class='current'>" + (appendopts.text) + "</span>");
+					var lnk = jQuery("<span class='current' >" + (appendopts.text) + "</span>");
 				} else {
 					var lnk = jQuery("<a>" + (appendopts.text) + "</a>")
 						.bind("click", getClickHandler(page_id))
@@ -106,41 +107,51 @@ jQuery.fn.pagination = function (maxentries, opts) {
 			if (opts.prev_text && (current_page > 0 || opts.prev_show_always)) {
 				appendItem(current_page - 1, {
 					text: opts.prev_text,
-					classes: "prev"
+					classes: "prev pull-left"
 				});
 			}
 			// 产生起始点
-			if (interval[0] > 0 && opts.num_edge_entries > 0) {
-				var end = Math.min(opts.num_edge_entries, interval[0]);
-				for (var i = 0; i < end; i++) {
-					appendItem(i);
-				}
-				if (opts.num_edge_entries < interval[0] && opts.ellipse_text) {
-					jQuery("<span>" + opts.ellipse_text + "</span>").appendTo(panel);
-				}
-			}
+			// if (interval[0] > 0 && opts.num_edge_entries > 0) {
+			// 	var end = Math.min(opts.num_edge_entries, interval[0]);
+			// 	for (var i = 0; i < end; i++) {
+			// 		appendItem(i);
+			// 	}
+			// 	if (opts.num_edge_entries < interval[0] && opts.ellipse_text) {
+			// 		jQuery("<span>" + opts.ellipse_text + "</span>").appendTo(panel);
+			// 	}
+			// }
 			// 产生内部的些链接
-			for (var i = interval[0]; i < interval[1]; i++) {
-				appendItem(i);
-			}
+			// for (var i = interval[0]; i < interval[1]; i++) {
+			// 	appendItem(i);
+			// }
 			// 产生结束点
-			if (interval[1] < np && opts.num_edge_entries > 0) {
-				if (np - opts.num_edge_entries > interval[1] && opts.ellipse_text) {
-					jQuery("<span>" + opts.ellipse_text + "</span>").appendTo(panel);
-				}
-				var begin = Math.max(np - opts.num_edge_entries, interval[1]);
-				for (var i = begin; i < np; i++) {
-					appendItem(i);
-				}
+			// if (interval[1] < np && opts.num_edge_entries > 0) {
+			// 	if (np - opts.num_edge_entries > interval[1] && opts.ellipse_text) {
+			// 		jQuery("<span>" + opts.ellipse_text + "</span>").appendTo(panel);
+			// 	}
+			// 	var begin = Math.max(np - opts.num_edge_entries, interval[1]);
+			// 	for (var i = begin; i < np; i++) {
+			// 		appendItem(i);
+			// 	}
 
-			}
+			// }
 			// 产生 "Next"-链接
 			if (opts.next_text && (current_page < np - 1 || opts.next_show_always)) {
 				appendItem(current_page + 1, {
 					text: opts.next_text,
-					classes: "next"
+					classes: "next pull-right"
 				});
 			}
+
+			// 产生中间显示条目
+			if(np>1){
+				var sum  = current_page -0;
+				var dom = jQuery('<div class="centerbox"><input type="text"  readonly="readonly" class="current_page text-center" value="'+(sum+1)+'"> <p>/'+np+'</p></div>');
+				panel.append(dom);
+			}
+			
+		
+		
 		}
 
 		//从选项中提取current_page

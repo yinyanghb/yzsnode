@@ -1,6 +1,6 @@
-<ul class="layui-nav main-nav" lay-filter="">
+<ul class="layui-nav main-nav col-lg-8 text-right col-md-12" lay-filter="">
     {% set page = getPath(path)[1] %}
-  
+ 
     <li class="layui-nav-item nav-item  {% if page == '' %} layui-this{% endif %}">
         <a href="/">首页</a>
     </li>
@@ -9,6 +9,7 @@
     <li class="layui-nav-item  nav-item  {% if page == 'projects' %} layui-this{% endif %}">
         <a href="javascript:;">机构专区</a>
         <dl class="layui-nav-child organization ">
+            <span class="after">Trading</span>
             <!-- 二级菜单 -->
             <dd class="{% if path=='/projects/0'%} active {%endif%}">
                 <a href="/projects/0"  >资产登记专区</a>
@@ -25,6 +26,7 @@
     <li class="layui-nav-item nav-item {% if page == 'Information' %} layui-this{% endif %}">
         <a href="javascript:;">信息披露</a>
         <dl class="layui-nav-child Information ">
+                <span class="after">Information</span>
             <!-- 二级菜单 -->
             <dd class="{% if path=='/Information/ability'%} active {%endif%}">
                 <a href="/Information/ability" >企业资质</a>
@@ -38,6 +40,7 @@
     <li class="layui-nav-item nav-item {% if page == 'about' %} layui-this{% endif %}">
         <a href="javascript:;">关于我们</a>
         <dl class="layui-nav-child about">
+                <span class="after">About</span>
             <!-- 二级菜单 -->
             <dd class="{% if path=='/about'%} active {%endif%}">
                 <a href="/about">本所简介</a>
@@ -54,10 +57,10 @@
 </ul>
 
 <script>
-    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+   
     layui.use('element', function () {
         var element = layui.element;
 
-        //…
+       
     });
 </script>

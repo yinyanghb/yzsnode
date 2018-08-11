@@ -2,7 +2,7 @@
 <div class="info-link-container">
     <a href="/Information/notice" class="pull-right more-link"> 查看更多</a>
     
-    <h3 style="display: inline-block;">本所公告</h3>
+    <h2 style="display: inline-block;">本所公告</h2>
     <div class=" info-box">
         <div class="info-img pull-right">
             <img src="../images/newbg.png" width="100%" height="100%" alt="">
@@ -10,8 +10,10 @@
         <ul class="info-list clearfix">
             {% for item in data.news.data %}
             <li>
-                <a href="/about/1/{{item.pid}}" class=" info-item text-left">
+                <span class="after"></span>
+                <a href="/Information/0/{{item.pid}}" class=" info-item text-left">
                     {{item.notice_title}}
+                    <span class="pull-right">{{item.startDate}}</span>
                 </a>
             </li>
             {% else %}

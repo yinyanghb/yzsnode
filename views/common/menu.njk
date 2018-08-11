@@ -1,10 +1,11 @@
 {% set pathname =getPath(path).splice(0,3).join('/') %}
-<div class="info-menu text-right col-lg-2">
+<div class="info-menu  col-lg-2">
+    <span class="before"></span>
     {{menuData.title}}
     <ul class="info-menu-ul " id="infoMenu">
         {% for item in menuData.navlist %}
-        <li>
-            <a href="{{item.path}}" class="text-left {% if pathname == item.path or menuData.type == item.title %} menu-this{% endif %}">{{item.title}}</a>
+        <li class="{% if pathname == item.path or menuData.type == item.title %}menu-this{% endif %}">
+            <a href="{{item.path}}" class="text-left ">{{item.title}}</a>
         </li>
         {% endfor%}
         <span class=" menu-bar"></span>

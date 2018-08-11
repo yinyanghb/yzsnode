@@ -7,22 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="亚租所" />
   <meta name="description" content="亚租所" />
-  <link rel="stylesheet" href="/css/index.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+  <link rel="stylesheet" href="/css/index.css"> {% include "common/css.njk" %}{% include "common/js.njk" %}
 </head>
 
 <body>
   {% include "common/header.njk" %}
-  
+
   <div class="container-fluid main-bg" style="background-image: url(images/bg.png)">
     <div class="main-bar">
       <div class="container main-bar-cnt">
         <div class="main-title title-l pull-left">
+          <span class="main-title-before"></span>
           <h3>专业交易服务</h3>
         </div>
         <div class="main-title title-c">
+          <span class="main-title-before"></span>
           <h3>优质资产来源</h3>
         </div>
         <div class="main-title title-r pull-right">
+          <span class="main-title-before"></span>
           <h3>丰富投资资金</h3>
         </div>
       </div>
@@ -38,11 +41,11 @@
         {% include 'index/item.njk'%}
       </ul>
     </div>
-    <!-- 信息披露 -->
+    <!-- 本所公告 -->
     {% include 'index/info.njk'%}
     <!-- 公司动态 -->
     {% include 'index/news.njk'%}
-    <div style="height: 83px; width: 100%"></div>
+
     <!-- 风险揭示 -->
     {% include 'common/riskWarning.njk'%}
   </div>
@@ -51,5 +54,6 @@
   <!-- footer -->
   {% include 'common/footer.njk'%}
 </body>
-{{data|dump}}
+
+
 </html>
