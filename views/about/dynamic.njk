@@ -19,10 +19,10 @@
         <div class="info-list-head row">
             {% set menuData = { "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
             } %} {% include "common/menu.njk" %}
-            <div class="info-list-h col-lg-12">
-                <h3> <span class="before"></span> 动态列表</h3>
+    
+            <div class="portlet-head">
+                <h2><i class="  icon-list"></i>动态列表</h2>
             </div>
-
         </div>
         <ul class=" row" style="padding:0 15px">
             {%for item in data.dynamic.data%}

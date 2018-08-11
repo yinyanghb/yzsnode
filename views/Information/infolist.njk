@@ -11,9 +11,10 @@
 
      
     </div>
-    <div class="info-list-h portlet">
-        <h3> <i class="before"></i>{%if getPath(path)[2] == 'policy'%} 政策法规列表{%else%} 公告列表{%endif%}</h3>
+    <div class="portlet-head">
+        <h2><i class="  icon-list "></i>{%if getPath(path)[2] == 'policy'%} 政策法规列表{%else%} 公告列表{%endif%}</h2>
     </div>
+
     <ul class="info-list-ul  portlet-body">
         {% for item in data.notice.data %}
         <li class="info-list-li {%if loop.index%2 ==0%} even  {%endif%}">
