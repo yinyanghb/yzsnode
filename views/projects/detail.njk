@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
 
-    <link rel="stylesheet" href="/css/projects.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <link rel="stylesheet" href="/css/projects.css"> {% include "common/css.njk" %} 
     <!-- DataTables -->
 
 </head>
@@ -18,125 +19,167 @@
 <body>
     {% include "common/header.njk" %}
     <div class="container-fluid main-bg" style="height: 520px;background-image: url(/images/organ_bg.png)">
-        <div class="main-bar" style="height: 120px;background: #3e505e">
-        </div>
+        <div class="main-bar" style="height: 88px;background: #3e505e"></div>
     </div>
-    <div class="container porject-container">
-            <div class=" porject-select">
-                    {% set type = params.type %}
-                    <div class="porject-sign detail-sign">
-                        <span class="before"></span>
-                        <div class="row">
-                            <h2 class="col-lg-3 detail-title"><span class="before"></span> {% if type==0%}资产登记项目{% elif type ==1%} 挂牌交易项目{% elif type ==2%}直融业务专区{%endif%}</h2>
-                            <div class="col-lg-9 detail-head">
-                                <div class="row">
-                                    <h2 class="porject-name">{{data.detail.data.borrow_name}}
-                                        <em style="vertical-align:top;color: #dd000c" class="glyphicon glyphicon-chevron-right"></em>
-                                    </h2>
-                                  
-                                    {% if type==0%}
-                                    <!-- 资产登记专区 -->
-                                    <dl class=" text-center">
-                                        <dt class="detail-th">
-                                            <span class="col-lg-8">资产登记方</span>
-                                            <span class="col-lg-4">备案日期</span>
-    
-                                        </dt>
-                                        <dd class="detail-tb">
-                                            <span class="col-lg-8">{{data.detail.data.asset_register}}</span>
-                                            <span class="col-lg-4">{{data.detail.data.record_date}}</span>
-                                        </dd>
-                                    </dl>
-                                    {%elif type==1 %}
-                                    <!-- 挂牌业务详情 -->
-                                    <dl class="text-center">
-                                        <dt class="detail-th">
-                                            <span class="col-lg-3">开始时间</span>
-                                            <span class="col-lg-3">结束时间</span>
-                                            <span class="col-lg-3">挂牌价格</span>
-                                            <span class="col-lg-3">状态</span>
-                                        </dt>
-                                        <dd class="detail-tb">
-                                            <span class="col-lg-3">{{data.detail.data.release_date}}</span>
-                                            <span class="col-lg-3">{{data.detail.data.release_end_date}}</span>
-                                            <span class="col-lg-3">{{data.detail.data.borrow_balance}}</span>
-                                            <span class="col-lg-3">{{projectState(data.detail.data.status)}}</span>
-                                        </dd>
-                                    </dl>
-                                    {%endif%}
-                                </div>
-                            </div>
-                        </div>
+    <div class="container detail-container">
+        <div class=" porject-select">
+            {% set type = params.type %}
+            <div class="detail-sign">
+                <span class="before"></span>
+                <i class="dLogo"></i>
+                
+                        <h2 class="porject-name red pull-left">
+                            <span class="before"></span> {% if type==0%}资产登记项目{% elif type ==1%} 挂牌交易项目{% elif type ==2%}直融业务专区{%endif%}</h2>
+
+                    <div class=" detail-head">
+                        <div class="">
+                            <h3 class=" detail-title">
+                                <span class="vm">{{data.detail.data.borrow_name}}</span>
+                                <em class="vm"></em>
+                            </h3>
+                   
+                            {% if type==0%}
+                            <!-- 资产登记专区 -->
+                            <dl class=" text-center">
+                                <dt class="detail-th">
+                                    <span class="col-xs-6">资产登记方</span>
+                                    <span class="col-xs-6">备案日期</span>
+
+                                </dt>
+                                <dd class="detail-tb">
+                                    <span class="col-xs-6">{{data.detail.data.asset_register}}</span>
+                                    <span class="col-xs-6">{{data.detail.data.record_date}}</span>
+                                </dd>
+                            </dl>
+                            {%elif type==1 %}
+                            <!-- 挂牌业务详情 -->
+                            <p class="dataDec">受{{data.detail.data.asset_register}}委托，深圳亚太租赁资产交易所向特定客户披露以下{{data.detail.data.borrow_name}}信息，征集意向受让方。意向受让方应符合《亚租所投资者适当性管理规则（试行）》中规定的合格投资人标准，交易过程也应严格遵守相关法律法规之规定。格遵守相关法律法规之规定。</p>
+                            <table class="text-table">
+                                <thead> 
+                                    <tr>
+                                        <th>开始时间</th>
+                                      {%if data.detail.data.release_end_date%}  <th>结束时间</th>
+                                      {%endif%}
+                                        <th>挂牌价格</th>
+                                        <th>状态</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{data.detail.data.release_date}}</td>
+                                        {%if data.detail.data.release_end_date%}<td>{{data.detail.data.release_end_date}}</td>{%endif%}
+                                        <td>{{data.detail.data.borrow_balance}}</td>
+                                        <td>{{projectState(data.detail.data.status)}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {%endif%}
+                        
                     </div>
                 </div>
-        <div class="protitlebar detail-bar">
-            <h2 class='prolist-title detail'><span class="before"></span> 项目详情</h2>
+            </div>
         </div>
+
+            <div class="detail-portlet-head">
+                <h2>
+                    <i class="icon-list vm ml15"></i>
+                    <span class="vm">项目详情</span>
+                </h2>
+            </div>
+ 
+        
+        
         <div class="detail-list">
 
-            <ul class="row ">
+            <ul class="detail-list-ul ">
                 {% if type == 0 %}
                 <!--  资产登记专区-->
-                <li class="col-lg-12">
-                    <p class="col-lg-4 text-right">项目名称</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.borrow_name}}</p>
+                <li class="detail-list-li clearfix ">
+                        <div class=" pull-left detail-list-title text-right">项目编号</div>
+                        <div class="detail-list-c">{{data.detail.data.borrow_no}}</div>
+                    </li>
+                <li class="detail-list-li clearfix even">
+                    <div class=" pull-left detail-list-title text-right">项目名称</div>
+                    <div class="detail-list-c">{{data.detail.data.borrow_name}}</div>
                 </li>
-                <li class="col-lg-12 even">
-                    <p class="col-lg-4 text-right">资产登记方</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.asset_register}}</p>
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title text-right">资产登记方</div>
+                    <div class="detail-list-c">{{data.detail.data.asset_register}}</div>
                 </li>
-                <li class="col-lg-12">
-                    <p class="col-lg-4 text-right">登记机构</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.registration_name}}</p>
+                <li class="detail-list-li clearfix even">
+                    <div class=" pull-left detail-list-title text-right">登记机构</div>
+                    <div class="detail-list-c">{{data.detail.data.registration_name}}</div>
                 </li>
-                <li class="col-lg-12 even">
-                    <p class="col-lg-4 text-right">登记期限</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.borrow_deadline}}</p>
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title text-right">登记期限</div>
+                    <div class="detail-list-c">{{data.detail.data.borrow_deadline}}</div>
                 </li>
-                <li class="col-lg-12">
-                    <p class="col-lg-4 text-right">登记规模</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.borrow_balance}}</p>
+                <li class="detail-list-li clearfix even">
+                    <div class=" pull-left detail-list-title text-right">登记规模</div>
+                    <div class="detail-list-c">{{data.detail.data.borrow_balance}}</div>
                 </li>
 
-                <li class="col-lg-12 even">
-                    <p class="col-lg-4 text-right">资产登记方介绍</p>
-                    <div class="col-lg-7 col-lg-offset-1" style="color: #3f3b3c;font-size: 18px;line-height: 26px;">{{data.detail.data.asset_register_detail | safe}}</div>
+                {% if data.detail.data.asset_register_detail | safe %}
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title text-right">资产登记方介绍</div>
+                    <div class="detail-list-c">
+                        <div class="pt15"><p>{{data.detail.data.asset_register_detail | safe}}</p></div>
+                    </div>
                 </li>
+                {% endif%}
                 {% elif type ==1%}
                 <!-- 挂牌交易项目 -->
-                <li class="col-lg-12">
-                    <p class="col-lg-4 text-right">项目名称</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.borrow_name}}</p>
+                {% if data.detail.data.borrow_no%}
+                <li class="detail-list-li clearfix ">
+                        <div class=" pull-left detail-list-title text-right">项目编号</div>
+                        <div class="detail-list-c">{{data.detail.data.borrow_no}}</div>
+                    </li>
+                    {%endif%}
+                    {%if data.detail.data.borrow_name%}
+                <li class="detail-list-li clearfix even">
+                    <div class=" pull-left detail-list-title text-right">项目名称</div>
+                    <div class="detail-list-c">{{data.detail.data.borrow_name}}</div>
                 </li>
-                <li class="col-lg-12 even">
-                    <p class="col-lg-4 text-right">挂牌方</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.asset_register}}</p>
+                {%endif%}
+                {%if data.detail.data.asset_register%}
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title text-right">挂牌方</div>
+                    <div class="detail-list-c">{{data.detail.data.asset_register}}</div>
                 </li>
-                <li class="col-lg-12">
-                    <p class="col-lg-4 text-right">挂牌金额</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.borrow_balance}}</p>
+                {% endif %}
+                {%if data.detail.data.borrow_balance%}
+                <li class="detail-list-li clearfix even">
+                    <div class=" pull-left detail-list-title text-right">挂牌价格</div>
+                    <div class="detail-list-c">{{data.detail.data.borrow_balance}}</div>
                 </li>
-                <li class="col-lg-12 even">
-                    <p class="col-lg-4 text-right">项目期限</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.borrow_deadline}}</p>
+                {%endif%}
+                {%if data.detail.data.borrow_deadline%}
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title text-right">项目期限</div>
+                    <div class="detail-list-c">{{data.detail.data.borrow_deadline}}</div>
                 </li>
-                <li class="col-lg-12">
-                    <p class="col-lg-4 text-right">预期年化收益率</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.year_interest_rate}}</p>
+                {%endif%}
+                {% if data.detail.data.year_interest_rate %}
+                <li class="detail-list-li clearfix  even">
+                    <div class=" pull-left detail-list-title text-right">预期年化收益率</div>
+                    <div class="detail-list-c">{{data.detail.data.year_interest_rate}}</div>
                 </li>
-                <li class="col-lg-12 even">
-                    <p class="col-lg-4 text-right">兑付方式</p>
-                    <p class="col-lg-7 col-lg-offset-1">{{data.detail.data.cash_way}}</p>
+                {%endif%}
+                {%if data.detail.data.cash_way%}
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title pull-left text-right">兑付方式</div>
+                    <div class="detail-list-c"><div class="pt15"><p>{{data.detail.data.cash_way}}</p></div></div>
                 </li>
+                {%endif%}
                 {%endif%}
 
             </ul>
         </div>
-        <div style="height: 83px; width: 100% "></div>
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
     </div>
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
+{% include "common/js.njk" %}
 </html>

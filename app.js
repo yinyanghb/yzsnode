@@ -43,7 +43,7 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'),{maxAge:1000*60*60}));
 
 // 中间件，为所有请求记录日志
 app.use(function (req, res, next) {

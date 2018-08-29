@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
   grunt.initConfig({
+
     //our JSHint options
     jshint: {
       all: ['js/deelon-sdk.js']
@@ -8,31 +9,16 @@ module.exports = function (grunt) {
     concat: {
       options: {
         separator: ';', //separates scripts
+        stripBanners: true
       },
       dist: {
         src: [
-
           // 所引用的 js 参见 views/js_compress_before.html
-          'lib/jquery-1.8.3.min.js',
-          'lib/jquery.cookie.js',
-          'lib/js.cookie.js',
-          'lib/provider.js',
-          'js/mappings.js',
-          'lib/utils.js',
-          'lib/router.js',
-          'js/utils.js',
-          'js/validate.js',
+          'lib/jquery.running.min.js',
           'lib/pagination/jquery.pagination.js',
-          'lib/pikaday/js/pikaday.min.js',
-          'js/utils.js',
-          'lib/validate.js',
-          'lib/tipso/tipso.js',
-          'lib/request.js',
-          'lib/IDValidator/GB2260.js',
-          'lib/IDValidator/IDValidator.js',
-
-
-
+          'lib/jquery-viewer/jquery-viewer.js',
+          'lib/sal.js',
+          'lib/jquery-dataTable/jquery-dataTable.js'
         ], //需要合并的文件，注意顺序
         dest: 'js/dist/app.js', //合并文件
       },
@@ -56,12 +42,11 @@ module.exports = function (grunt) {
           // css 暂时不要压缩，因为有图片路径引用问题
           'css/app.min.css': [
             'lib/pagination/pagination.css',
-            'lib/pikaday/css/pikaday.css',
-            'lib/tipso/tipso.min.css',
-
+            'lib/jquery-viewer/viewer.css',
+            'lib/jquery-dataTable/jquery-dataTable.css',
+            'lib/layui-v2.3.0/layui/css/layui.css',
             'css/common.css',
-            'css/login.css',
-            'css/members.css'
+           
           ],
         },
       },
@@ -71,13 +56,13 @@ module.exports = function (grunt) {
       /* 压缩图片大小 */
       dist: {
         options: {
-          optimizationLevel: 3, //定义 PNG 图片优化水平
+          optimizationLevel: 7, //定义 PNG 图片优化水平
         },
         files: [{
           expand: true,
-          cwd: 'before/images',
+          cwd: 'images/',
           src: ['**/*.{png,jpg}'], // 优化 img 目录下所有 png/jpg/jpeg 图片
-          dest: 'after/images', // 优化后的图片保存位置，覆盖旧图片，并且不作提示（建议新建一个目录）
+          dest: 'images/', // 优化后的图片保存位置，覆盖旧图片，并且不作提示
         }, ],
       },
     },

@@ -2,54 +2,21 @@
 
 	<li class="fixed-download dropdown-has-content" >
 		<a href="javascript:;"  class="popoverBtn"
-		data-container=".fixed-download" data-toggle="popover" data-placement="left" 
-		 data-content="<img src='/images/app.png' alt='二维码' width='130' height='130' /><p class='prange text-center'>扫一扫</p><p class='prange text-center'>下载app</p>" >
+		data-container=".popoverBtn" data-toggle="popover" data-placement="left" data-trigger='hover'
+		 data-content="<img src='/images/qr2.png' alt='二维码' width='130' height='130' /><p class='prange text-center'>扫一扫</p><p class='prange text-center'>下载app</p>" >
 				<em class="fixed-icon  fixed-icon-qrcode"></em>
 		</a>
 		
-<!--  -->
-		<!-- <div class="fn-clear color-white-text ">
-				<div class="fn-left">
-					<img src="/images/app.png" alt="二维码" width="130" height="130" />
-					<p class="orange">扫一扫</p>
-					 <a class="blue" href="http://www.cashlai.com/activity/appload/index.jsp">下载山高金服APP</a> 
-				</div>
-			</div> -->
-		<!-- <div class="download-app-wrap popover" >
-			<div class="arrow "></div>
 
-		
-		</div> -->
 	</li>
 	<li class="fixed-contact ">
-		<span class="fixed-icon fixed-icon-serve" href="javascript:"></span>
+		<a class=" servepopoverBtn" href="javascript:;" 
+		data-container="body" data-toggle="popover" data-placement="left" data-trigger='hover'
+		data-content="客服电话 0755-32989919" >
+		<em class="fixed-icon fixed-icon-serve"></em>
+	</a>
 	</li>
 	<li class="fixed-goTop " style="display: none;">
 		<span class="fixed-icon glyphicon fixed-icon-up" href="javascript:"></span>
 	</li>
 </ul>
-<script>
-$(function () { $(".popoverBtn").popover({html : true }); });
-	//show and hide go-to-top Button
-	$(window).scroll(function () {
-		var r = $(this).scrollTop();
-		if (r >= 850) {
-			$(".fixed-goTop").show()
-		}
-		if (r < 850) {
-			$(".fixed-goTop").hide()
-		}
-	});
-	// click go-to-top
-	$('.fixed-goTop ').click(function () {
-		$("html,body").animate({
-			scrollTop: 0
-		}, 500);
-		return false;
-	});
-	$('.fixed-download').hover(function(){
-		$(this).find('.popover').show()
-	},function(){
-		$(this).find('.popover').hide()
-	})
-</script>

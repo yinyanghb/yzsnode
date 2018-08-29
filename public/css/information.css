@@ -1,10 +1,16 @@
+
+#preload{
+   background:  url(../images/info-bg.png) no-repeat -9999px -9999px; 
+}
+
 .information-content,.details-container {
-    margin-top: -480px
+    margin-top: -480px;
+    padding-bottom: 291px
 }
 
 .info-top-bar {
     position: relative;
-    width: 900px;
+  
     height: 320px;
     padding: 50px;
     background: #fff;
@@ -15,10 +21,8 @@
     font-size: 26px;
 }
 .info-top-bar h3 {
-    /*line-height: 45px;*/
     color: #666;
     font-size: 18px;
-    
 }
 
 .qrcode {
@@ -81,7 +85,7 @@
 
 .info-list-li {
     padding: 0 20px;
-    line-height: 48px;
+    line-height: 60px;
 
 }
 
@@ -102,27 +106,25 @@
     font-size: 22px;
 }
 
-.line {
-    height: 1px;
-    /*margin: 0 30px;*/
-    background: #eee
-}
+
 
 .detail-box {
     padding: 0 40px
 }
-
+.detail-box img {
+    margin: 0 auto;
+    max-width: 100%;
+    display: block
+}
 .startDate {
     line-height: 48px;
+    margin-bottom: 15px;
 }
 
 .license {
     height: 472px;
     margin-top: 15px;
     margin-bottom: 15px;
-    /*padding: 90px 90px 80px 84px;*/
-    /*padding: 30px;*/
-    /*margin: 30px;*/
     background: url(../images/license.png) no-repeat center
 }
 
@@ -178,6 +180,32 @@
     /*border: solid 1px #f0f0f0;*/
     background: url(../images/Reply.png) no-repeat center
 }
-.notice_detail{
-    text-indent: 2em
+
+
+.icon-aptitude-1,
+.icon-aptitude-2,
+.icon-aptitude-3 {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-aptitude-1 {
+    background: url(../images/icon_aptitude_1.png) no-repeat scroll center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.icon-aptitude-2 {
+    background: url(../images/icon_aptitude_2.png) no-repeat scroll center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.icon-aptitude-3 {
+    background: url(../images/icon_aptitude_3.png) no-repeat scroll center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+.pdfFile,.pdfFile:hover,.pdfFile:link,.pdfFile:visited{
+    color: #ba9965;
+    text-decoration: underline !important;
 }

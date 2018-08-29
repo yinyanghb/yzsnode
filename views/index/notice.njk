@@ -1,14 +1,12 @@
 <!-- 1 -->
 <div class="notice-wapperbox">
     <div class="notice-title pull-left">
-        <span class="notice-before mr10 vm"></span>
-        <span class="mr10 red vm">公告</span>
-        <span class="vm">|</span>
+        <span class="notice-before  vm"></span><span class="mr20 red vm">公告</span><span class="vm">|</span>
     </div>
     <div class=" pull-right notice-more">
         <a class="more-notice" href="/Information/notice">查看更多</a>
     </div>
-    <div class="notice pull-left">
+    <div class="notice notice-box">
         <div class="als-viewport">
             <ul class="als-wrapper">
                 {% for item in data.notice.data%}
@@ -22,20 +20,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(function () {
-        if ($(".notice ul li").length > 1) {
-            // 轮播滑动
-            $(".notice").als({
-                visible_items: 1,
-                scrolling_items: 1,
-                orientation: "vertical",
-                circular: "yes",
-                autoscroll: "yes",
-                direction: "up",
-                start_from: 0
-            });
-        }
-    })
-</script>

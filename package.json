@@ -5,7 +5,7 @@
   "scripts": {
     "start": "pm2 start ./bin/www",
     "stop": "pm2 stop ./bin/www",
-    "restart":"pm2 restart  ./bin/www",
+    "restart": "pm2 restart  ./bin/www",
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "express": "~4.13.1",
     "express-session": "*",
     "express-useragent": "^1.0.7",
+    "iconv-lite": "^0.4.23",
     "ipware": "*",
     "jssha": "^1.6.0",
     "log4js": "^1.1.1",

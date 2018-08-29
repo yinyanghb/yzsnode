@@ -1,18 +1,19 @@
 <table id="tb_project">
     <thead>
         <tr>
-            <th class="text-left">项目名称</th>
-            <th class="text-left">会员名称</th>
-            <th class="text-left">备案日期</th>
-
+            <th class="text-left borrow_no">项目编号</th>
+            <th class="text-left borrow_name">项目名称</th>
+            <th class="text-left member_name">会员名称</th>
+            <th class="text-left record_date">备案日期</th>
         </tr>
     </thead>
     <tbody>
         {% for item in data.projects.data %}
         <tr data-link={{ '/projects/'+type+ '/detail/'+item.pid}}>
-            <td>{{item.borrow_name}}</td>
-            <td>{{item.member_name}}</td>
-            <td>{{item.record_date}}</td>
+            <td class="borrow_no c9">{{item.borrow_no}}</td>
+            <td class="borrow_name c6">{{subStr(item.borrow_name,30)}}</td>
+            <td class="member_name c6">{{subStr(item.member_name,20)}}</td>
+            <td class="record_date c6">{{item.record_date}}</td>
         </tr>
 
         {% else %}

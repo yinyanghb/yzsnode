@@ -1,22 +1,24 @@
 <table id="tb_project">
     <thead>
         <tr>
-            <th class="text-left">项目名称</th>
-            <th class="text-left">挂牌规模</th>
-            <th class="text-left">项目期限</th>
-            <th class="text-left">预期年化收益率</th>
-            <th class="text-left">状态</th>
+            <th class="text-left borrow_no">项目编号</th>
+            <th class="text-left borrow_name">项目名称</th>
+            <th class="text-left asset_register">挂牌方</th>
+            <th class="text-left borrow_balance">挂牌价格</th>
+            <th class="text-left release_date">挂牌日期</th>
+            <th class="text-left status">状态</th>
         </tr>
     </thead>
 
     <tbody>
         {% for item in data.projects.data %}
         <tr data-link={{'/projects/'+type+ '/detail/'+item.pid}}>
-            <td>{{item.borrow_name}}</td>
-            <td>{{item.borrow_balance}}</td>
-            <td>{{item.borrow_deadline}}</td>
-            <td>{{item.year_interest_rate}}</td>
-            <td>{{projectState(item.status)}}
+            <td class="borrow_no c9">{{item.borrow_no}}</td>
+            <td class="borrow_name c6">{{subStr(item.borrow_name,18)}}</td>
+            <td class="asset_register c6">{{subStr(item.asset_register,14)}}</td>
+            <td class="borrow_balance c6">{{item.borrow_balance}}</td>
+            <td class="release_date c6">{{item.release_date}}</td>
+            <td class="status c6">{{projectState(item.status)}}
             </td>
         </tr>
         {% else %}

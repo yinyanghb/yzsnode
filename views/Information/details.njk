@@ -3,47 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
-    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %}
 </head>
 
 <body>
     {% include "common/header.njk" %}
     <div class="container-fluid main-bg about-bg" style="height: 520px;background-image: url(/images/info-bg.png)">
-        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+        <div class="main-bar" style="height: 120px;background: #3e505e"></div>
     </div>
     <div class="container details-container">
         <div class="info-list-box ">
             <div class="info-list-head row">
-                {% set typeArr = ["本所公告","本所新闻","公司动态","政策法规"]%} 
-                {# {% set titleArr = ["信息披露","关于我们"]%} #}
-                {% set dataArr = [{type:typeArr[data.details.data.type-1], "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
+                {% set typeArr = ["本所公告","本所新闻","公司动态","政策法规"]%} {# {% set titleArr = ["信息披露","关于我们"]%} #} {% set dataArr = [{type:typeArr[data.details.data.type-1],
+                "title":'信息披露',navlist:[{title:'企业资质',path:'/Information/ability'},{title:'本所公告',path:'/Information/notice'}]
                 },{type:typeArr[data.details.data.type-1], "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
-                }] %}
-                
-                {% set menuData=dataArr[params.type]%}
-                 {% include "common/menu.njk" %}
+                }] %} {% set menuData=dataArr[params.type]%} {% include "common/menu.njk" %}
 
-                <h2 class="notice_title text-center">{{data.details.data.notice_title}}</h2>
-                <div class="line row"></div>
-                <div class="detail-box">
-                    <p class="startDate text-right">日期：{{data.details.data.startDate}}</p>
-                    <div class=" notice_detail lead">
-                        {{data.details.data.notice_detail |safe }}
-                    </div>
+
+            </div>
+            <h2 class="notice_title text-center">{{data.details.data.notice_title}}</h2>
+            <div class="line"></div>
+            <div class="detail-box">
+                <p class="startDate text-right">日期：{{data.details.data.startDate}}</p>
+                <div class=" notice_detail">
+                    {{data.details.data.notice_detail |safe }} {% if data.details.data.path != ''%}
+                    <p>附件：
+                        <a href="{{data.details.data.path}}" class="pdfFile" target="_blank">{{data.details.data.original_file_name}}</a>
+                    </p>
+                    {% endif %} 
                 </div>
             </div>
-            <div style="height: 83px; width: 100%"></div>
+            <!-- <div style="height: 83px; width: 100%"></div> -->
             <!-- 风险揭示 -->
             {% include 'common/riskWarning.njk'%}
 
         </div>
     </div>
     <!-- footer -->
-    {% include 'common/footer.njk'%}
+    {% include 'common/footer.njk'%} {% include "common/js.njk" %}
 </body>
 
 

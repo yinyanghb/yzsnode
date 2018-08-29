@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" /> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" /> {% include "common/css.njk" %}
 
     <link rel="stylesheet" href="/css/projects.css">
     <!-- DataTables -->
@@ -17,68 +18,128 @@
     {% include "common/header.njk" %}
     <div class="container-fluid main-bg" style="height: 520px;background-image: url(/images/organ_bg.png)">
 
-        <div class="main-bar" style="height: 120px;background: #3e505e"></div>
+        <div class="main-bar" style="height: 88px;background: #3e505e"></div>
 
 
     </div>
 
     <div class="container porject-container">
-        
-            <div class=" porject-select">
-                    {% set type = params.type %}
-                    <div class="porject-sign">
-                        <div class="prologo"></div>
-                        {% if type == 0 %}
-                        <!-- 资产登记专区 -->{% include "projects/asset.njk" %} {% elif type == 1 %}
-                        <!-- 挂牌交易专区 -->{% include "projects/deal.njk" %} {% elif type == 2 %}
-                        <!-- 直融项目专区 -->
-                        {% include "projects/business.njk" %} {% endif %}
+
+        <div class=" porject-select">
+            {% set type = params.type %}
+            <div class="porject-sign">
+                <div class="prologo"></div>
+                {% if type == 0 %}
+                <!-- 资产登记专区 -->{% include "projects/asset.njk" %} {% elif type == 1 %}
+                <!-- 挂牌交易专区 -->{% include "projects/deal.njk" %} {% elif type == 2 %}
+                <!-- 直融项目专区 -->
+                {% include "projects/business.njk" %} {% endif %}
+            </div>
+        </div>
+        <div class=" select-box">
+            <div class="dropdown select-k pull-left">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    <div class="selectContent">
+                        项目编号
                     </div>
-                </div>
-                <div class=" select-box">
-        
-                    <div class="row">
-                        <div class="col-sm-3">
-                            {%set v = getPath(path)[2]%}
-                            <select class="form-control select-k " id="txt_search_departmentname">
-                                {% if v==0 %}
-                                <!-- 资产登记业务 -->
-                                <option value="1">项目名称</option>
-                                <option value="2">会员名称</option>
-                                <option value="3">备案日期</option>
-                                {% elif v == 1%}
-                                <!-- 挂牌交易专区 -->
-                                <option value="1">项目编号</option>
-                                <option value="2">挂牌规模</option>
-                                <option value="3">项目期限</option>
-                                <option value="4">预期年化收益率</option>
-                                <option value="5">状态</option>
-                                {% elif v == 2%}
-                                <!-- 直融业务专区 -->
-                                <option value="1">项目名称</option>
-                                <option value="2">项目总额</option>
-                                <option value="3">项目期限</option>
-                                <option value="4">预期年化收益率</option>
-                                <option value="5">状态</option>
-                                {% endif%}
-                            </select>
-                        </div>
-                        <label class="control-label col-sm-1 select-label text-right" for="txt_search_statu ">输入：</label>
-                        <div class="col-sm-3 ">
-                            <input type="text " class="form-control select-v" id="txt_search_statu">
-                        </div>
-                        <div class="col-sm-4 " style="text-align:left; ">
-                            <button class="select-btn " id="btn_query" class="btn btn-primary ">查询</button>
-                        </div>
-                    </div>
-        
-                </div>
-  
+                    <span class="select-icon icon-down">
+                        <i></i>
+                    </span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    {%set v = getPath(path)[2]%} {% if v==0 %}
+                    <!-- 资产登记业务 -->
+                    <li class="active">
+                        <input type="checkbox" value="1" />
+                        <span>项目编号</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="2">
+                        <span>项目名称</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="3">
+                        <span>会员名称</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="4">
+                        <span>备案日期</span>
+                    </li>
+                    {% elif v == 1%}
+                    <!-- 挂牌交易专区 -->
+                    <li class="active">
+                        <input type="checkbox" value="1" />
+                        <span>项目编号</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="2" />
+                        <span>项目名称</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="3" />
+                        <span>挂牌方</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="4" />
+                        <span>挂牌价格</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="5" />
+                        <span>挂牌日期</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="6" />
+                        <span>状态</span>
+                    </li>
+
+                    {% elif v == 2%}
+                    <!-- 直融业务专区 -->
+                    <li class="active">
+                        <input type="checkbox" value="1" />
+                        <span>项目名称</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="2" />
+                        <span>项目总额</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="3" />
+                        <span>项目期限</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="4" />
+                        <span>预期年化收益率</span>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="5" />
+                        <span>状态</span>
+                    </li>
+                    {% endif%}
+                </ul>
+            </div>
+
+
+
+            <label class="control-label pull-left select-label text-right" for="txt_search_statu ">输入：</label>
+            <div class="pull-left inputBox">
+                <input type="text " class="form-control select-v" id="txt_search_statu">
+            </div>
+            <div class=" " style="text-align:left; ">
+                <button class="select-btn " id="btn_query" class="btn btn-primary ">确定</button>
+            </div>
+
+
+        </div>
+
         <div class="portlet-head">
-            <h2><i class="  icon-list"></i>项目列表</h2>
+            <h2>
+                <i class="icon-list vm"></i>
+                <span class="vm">项目列表</span>
+            </h2>
         </div>
         <div class="portlet-body">
-                {% if type == 0 %}
+            {% if type == 0 %}
             <!-- 资产登记专区 -->
             {% include "projects/assetTable.njk"%} {% elif type == 1 %}
             <!-- 挂牌交易专区 -->
@@ -89,8 +150,8 @@
             <div id="Pagination" class="pagination">
             </div>
         </div>
-       
-   
+
+
 
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
@@ -99,7 +160,7 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
-{% if data.projects.data.length != 0%}
+{% include "common/js.njk" %} {% if data.projects.data.length != 0%}
 <script>
     var project = {
         myTable: '',
@@ -113,13 +174,40 @@
                 },
                 "stripeClasses": ['strip1', 'strip2'],
                 "ordering": false,
+                "autoWidth": false
 
             });
             self.bindEvents();
             self.pageInit({{data.projects.count}})
         },
+        checkItem:function() {
+            var dom = $('.selectContent').html('');
+            $('.dropdown-menu>li.active').each(function () {
+                var span = $('<span class="badge"></span>');
+                span.text($(this).text());
+                dom.append(span);
+                $('.dropdown-menu').hide()
+            })
+        },
         bindEvents: function () {
             var self = this;
+            //选择
+            $('.dropdown-toggle').click(function (e) {
+                $(this).find('.select-icon').toggleClass('icon-up')
+                $(this).siblings('.dropdown-menu').toggle();
+            });
+            $('.dropdown-menu').on('click', '>li', function (e) {
+                $(this).addClass('active').siblings('li').removeClass('active');
+                $(this).find('input[type="checkbox"]').prop('checked', $(this).hasClass('active'));
+                self.checkItem();
+            });
+            $('.dropdown').on('click', '.dropdown-toggle, .dropdown-menu', function (e) {
+                e.stopPropagation();
+            })
+            $(document).on('click', function () {
+                $('.dropdown-menu').hide();
+                $('.select-icon').removeClass('icon-up')
+            });
             // 跳转
             $('#tb_project').on('click', 'tbody tr', function () {
                 var link = $(this).data('link')
@@ -127,14 +215,21 @@
             });
             // 搜索
             $('#btn_query').on('click', function () {
-                self.myTable.columns($('#txt_search_departmentname').val() - 1)
+                var c = $('input[type=checkbox]:checked').val() || 1
+                self.myTable.columns(c - 1)
                     .search($('#txt_search_statu').val())
                     .draw();
                 $("#Pagination").empty();
                 self.pageInit(self.myTable.page.info().recordsDisplay)
-
             })
+            // hover
 
+            $('#tb_project tbody').on('mouseover', 'tr', function () {
+                    $(this).addClass('highlight')
+                })
+                .on('mouseleave', 'tr', function () {
+                    $(this).removeClass('highlight');
+                });
         },
         pageInit: function (data) {
             var self = this;

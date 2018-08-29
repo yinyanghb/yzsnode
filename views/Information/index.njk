@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
-    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %}
 </head>
    
 <body>
@@ -20,13 +21,14 @@
     <div class="container information-content">
         {% include "Information/infobar.njk" %} {%include "Information/infolist.njk"%}
 
-        <div style="height: 83px; width: 100%"></div>
+        <!-- <div style="height: 83px; width: 100%"></div> -->
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
     </div>
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
+{% include "common/js.njk" %}
 <script>
     var infor = {
         init: function () {

@@ -1,11 +1,41 @@
 ﻿/* navbar */
-
-.container {
-    padding: 0
+body,html{
+    /* font-family: "Microsoft YaHei" */
+    /* font-family: "Helvetica Neue",Helvetica,Arial, "Microsoft Yahei", sans-serif; */
+    font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,\5FAE\8F6F\96C5\9ED1,sans-serif
 }
+input,
+ select {
+    -webkit-appearance: none;
+    -moz-appearance :none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   
+}
+
+.container-fluid {
+    min-width: 1200px;
+}
+.container {
+    width: 1170px;
+}
+
+@media (max-width: 1599px) {
+    .container-fluid {
+        min-width: 1030px;
+    }
+    .container {
+        width: 1000px;
+    }
+}
+
+
 
 .vm {
     vertical-align: middle;
+}
+
+.ml15 {
+    margin-left: 15px;
 }
 
 .mr10 {
@@ -15,13 +45,21 @@
 .mt10 {
     margin-top: 10px;
 }
-
+.mt30{
+    margin-top: 96px
+}
 .mb10 {
     margin-bottom: 10px;
 }
 
 .p30 {
     padding: 30px;
+}
+.pl28{
+    padding-left: 28px;
+}
+.pt15 {
+    padding-top: 15px;
 }
 
 .red {
@@ -52,21 +90,19 @@ h5,
     font-size: 12px;
 }
 
-.header-top.navbar-fixed-top {
-    height: 108px;
+.header-top {
     background: #fff;
-    box-shadow: 0px 10px 5px 0px rgba(3, 21, 36, 0.11);
     border: none;
-    border-bottom: 1px solid #eee
+    border-bottom: 1px solid #e3e5e7
 }
-
+.navbar-fixed-top .topbar-bg{
+    display: none
+}
 .topbar-bg {
-    position: absolute;
-    height: 35px;
+    position: relative;
+    display: block;
+    height: 30px;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
     background: #263039
 }
 
@@ -84,7 +120,8 @@ h5,
     float: left;
     position: relative;
     cursor: pointer;
-    padding: 0 10px
+    padding: 0 10px;
+    color: #fff;
 }
 
 /* 顶部二维码 */
@@ -123,6 +160,7 @@ h5,
 
 .topbar-nav .top-login {
     background: #dd000c;
+    padding: 0 46px;
     color: #fff
 }
 
@@ -133,23 +171,25 @@ h5,
 }
 
 .topbar {
-    font-size: 12px;
-    line-height: 35px;
+    font-size: 11px;
+    line-height: 30px;
     color: #ccc
 }
 
 .top-nav-container,
 .top-nav-container h1 {
-    line-height: 70px;
+    line-height: 68px;
 }
 
 .logo {
     float: left;
 }
 
-.layui-nav.main-nav {
-    background: #fff;
+.logo img {
+    width: 100%;
 }
+
+
 
 .nav-item:hover {
     background: url(../images/navhover.png) repeat-x 1px
@@ -159,23 +199,36 @@ h5,
     display: none
 }
 
-.layui-nav .nav-item-line.layui-nav-item {
+.layui-nav .nav-item-line {
+    position: absolute;
+    top: 21px;  
+    right: -1px;
     width: 1px;
-    height: 42px;
-    background: #999
+    height: 33px;
+    background: #d2d2d2;
+    z-index: 10;
 }
 
-.layui-nav .layui-nav-item {
-    line-height: 70px !important;
+.layui-nav .layui-nav-item a {
+    text-decoration: none;
+    padding: 0 46px;
+    color: #333
+}
+.layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+    color: #000;
 }
 
-.layui-nav .layui-nav-item a:hover,
+.layui-nav .layui-this:after {
+    height: 4px;
+}
+
+/*.layui-nav .layui-nav-item a:hover,
 .layui-nav .layui-this a,
 .layui-nav .layui-nav-item a {
     text-decoration: none;
-    padding: 0 30px;
+    padding: 0 46px;
     color: #333
-}
+}*/
 
 .layui-nav .layui-this:after,
 .layui-nav-bar,
@@ -241,24 +294,25 @@ h5,
     text-align: center
 }
 
-/* main-bg */
+
 
 .main-bg {
     position: relative;
-    height: 530px;
-    margin-top: 108px;
+    height: 388px;
+  
     background-repeat: no-repeat;
-    background-size: 100%;
     background-position: center top;
 }
-
+.navbar {
+    margin: 0
+}
 .main-bar {
     position: absolute;
-    height: 130px;
+    height: 108px;
     width: 100%;
     background: #decd75;
     left: 0;
-    bottom: 0
+    bottom: 0;
 }
 
 .yzs-btn {
@@ -272,31 +326,46 @@ h5,
     /*min-height: 72px;*/
     border-bottom: 3px solid #e6d9b1;
     /*margin-bottom: 50px*/
-    margin: 0 0 30px;
+    margin: 58px 0;
 }
 
 .risk-h>.after {
-    content: '';
-    position: absolute;
+    display: inline-block;
     height: 24px;
     width: 24px;
-    top: 18px;
-    left: 15px;
+    margin-right: 15px;
     background: url(../images/risk.png) no-repeat center
 }
 
 .risk-h {
     position: relative;
-    padding-left: 50px;
-    height: 60px;
-    line-height: 60px;
+    padding-left: 28px;
+    height: 48px;
+    line-height: 48px;
     background: #ededed;
     cursor: pointer;
+
 }
 
+.risk-h .icon-up{
+    position: absolute;
+    height: 24px;
+    width: 54px;
+    right: 68px;
+    top: 50%;
+    margin-top: -12px;
+    border-left: 1px solid #ccc;
+    background-image:url(../images/rikdown.png) ;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+.risk-h.collapsed .icon-up{
+    background-image:url(../images/rikup.png) ;
+}
 .risk-h3 {
     display: inline-block;
-    line-height: unset;
+    color: #263039;
+    font-size: 18px; 
 }
 
 .risk-down {
@@ -307,7 +376,7 @@ h5,
     font-size: 14px;
     right: 0;
     text-align: center;
-    color: #666;
+    color: #999;
 }
 
 .risk-down::after {
@@ -322,18 +391,22 @@ h5,
 }
 
 .risk-well {
-    padding: 30px;
+    padding: 30px 35px;
     border: 1px solid rgb(218, 218, 218)
 }
 
 .risk-text {
     text-indent: 2em;
-    line-height: 22px;
+    line-height: 30px;
+    color: #999
 }
 
 /* 底部 */
 
 .footer-box {
+    margin-top: -261px;
+    margin-bottom: -200px;
+    position: relative;
     padding-top: 8px;
     background: #313940;
     color: #fff;
@@ -341,11 +414,11 @@ h5,
 
 .footer-address-copyright,
 .custom-service {
-    padding-bottom: 26px;
+    padding-bottom: 20px;
 }
 
 .footer-logo {
-    margin-top: 38px
+    margin-top: 36px
 }
 
 .footer-info {
@@ -354,7 +427,7 @@ h5,
 }
 
 #foot_temx {
-    padding: 45px;
+    padding: 36px 45px;
 }
 
 #foot_temx dl {
@@ -364,8 +437,9 @@ h5,
 
 #foot_temx dl dt {
     padding-bottom: 20px;
-    font-size: 18px;
-    color: #fff
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
 }
 
 #foot_temx dl dd {
@@ -373,8 +447,8 @@ h5,
 }
 
 #foot_temx dl dd a {
-    color: rgb(255, 255, 255);
-    opacity: .5;
+    color: #989ca0;
+    
 }
 
 .footer-address-copyright {
@@ -393,8 +467,8 @@ h5,
 .code-list {
     padding-top: 36px;
     font-size: 10px;
-    color: #fff;
-    opacity: .5;
+    color: #989ca0;
+    
 }
 
 .code-list dl {
@@ -402,20 +476,26 @@ h5,
 }
 
 .code-list dt {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    opacity: .5;
+}
+.code-list dt:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
-.custom,
 .service_no {
     display: inline-block;
-    line-height: 26px;
-    color: #fff;
-    color: rgba(255, 255, 255, 0.5);
+    line-height: 24px;
+    color:#989ca0;
 }
 
 .custom {
-    font-size: 18px;
-    margin-right: 28px
+    display: inline-block;
+    width: 29px;
+    height: 30px;
+    background: url(../images/hot.png) no-repeat center ;
+    margin-right: 24px;
 }
 
 .icon {
@@ -451,6 +531,7 @@ h5,
 /* menu */
 
 .info-menu {
+    /*width: 145px;*/
     line-height: 48px;
     position: relative;
     background: #263039;
@@ -464,7 +545,7 @@ h5,
     position: absolute;
     left: 0;
     width: 60px;
-    height: 58px;
+    height: 48px;
     background: url(../images//infoicon.png) no-repeat center center
 }
 
@@ -569,8 +650,6 @@ h5,
     border-bottom: 1px solid #f8f8f8
 }
 
-
-
 table.dataTable {
     border-collapse: collapse
 }
@@ -642,14 +721,30 @@ table.dataTable {
     border-bottom: 1px solid #efefef;
 }
 
+.line {
+    height: 1px;
+    /*margin: 0 30px;*/
+    background: #eee
+}
+
 .clemp {
     position: relative;
-    display: -webkit-box;
+    /* display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2; */
     overflow: hidden;
+    line-height: 24px;
+    font-size: 12px;
+    max-height: 48px;
+    
     /* font-size: 14px !important;
     line-height: 24px !important; */
+}
+.clemp a{
+    color: #999
+}
+.clemp.p-after {
+    height: 48px;
 }
 
 .clemp>.after {
@@ -658,8 +753,9 @@ table.dataTable {
     text-indent: 0;
     bottom: 0;
     right: 0;
-    width: 1.2em;
+    width: 1.3em;
     z-index: 10;
+    background: #fff
 }
 
 .clemp.p-after>.after {
@@ -668,4 +764,39 @@ table.dataTable {
 
 .pagination {
     margin: 15px 0;
+}
+
+.pagination a,
+.pagination span {
+    font-size: 14px;
+}
+
+.pagination .centerbox input {
+    font-size: 14px;
+}
+
+.pagination .centerbox p {
+    font-size: 14px;
+}
+
+.portlet-head {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.portlet-head h2 i {
+    margin-right: 10px;
+}
+
+.icon-list {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/pro.png) no-repeat scroll center center;
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+
+embad {
+    display: none
 }

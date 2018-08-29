@@ -3,62 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
-    <link rel="stylesheet" href="/css/about.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="/css/about.css"> {% include "common/css.njk" %} 
 </head>
 
 <body>
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg about-bg" style="height: 625px;background-image: url(/images/usbg.png)">
-        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+    <div class="container-fluid main-bg about-bg" style="height: 520px;background-image: url(/images/usbg.png)">
+        <div class="main-bar" style="height: 120px;background: #3e505e"></div>
     </div>
     <div class="container about-container">
-        <div class="info-list-head row">
-            {% set menuData = {type:'联系我们', "title":'帮助中心',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}]
-            } %} {% include "common/menu.njk" %}
-        </div>
-        <div class="noticeUs row">
-            <ul class="">
-                <li class="">
-                    <p class="col-lg-2 col-lg-offset-3 text-right icon-p site">联系地址：</p>
-                    <p class="col-lg-7">深圳市南山区科技南八路豪威科技大厦24楼</p>
-                </li>
-                <li class="">
-                    <p class="col-lg-2 col-lg-offset-3 text-right icon-p hotLine">客服热线：</p>
-                    <p class="col-lg-7">0755-32989919</p>
-                </li>
-                <li class="">
-                    <p class="col-lg-2 col-lg-offset-3 text-right icon-p weChat">客服微信：</p>
-                    <p class="col-lg-7">LAECAP_Service</p>
-                </li>
-                <li class="">
-                    <p class="col-lg-2 col-lg-offset-3 text-right icon-p email">客服邮箱：</p>
-                    <p class="col-lg-7">service@laecap.com</p>
-                </li>
-            </ul>
-            <div class="qrcode-box col-lg-12 ">
-                <div class="col-lg-3 col-lg-offset-2">
-                    <dl>
-                        <dt>
-                            <p class="text-center">微信服务号</p>
-                        </dt>
-                        <dd style="background-image: url(/images/qr1.png)">
+        <div class="about-wrap">
+            <div class="info-list-head row">
+                {% set menuData = {type:'联系我们', "title":'帮助中心',navlist:[{title:'联系我们',path:'/about/noticeUs'}]
+                } %} {% include "common/menu.njk" %}
+            </div>
+            <div class="noticeUs row">
+                <ul class="">
+                    <li class="row">
+                        <p class="col-xs-2 col-xs-offset-3 icon-p site">联系地址：</p>
+                        <p class="col-xs-7">深圳市南山区科技南八路豪威科技大厦24楼</p>
+                    </li>
+                    <li class="row">
+                        <p class="col-xs-2 col-xs-offset-3 icon-p hotLine">客服热线：</p>
+                        <p class="col-xs-7">0755-32989919</p>
+                    </li>
+                    <li class="row">
+                        <p class="col-xs-2 col-xs-offset-3 icon-p weChat">客服微信：</p>
+                        <p class="col-xs-7">LAECAP_Service</p>
+                    </li>
+                    <li class="row">
+                        <p class="col-xs-2 col-xs-offset-3 icon-p email">客服邮箱：</p>
+                        <p class="col-xs-7">service@laecap.com</p>
+                    </li>
+                </ul>
+                <div class="qrcode-box col-xs-12 ">
+                    <div class="col-xs-3 col-xs-offset-2">
+                        <dl>
+                            <dt>
+                                <p class="text-center">微信服务号</p>
+                            </dt>
+                            <dd style="background-image: url(/images/qr1.png)">
 
-                        </dd>
-                    </dl>
-                </div>
-                <div class="col-lg-3 col-lg-offset-2">
-                    <dl>
-                        <dt>
-                            <p class="text-center">微信订阅号</p>
-                        </dt>
-                        <dd style="background-image: url(/images/qr2.png)">
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-3 col-xs-offset-2">
+                        <dl>
+                            <dt>
+                                <p class="text-center">微信订阅号</p>
+                            </dt>
+                            <dd style="background-image: url(/images/qr2.png)">
 
-                        </dd>
-                    </dl>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,5 +74,5 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
-
+{% include "common/js.njk" %}
 </html>

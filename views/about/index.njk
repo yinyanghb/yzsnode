@@ -3,27 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
-    <link rel="stylesheet" href="/css/about.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
+    {% include "common/css.njk" %}
+    <link rel="stylesheet" href="/css/about.css">
 </head>
 
 <body>
     {% include "common/header.njk" %}
     <div class="container-fluid main-bg about-bg" style="height: 520px;background-image: url(images/about-bg.png)">
-        <div class="main-bar" style="height: 174px;background: #3e505e"></div>
+        <!-- <div class="main-bar" style="height: 120px;background: #3e505e"></div> -->
     </div>
     <div class="container about-container">
-        <div class="info-list-head row">
-            {% set menuData = { "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}] } %} {% include
-            "common/menu.njk" %}
+        
+        <div class="about-wrap">
+            <div class="info-list-head row">
+                {% set menuData = { "title":'关于我们',navlist:[{title:'本所简介',path:'/about'},{title:'公司动态',path:'/about/dynamic'}] } %} {% include
+                "common/menu.njk" %}
+                
+            </div>
+            <h2 class="text-center about-title">深圳亚太租赁资产交易中心有限公司简介</h2>
+            <div class="aboutUs ta template-box">
+                {% include "template/intro.njk"%}
+            </div>
+
             
-        </div>
-        <h2 class="text-center about-title">深圳亚太租赁资产交易中心有限公司简介</h2>
-        <div class="aboutUs ta template-box">
-            {% include "template/intro.njk"%}
         </div>
         <!-- 风险揭示 -->
         {% include 'common/riskWarning.njk'%}
@@ -33,5 +40,5 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
-
+{% include "common/js.njk" %}
 </html>

@@ -1,66 +1,62 @@
-<ul class="layui-nav main-nav col-lg-8 text-right col-md-12" lay-filter="">
-    {% set page = getPath(path)[1] %}
- 
-    <li class="layui-nav-item nav-item  {% if page == '' %} layui-this{% endif %}">
-        <a href="/">首页</a>
-    </li>
-    <li class="nav-item-line layui-nav-item"></li>
+<div class="col-xs-8">
 
-    <li class="layui-nav-item  nav-item  {% if page == 'projects' %} layui-this{% endif %}">
-        <a href="javascript:;">机构专区</a>
-        <dl class="layui-nav-child organization ">
-            <span class="after">Trading</span>
-            <!-- 二级菜单 -->
-            <dd class="{% if path=='/projects/0'%} active {%endif%}">
-                <a href="/projects/0"  >资产登记专区</a>
-            </dd>
-            <dd  class="{% if path=='/projects/1'%} active {%endif%}">
-                <a href="/projects/1">挂牌交易专区</a>
-            </dd>
-            <dd class="{% if path=='/projects/2'%} active {%endif%}">
-                <a href="/projects/2" >直融项目专区</a>
-            </dd>
-        </dl>
-    </li>
-    <li class="nav-item-line layui-nav-item"></li>
-    <li class="layui-nav-item nav-item {% if page == 'Information' %} layui-this{% endif %}">
-        <a href="javascript:;">信息披露</a>
-        <dl class="layui-nav-child Information ">
-                <span class="after">Information</span>
-            <!-- 二级菜单 -->
-            <dd class="{% if path=='/Information/ability'%} active {%endif%}">
-                <a href="/Information/ability" >企业资质</a>
-            </dd>
-            <dd class="{% if path=='/Information/notice'%} active {%endif%}">
-                <a href="/Information/notice">本所公告</a>
-            </dd>
-        </dl>
-    </li>
-    <li class="nav-item-line layui-nav-item"></li>
-    <li class="layui-nav-item nav-item {% if page == 'about' %} layui-this{% endif %}">
-        <a href="javascript:;">关于我们</a>
-        <dl class="layui-nav-child about">
-                <span class="after">About</span>
-            <!-- 二级菜单 -->
-            <dd class="{% if path=='/about'%} active {%endif%}">
-                <a href="/about">本所简介</a>
-            </dd>
-            <dd class="{% if path=='/about/dynamic'%} active {%endif%}">
-                <a href="/about/dynamic">公司动态</a>
-            </dd>
-            <!-- <dd>
-                <a href="/about/team">管理团队</a>
-            </dd> -->
-        </dl>
-    </li>
+    <ul class="layui-nav main-nav text-right" lay-filter="">
+        {% set page = getPath(path)[1] %}
+     
+        <li class="layui-nav-item nav-item  {% if page == '' %} layui-this{% endif %}">
+            <a href="/">首页</a>
+            <span class="nav-item-line "></span>
+        </li>
+        
 
-</ul>
-
-<script>
-   
-    layui.use('element', function () {
-        var element = layui.element;
-
+        <li class="layui-nav-item  nav-item  {% if page == 'projects' %} layui-this{% endif %}">
+            <a href="javascript:;">机构专区</a>
+            <dl class="layui-nav-child organization ">
+                <span class="after">Trading</span>
+                <!-- 二级菜单 -->
+                <dd class="{% if path=='/projects/0'%} active {%endif%}">
+                    <a href="/projects/0"  >资产登记专区</a>
+                </dd>
+                <dd  class="{% if path=='/projects/1'%} active {%endif%}">
+                    <a href="/projects/1">挂牌交易专区</a>
+                </dd>
+                <dd class="{% if path=='/projects/2'%} active {%endif%}">
+                    <a href="/projects/2" >直融项目专区</a>
+                </dd>
+            </dl>
+            <span class="nav-item-line "></span>
+        </li>
        
-    });
-</script>
+        <li class="layui-nav-item nav-item {% if page == 'Information' %} layui-this{% endif %}">
+            <a href="javascript:;">信息披露</a>
+            <dl class="layui-nav-child Information ">
+                    <span class="after">Information</span>
+                <!-- 二级菜单 -->
+                <dd class="{% if path=='/Information/ability'%} active {%endif%}">
+                    <a href="/Information/ability" >企业资质</a>
+                </dd>
+                <dd class="{% if path=='/Information/notice'%} active {%endif%}">
+                    <a href="/Information/notice">本所公告</a>
+                </dd>
+            </dl>
+            <span class="nav-item-line"></span>
+        </li>
+      
+        <li class="layui-nav-item nav-item {% if page == 'about' %} layui-this{% endif %}">
+            <a href="javascript:;">关于我们</a>
+            <dl class="layui-nav-child about">
+                    <span class="after">About</span>
+                <!-- 二级菜单 -->
+                <dd class="{% if path=='/about'%} active {%endif%}">
+                    <a href="/about">本所简介</a>
+                </dd>
+                <dd class="{% if path=='/about/dynamic'%} active {%endif%}">
+                    <a href="/about/dynamic">公司动态</a>
+                </dd>
+            </dl>
+        </li>
+
+    </ul>
+
+</div>
+

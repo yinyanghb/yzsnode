@@ -1,24 +1,31 @@
 <div class=" risk">
-    <div class="risk-h" data-toggle="collapse" data-target="#risk-collapse" aria-expanded="false" aria-controls="collapseExample">
-        <span class="after"></span>
-        <h3 class="risk-h3">重要风险揭示</h3>
-        <div class="risk-h3 risk-down">
-            <span class="  glyphicon glyphicon-chevron-up"></span>
-        </div>
+    <div class="risk-h collapsed" data-toggle="collapse" data-target="#risk-collapse" aria-expanded="false" aria-controls="collapseExample">
+        <i class="after vm"></i>
+        <span class="risk-h3 vm">重要风险揭示</span>
+        <i class="icon-up  vm"></i>
+        <!-- <div class="risk-h3 risk-down">
+            
+          
+        </div> -->
 
     </div>
     <div class="collapse" id="risk-collapse">
         <div class="risk-well">
-            <p class="risk-text">本网站刊登的产品信息只作为投资参考，不作为亚租所对投资收益的承诺与保证。 投资方需自行判断投资风险并承担一切法律后果。特别提示：进入本网站及浏览其任何网页，即表示知悉并接受上述条款。</p>
+            <p class="risk-text">
+                1. 亚租所对本网站中所示的任何商标、标志拥有所有权。未经亚租所的书面批准，任何人不得使用。本网站所刊登的资料受版权保护。未经亚租所书面同意，该资料任何部分均不得修改、复制、储存于检索系统、传送、抄袭、分发，或用于任何商业或公开用途。
+            </p>
+            <p class="risk-text">
+                2. 本网站刊登的产品信息只作为投资参考，不作为亚租所对投资收益的承诺与保证。投资方需自行判断投资风险并承担一切法律后果。
+            </p>
+            <p class="risk-text">
+                3. 投资方与交易对手产生的纠纷，自行解决，亚租所不承担任何法律责任。
+            </p>
+
+            <p class="risk-text">4. 亚租所不为于本网站使用的任何第三方软件的准确性、安全性、功能或性能作任何声明或保证。</p>
+            <p class="risk-text"> 5. 亚租所不对于非亚租所原因导致的通讯设施故障引致的数据及交易之准确性或及时性不负任何责任。</p>
+            <p class="risk-text"> 6. 亚租所会员或非会员享受本网站提供的服务，需自行保管账户、密码、业务档案等信息，若发生密码遗失、账户被盗用、业务档案丢失造成损失的，会员或非会员自行承担后果。</p>
+            <p class="risk-text">特别提示：进入本网站及浏览其任何网页，即表示知悉并接受上述条款。</p>
+        
         </div>
     </div>
 </div>
-<script>
-    // shown.bs.collapse
-    $('#risk-collapse').on('show.bs.collapse hide.bs.collapse', function () {
-
-        $(this).siblings('.risk-h').find('.risk-down>.glyphicon').toggleClass(
-            ' glyphicon-chevron-up glyphicon-chevron-down')
-
-    })
-</script>

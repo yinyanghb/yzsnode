@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>亚租所</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="亚租所" />
-    <meta name="description" content="亚租所" />
-    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %} {% include "common/js.njk" %}
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
+    <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %}
 </head>
 
 <body>
@@ -23,7 +24,10 @@
                 } %} {% include "common/menu.njk" %}
             </div>
             <div class="portlet-head">
-                <h2><i class="  icon-aptitude-1"></i>交易所牌照</h2>
+                <h2>
+                    <i class="icon-aptitude-1 vm"></i>
+                    <span class="vm">交易所牌照</span>
+                </h2>
             </div>
             <div class="line "></div>
             <div class="license">
@@ -34,17 +38,20 @@
                         <p>（深府金函 [2014] 309号）</p>
                     </li>
                     <li>
-                        <img data-original='/images/pdf/qualification.jpg' src="/images/pdf/qualification.jpg" alt="关于批准深圳亚太租赁资产交易中心有限公司业务资格的函" class="hide" id="qualification">
+                        <img data-original='/images/pdf/qualification.jpg' src="/images/pdf/qualification.jpg" alt="关于批准深圳亚太租赁资产交易中心有限公司业务资格的函" class="hide"
+                            id="qualification">
                         <a class="viewerBtn" href="javascript:;" data-target='qualification'>《关于批准深圳亚太租赁资产交易中心有限公司业务资格的函》</a>
                         <p>（深府金函 [2014] 480号））</p>
                     </li>
                     <li>
-                        <img data-original='/images/pdf/range.jpg' src="/images/pdf/range.jpg" alt="《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》" class="hide" id="range">
+                        <img data-original='/images/pdf/range.jpg' src="/images/pdf/range.jpg" alt="《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》" class="hide"
+                            id="range">
                         <a class="viewerBtn" href="javascript:;" data-target='range'>《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》</a>
                         <p>（深府金函 [2014] 508号）</p>
                     </li>
                     <li>
-                        <img data-original='/images/pdf/Reply.jpg' src="/images/pdf/Reply.jpg" alt="《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》" class="hide" id="replyt">
+                        <img data-original='/images/pdf/Reply.jpg' src="/images/pdf/Reply.jpg" alt="《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》" class="hide"
+                            id="replyt">
                         <a class="viewerBtn" href="javascript:;" data-target='replyt'>《关于同意深圳亚太租赁资产交易中心有限公司变更经营范围的批复》</a>
                         <p>（深府金函 [2015] 111号）</p>
 
@@ -52,47 +59,53 @@
                 </ul>
             </div>
             <div class="portlet-head">
-                <h2><i class="  icon-aptitude-2"></i>交易流程</h2>
+                <h2>
+                    <i class="icon-aptitude-2 vm"></i>
+                    <span class="vm">交易流程</span>
+                </h2>
             </div>
-           
+
             <div class="line "></div>
             <div class="p30 text-center">
                 <img src="/images/flow-bg.png">
             </div>
             <div class="portlet-head">
-                <h2><i class="  icon-aptitude-3"></i>专业资质</h2>
+                <h2>
+                    <i class="icon-aptitude-3 vm"></i>
+                    <span class="vm">专业资质</span>
+                </h2>
             </div>
-            
+
             <div class="line "></div>
             <div class="p30">
                 <div class="row text-center">
-                <div class="col-md-6">
-                    <dl>
-                        <dt>
+                    <div class="col-xs-6">
+                        <dl>
+                            <dt>
 
-                            <img id="charter" data-original='/images/pdf/charter.jpg' src="/images/pdf/charter.jpg" alt="营业执照" class="charter">
+                                <img id="charter" data-original='/images/pdf/charter.jpg' src="/images/pdf/charter.jpg" alt="营业执照" class="charter">
 
-                        </dt>
-                        <dd class="mt10">
-                            <p>营业执照</p>
-                        </dd>
-                    </dl>
+                            </dt>
+                            <dd class="mt10">
+                                <p>营业执照</p>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="col-xs-6 ">
+                        <dl>
+                            <dt>
+
+                                <img id="Reply" data-original='/images/pdf/Reply.jpg' src="/images/pdf/Reply.jpg" alt="关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复" class="Reply">
+
+                            </dt>
+                            <dd class="mt10">
+                                <p>关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
-           
-                <div class="col-md-6 ">
-                    <dl>
-                        <dt>
-                             
-                            <img id="Reply" data-original='/images/pdf/Reply.jpg' src="/images/pdf/Reply.jpg" alt="关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复" class="Reply">
-
-                        </dt>
-                        <dd class="mt10">
-                            <p>关于同意深圳亚太租赁资产交易中心有限公司 变更经营范围的批复
-                            </p>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
             </div>
         </div>
 
@@ -104,17 +117,25 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
+{% include "common/js.njk" %}
 <script>
-    $('#charter,#Reply,#build,#qualification,#range,#replyt').viewer({
-        navbar: false,
-        toolbar: false,
-        url: "data-original"
-    })
+    window.onload = function () {
+    let preload = document.createElement('div');
+    preload.id = 'preload';
+    document.body.appendChild(preload);
+    }
+    $(function () {
+        $('#charter,#Reply,#build,#qualification,#range,#replyt').viewer({
+            navbar: false,
+            toolbar: false,
+            url: "data-original"
+        })
 
-    $('.viewerBtn').on('click', function () {
-        var args = $(this).data('target');
-        $('#'+args).trigger('click')
+        $('.viewerBtn').on('click', function () {
+            var args = $(this).data('target');
+            $('#' + args).trigger('click')
 
+        })
     })
 </script>
 

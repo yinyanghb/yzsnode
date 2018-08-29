@@ -1,8 +1,12 @@
 .about-container {
-    position: relative;
     margin-top: -380px;
-    background: #fff;
-    padding: 30px !important
+    padding-bottom: 291px
+}
+
+.about-wrap {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
 }
 
 .info-list-h {
@@ -26,13 +30,14 @@
 }
 
 .item-content {
-    padding: 30px;
+    padding: 30px 15px;
 }
 
 .item-t {
-    padding: 0  0 0 42px !important;
+    padding: 0  0 0 28px !important;
     margin-bottom: 20px;
     font-size: 14px;
+    font-weight: bold;
 }
 .item-t>.before{
     position: absolute;
@@ -47,7 +52,7 @@
 }
 .about-title {
     /*padding-top: 80px*/
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 15px;
 }
 .item-txt{
@@ -58,8 +63,15 @@
     text-indent: 2em;
     word-break: break-all;
     /*font-size: 18px;*/
-    color: #666666;
+    color: #999;
     /*line-height: 36px;*/
+}
+
+.dynamic-item a {
+    color: #333;
+}
+.dynamic-item a:hover {
+    color: #333;
 }
 
 .dynamic-item.even {
@@ -80,32 +92,51 @@
 }
 
 .template-box {
-    text-indent: 2em;
-    padding: 0 60px
+    /*text-indent: 2em;*/
+    padding: 0 60px;
+    color: #666;
 }
 
 .noticeUs {
-    padding: 60px 140px;
+    padding: 20px 40px;
 }
 
-.template-box span {
-    line-height: 50px;
+.template-box h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    /*text-indent: 26px;*/
 }
+
+.template-box p {
+    text-indent: 2em;
+    margin-bottom: 15px;
+    line-height: 21px;
+}
+
 
 .noticeUs li {
-    line-height: 98px;
-    font-size: 24px;
+    line-height: 48px;
+    font-size: 14px;
     color: #3f3b3c;
 }
 
+.noticeUs .icon-p {
+    padding-left: 25px;
+}
+.template-box img{
+    max-width: 100%;
+}
 .icon-p::before {
     content: "";
     position: absolute;
-    height: 98px;
-    width: 58px;
+    height: 24px;
+    width: 24px;
     background-position: center;
     background-repeat: no-repeat;
-    left: -84px;
+    left: -8px;
+    top: 12px;
+    -webkit-background-size: contain;
+    background-size: contain;
 }
 
 .site::before {
@@ -125,29 +156,34 @@
 }
 
 .qrcode-box {
-    margin-top: 40px;
-    padding-top: 50px;
-    height: 326px;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /*height: 326px;*/
     background-color: #ffffff;
     border-radius: 10px;
     border: solid 1px #f0f0f0;
 }
 
 .qrcode-box dd {
-    height: 198px;
+    margin-top: 15px;
+    height: 140px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .download {
     display: inline-block;
-    line-height: 50px;
-    color: #00f;
+    /*line-height: 50px;*/
+    color: #ba9965;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: underline !important
 }
 
-.download:hover {
-    color: #00f
+.download:hover,
+.download:active,
+.download:visited,
+.download:focus {
+    color: #ba9965
 }

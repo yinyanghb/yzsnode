@@ -1,51 +1,29 @@
 <div class="container-fluid friendLink">
-    <div class="container ">
-        <div class="">
-            <div class="pull-left">
-                <h3 class="">合作机构</h3>
-            </div>
-            <div class="notice  pull-right" style="margin: 0">
-                <div class="als-viewport" style="height: 52px;">
-                    <ul class="als-wrapper">
+    <div class="container" >
+        
+            
+                <h2 class= "friendLinkT pull-left">合作机构</h2>
+     
+       
+    
+            <div class="friendlinkC notice " >
+                <div class="als-viewport " >
+                    <ul class="als-wrapper ">
                         {% for item in ['a','b','c','d']%}
-
                         <ul class="link-ul als-item">
                             {% for num in [1,2,3,4,5]%}
-                            <li class="" style="background-image: url(../images/friendLink/{{item+num}}.jpg)">
-                                <a href="javascript:;">
-
-                                </a>
+                            <li class="">
+                                
+                                    <img src="../images/friendLink/{{item+num}}.jpg" >
+                               
                             </li>
-
                             {%endfor%}
                         </ul>
                         {% endfor%}
                     </ul>
                 </div>
             </div>
-            <!-- <ul class="col-md-12 col-lg-10 link-ul">
-                <li style="background-image: url(../images/friendLink/)">
-                    <a href="javascript:;">
-
-                    </a>
-                </li>
-                <li style="background-image: url(../images/bg.png)">
-                    <a href="javascript:;">
-
-                    </a>
-                </li>
-                <li style="background-image: url(../images/bg.png)">
-                    <a href="javascript:;">
-
-                    </a>
-                </li>
-                <li style="background-image: url(../images/bg.png)">
-                    <a href="javascript:;">
-
-                    </a>
-                </li>
-            </ul> -->
-        </div>
+       
     </div>
     <div class="link-bar"></div>
 </div>

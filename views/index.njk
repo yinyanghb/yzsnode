@@ -3,41 +3,57 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>亚租所</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content="亚租所" />
-  <meta name="description" content="亚租所" />
-  <link rel="stylesheet" href="/css/index.css"> {% include "common/css.njk" %}{% include "common/js.njk" %}
+  <meta name="baidu-site-verification" content="vmjEIDKaNy" />
+
+  <title>{{title}}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="keywords" content="{{keywords}}" />
+  <meta name="description" content="{{description}}" />
+  <link rel="stylesheet" href="/css/index.css"> {% include "common/css.njk" %}
+  
 </head>
 
 <body>
   {% include "common/header.njk" %}
+ 
+  <div class="container-fluid main-bg" style="background-image: url(images/bg.jpg)">
+    <div class="main-bar" style="bottom:-108px"></div>
 
-  <div class="container-fluid main-bg" style="background-image: url(images/bg.png)">
-    <div class="main-bar">
-      <div class="container main-bar-cnt">
-        <div class="main-title title-l pull-left">
+    </div>
+  </div>
+ 
+  <div class="container main-container">
+  
+    <ul class="main-bar-cnt row">
+      <li class="col-xs-4">
+        <div class="main-title title-l ">
           <span class="main-title-before"></span>
           <h3>专业交易服务</h3>
+          <span class="title-img t-l"></span>
         </div>
+      </li>
+      <li class="col-xs-4">
         <div class="main-title title-c">
           <span class="main-title-before"></span>
           <h3>优质资产来源</h3>
+          <span class="title-img t-c"></span>
         </div>
-        <div class="main-title title-r pull-right">
+      </li>
+      <li class="col-xs-4">
+        <div class="main-title title-r ">
           <span class="main-title-before"></span>
           <h3>丰富投资资金</h3>
+          <span class="title-img t-r"></span>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
+      </li>
+    </ul>
     <!-- 平台动态 -->
     {% include 'index/notice.njk' %}
     <!-- 项目专区 -->
     <h2 class="text-center porject-title">机构专区</h2>
     <div class="porject-wrap ">
-      <ul class="product_list clearfix">
+      <ul class="product_list row">
         {% include 'index/item.njk'%}
       </ul>
     </div>
@@ -53,6 +69,8 @@
   {% include 'index/friendLink.njk'%}
   <!-- footer -->
   {% include 'common/footer.njk'%}
+  {% include "common/js.njk" %}
+  <script src="/js/preload.js"></script>
 </body>
 
 
