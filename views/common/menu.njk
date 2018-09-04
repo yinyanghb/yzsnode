@@ -1,6 +1,8 @@
 {% set pathname =getPath(path).splice(0,3).join('/') %}
 <div class="info-menu  col-xs-2">
-    <span class="before"></span>
+    <span class="before">
+        <i class="icon-m-ic-icon m-ic-icon-infoicon"></i>
+    </span>
     {{menuData.title}}
     <ul class="info-menu-ul " id="infoMenu">
         {% for item in menuData.navlist %}

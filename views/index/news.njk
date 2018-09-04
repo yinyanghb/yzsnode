@@ -8,9 +8,11 @@
   <div id="collapsebox">
     {% for item in data.plat.data %}
     <div class="panel dynamic-item">
-        <div class="after"></div>
-      <span class="dy-btn hicon icon-plus
-        " href="{{'#collapseExample'+loop.index}}" data-toggle="collapse" data-parent="#collapsebox" aria-expanded="{{loop.first}}"></span>
+        <div class="after icon-m-ic-icon m-ic-icon-plogo"></div>
+      <span class="dy-btn hicon  " href="{{'#collapseExample'+loop.index}}" data-toggle="collapse" data-parent="#collapsebox" aria-expanded="{{loop.first}}">
+        <i class="icon-m-ic-icon m-ic-icon-minus"></i>
+        <i class="icon-m-ic-icon m-ic-icon-plus"></i>
+      </span>
  
       <div class="dynamic-h">
         <a href="/about/1/{{item.pid}}">

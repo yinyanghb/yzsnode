@@ -4,7 +4,6 @@ var commontObj = {
         this.nav();
         this.fixed();
         this.menu();
-        this.risk();
         this.indexpage()
     },
     // 顶部悬浮事件
@@ -75,12 +74,6 @@ var commontObj = {
             })
         })
     },
-    risk:function(){
-        $('#risk-collapse').on('show.bs.collapse hide.bs.collapse', function () {
-            $(this).siblings('.risk-h').find('.risk-down>.glyphicon').toggleClass(
-                ' glyphicon-chevron-up glyphicon-chevron-down')
-        })
-    },
     indexpage:function(){
         
         $('body').running();
@@ -101,23 +94,22 @@ var commontObj = {
         $('.collapse').on('show.bs.collapse hide.bs.collapse', function () {
             $(this).parents('.dynamic-item').toggleClass('shown')
             $(this).siblings('.dynamic-h').find('.dy-h4').eq(0).toggleClass('bold')
-            $(this).parents('.dynamic-item').find('.dy-btn').toggleClass(
-              'icon-minus icon-plus')
+      
           })
-          $('.collapse').on('shown.bs.collapse ', function () {
-            var $dom = $(this).find('.clemp')
-            var lh = parseInt($dom.css('line-height'));
-            var height = parseInt($dom.height());
-            if ((height / lh) > 2) {
-              $dom.addClass("p-after")
-            } else {
-              $(this).removeClass("p-after");
-            }
-          })
+        //   $('.collapse').on('shown.bs.collapse ', function () {
+        //     var $dom = $(this).find('.clemp')
+        //     var lh = parseInt($dom.css('line-height'));
+        //     var height = parseInt($dom.height());
+        //     if ((height / lh) > 2) {
+        //       $dom.addClass("p-after")
+        //     } else {
+        //       $(this).removeClass("p-after");
+        //     }
+        //   })
     }
 }
 $(function () {
     commontObj.init();
     $(window).trigger('scroll')
-    $('#collapseExample1').collapse('show')
+    $('span[href=#collapseExample1]').trigger('click')
 })

@@ -8,7 +8,9 @@
     background-color: #fff;
     padding: 30px;
 }
-
+.about-wrap ul.row {
+    min-height: 300px
+}
 .info-list-h {
     margin-top: 30px;
 }
@@ -41,14 +43,11 @@
 }
 .item-t>.before{
     position: absolute;
-    width: 14px;
-    height: 16px;
-    background-image: url(../images/dy-read.png);
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
     left: 0;
-   
+    background-image: url(../images/sprite/icons.png);
+    background-position: -205px -218px;
+    width: 18px;
+    height: 21px;
 }
 .about-title {
     /*padding-top: 80px*/
@@ -78,10 +77,11 @@
     background: #f8f8f8
 }
 
-
-
 .read>.before {
-    background-image: url(../images/read.png);
+    background-image: url(../images/sprite/icons.png);
+    background-position: -223px -218px;
+    width: 18px;
+    height: 21px;
 }
 
 .aboutimg {

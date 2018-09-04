@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/information.css"> {% include "common/css.njk" %}
 </head>
 
-<body>
+<body ontouchstart>
     {% include "common/header.njk" %}
     <div class="container-fluid main-bg ability-main" style="height: 520px;background-image: url(/images/info-bg.png)">
         <div class="main-bar" style="height: 120px;background: #3e505e;z-index: -10;"></div>
@@ -25,7 +25,7 @@
             </div>
             <div class="portlet-head">
                 <h2>
-                    <i class="icon-aptitude-1 vm"></i>
+                    <i class="icon-m-ic-icon m-ic-icon-icon_aptitude_1"></i>
                     <span class="vm">交易所牌照</span>
                 </h2>
             </div>
@@ -60,7 +60,7 @@
             </div>
             <div class="portlet-head">
                 <h2>
-                    <i class="icon-aptitude-2 vm"></i>
+                    <i class="icon-m-ic-icon m-ic-icon-icon_aptitude_2"></i>
                     <span class="vm">交易流程</span>
                 </h2>
             </div>
@@ -71,7 +71,7 @@
             </div>
             <div class="portlet-head">
                 <h2>
-                    <i class="icon-aptitude-3 vm"></i>
+                    <i class="icon-m-ic-icon m-ic-icon-icon_aptitude_3"></i>
                     <span class="vm">专业资质</span>
                 </h2>
             </div>
@@ -120,7 +120,7 @@
 {% include "common/js.njk" %}
 <script>
     window.onload = function () {
-    let preload = document.createElement('div');
+    var preload = document.createElement('div');
     preload.id = 'preload';
     document.body.appendChild(preload);
     }

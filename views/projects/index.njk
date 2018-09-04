@@ -14,9 +14,9 @@
     <!-- <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script> -->
 </head>
 
-<body>
+<body ontouchstart>
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg" style="height: 520px;background-image: url(/images/organ_bg.png)">
+    <div class="container-fluid main-bg" style="height: 476px;background-image: url(/images/organ_bg.png)">
 
         <div class="main-bar" style="height: 88px;background: #3e505e"></div>
 
@@ -28,7 +28,7 @@
         <div class=" porject-select">
             {% set type = params.type %}
             <div class="porject-sign">
-                <div class="prologo"></div>
+                <div class="prologo icon-m-ic-icon m-ic-icon-dlogo"></div>
                 {% if type == 0 %}
                 <!-- 资产登记专区 -->{% include "projects/asset.njk" %} {% elif type == 1 %}
                 <!-- 挂牌交易专区 -->{% include "projects/deal.njk" %} {% elif type == 2 %}
@@ -38,65 +38,69 @@
         </div>
         <div class=" select-box">
             <div class="dropdown select-k pull-left">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="true">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="true">
                     <div class="selectContent">
-                        项目编号
+                            查询码
                     </div>
                     <span class="select-icon icon-down">
-                        <i></i>
+                        <i class=""></i>
                     </span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li class="active">
+                                <input type="checkbox" value="queryCode" />
+                                <span>查询码</span>
+                            </li>
                     {%set v = getPath(path)[2]%} {% if v==0 %}
                     <!-- 资产登记业务 -->
-                    <li class="active">
-                        <input type="checkbox" value="1" />
+                    <li >
+                        <input type="checkbox" value="borrowNo" />
                         <span>项目编号</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="2">
+                        <input type="checkbox" value="borrowName">
                         <span>项目名称</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="3">
+                        <input type="checkbox" value="memberName">
                         <span>会员名称</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="4">
+                        <input type="checkbox" value="recordDate">
                         <span>备案日期</span>
                     </li>
                     {% elif v == 1%}
                     <!-- 挂牌交易专区 -->
-                    <li class="active">
-                        <input type="checkbox" value="1" />
+                    <li >
+                        <input type="checkbox" value="borrowNo" />
                         <span>项目编号</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="2" />
+                        <input type="checkbox" value="borrowName" />
                         <span>项目名称</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="3" />
+                        <input type="checkbox" value="assetRegister" />
                         <span>挂牌方</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="4" />
+                        <input type="checkbox" value="borrowBalance" />
                         <span>挂牌价格</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="5" />
+                        <input type="checkbox" value="releaseDate" />
                         <span>挂牌日期</span>
                     </li>
                     <li>
-                        <input type="checkbox" value="6" />
+                        <input type="checkbox" value="status" />
                         <span>状态</span>
                     </li>
 
                     {% elif v == 2%}
                     <!-- 直融业务专区 -->
-                    <li class="active">
-                        <input type="checkbox" value="1" />
+                    <li >
+                        <input type="checkbox" value="borrowName" />
                         <span>项目名称</span>
                     </li>
                     <li>
@@ -118,15 +122,12 @@
                     {% endif%}
                 </ul>
             </div>
-
-
-
             <label class="control-label pull-left select-label text-right" for="txt_search_statu ">输入：</label>
             <div class="pull-left inputBox">
                 <input type="text " class="form-control select-v" id="txt_search_statu">
             </div>
             <div class=" " style="text-align:left; ">
-                <button class="select-btn " id="btn_query" class="btn btn-primary ">确定</button>
+                <button id="btn_query" class="select-btn btn btn-primary ">确定</button>
             </div>
 
 
@@ -134,18 +135,85 @@
 
         <div class="portlet-head">
             <h2>
-                <i class="icon-list vm"></i>
+                <i class="icon-m-ic-icon m-ic-icon-pro vm"></i>
                 <span class="vm">项目列表</span>
             </h2>
         </div>
         <div class="portlet-body">
-            {% if type == 0 %}
+            {% if params.type == 0%}
             <!-- 资产登记专区 -->
-            {% include "projects/assetTable.njk"%} {% elif type == 1 %}
-            <!-- 挂牌交易专区 -->
-            {% include "projects/dealTable.njk" %} {% elif type == 2 %}
-            <!-- 直融项目专区 -->
-            {% include "projects/businessTable.njk" %}{% endif %}
+            <table id="tb_project" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th class="text-left borrow_no" width="20%">项目编号</th>
+                        <th class="text-left borrow_name" width="40%">项目名称</th>
+                        <th class="text-left member_name" width="30%">会员名称</th>
+                        <th class="text-left record_date" width="10%">备案日期</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_tbody">
+                </tbody>
+            </table>
+            <script type="text/template" id="tpl">
+                <tr data-link="{{'/projects/'+type+ '/detail/'}}$pid" data-param = '$pid'>
+                    <td class="borrow_no c9">$borrow_no</td>
+                    <td class="borrow_name c6">$borrow_name</td>
+                    <td class="member_name c6">$member_name</td>
+                    <td class="record_date c6">$record_date</td>
+                </tr>
+            </script>
+            {% elif params.type == 1 %}
+            <!-- 挂牌交易 -->
+            <table id="tb_project" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th class="text-left borrow_no" width="20%">项目编号</th>
+                        <th class="text-left borrow_name" width="40%">项目名称</th>
+                        <th class="text-left asset_register" width="25%">挂牌方</th>
+                        <th class="text-left borrow_balance" width="5%">挂牌价格</th>
+                        <th class="text-left release_date" width="10%">挂牌日期</th>
+                        <th class="text-left status" width="5%">状态</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_tbody">
+                </tbody>
+            </table>
+            <script type="text/template" id="tpl">
+                <tr data-link="{{'/projects/'+type+ '/detail/'}}$pid" data-param = '$pid'>
+                        <td class="borrow_no c9">$borrow_no</td>
+                        <td class="borrow_name c6"><p class="pull-left">$borrow_name</p></td>
+                        <td class="asset_register c6"><p class="pull-left">$asset_register</p> </td>
+                        <td class="borrow_balance c6">$borrow_balance</td>
+                        <td class="release_date c6">$release_date</td>
+                        <td class="status c6">$status</td>
+                    </tr>
+                </script>
+            {% elif params.type == 2%}
+            <!--  -->
+            <table id="tb_project" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th class="text-left">项目名称</th>
+                        <th class="text-left">项目总额</th>
+                        <th class="text-left">项目期限</th>
+                        <th class="text-left">预期年化收益率</th>
+                        <th class="text-left">状态</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_tbody">
+                </tbody>
+            </table>
+            <script type="text/template" id="tpl">
+                <tr data-link="{{'/projects/'+type+ '/detail/'}}$pid" data-param = '$pid'>
+                            <td class="borrow_no c9">$borrow_no</td>
+                            <td class="borrow_name c6"><p class="pull-left">$borrow_name</p></td>
+                            <td class="asset_register c6"><p class="pull-left">$asset_register</p> </td>
+                            <td class="borrow_balance c6">$borrow_balance</td>
+                            <td class="release_date c6">$release_date</td>
+                            <td class="status c6">$status</td>
+                        </tr>
+                    </script>
+            {% endif%}
             <!-- 分页 S-->
             <div id="Pagination" class="pagination">
             </div>
@@ -160,33 +228,115 @@
     <!-- footer -->
     {% include 'common/footer.njk'%}
 </body>
-{% include "common/js.njk" %} {% if data.projects.data.length != 0%}
+{% include "common/js.njk" %}
 <script>
+    var table;
     var project = {
+        type: '{{params.type}}',
+        statusObj: {
+            '_1': '挂牌中',
+            '_2': '已成交',
+            '_3': '已兑付'
+        },
+        page: 1,
         myTable: '',
         init: function () {
             var self = this;
-            self.myTable = $('#tb_project').DataTable({
-                dom: 't',
-                "pageLength": 10,
-                language: {
-                    "sZeroRecords": "没有匹配结果"
-                },
-                "stripeClasses": ['strip1', 'strip2'],
-                "ordering": false,
-                "autoWidth": false
-
-            });
+            self.render();
             self.bindEvents();
-            self.pageInit({{data.projects.count}})
         },
-        checkItem:function() {
+        render: function (msg) {
+            var self = this,
+             rows = '',
+             msg = msg || '暂无数据';
+            var tpl = $("#tpl").html();
+            var n = $('#tb_project th').length;
+            var nolist = '<tr class="no-item text-center"><td colspan="' + n + '">'+msg+'</td></tr>';
+            self.getData().then(function (res) {
+                $("#Pagination").empty();
+                var data = res.data.listData;
+                if (res.data.total > 10) {
+                    self.pageInit(20)
+                }
+                if (res.data.total == 0 || !res.data.listData.length) {
+                    $("#tb_tbody").html(nolist);
+                    return false
+                }
+
+                function subStr(str, num) {
+                    if (!str) {
+                        // 检查非空
+                        return "";
+                    }
+                    if (str.length < num) {
+                        return str;
+                    } else {
+                        return str.substr(0, num) + "...";
+                    }
+                }
+
+                $.each(data, function (a, b) {
+                    rows += tpl.replace(/\$pid/, b.pid)
+                        .replace(/\$borrow_no/, b.borrow_no)
+                        .replace(/\$borrow_name/,subStr(b.borrow_name,18))
+                        .replace(/\$member_name/,subStr(b.member_name,14) )
+                        .replace(/\$record_date/, b.record_date)
+                        .replace(/\$asset_register/,subStr(b.asset_register,14))
+                        .replace(/\$release_date/, b.release_date)
+                        .replace(/\$borrow_balance/, b.borrow_balance)
+                        .replace(/\$status/, self.statusObj['_' + b.status])
+                })
+                $("#tb_tbody").html(rows);
+                
+            })
+        },
+        getData: function () {
+          
+            var self = this,
+                // url = apiBasePath + "/pc/queryAssetInfoList?borrowType=" + self.type,
+                
+                k = $('input[type=checkbox]:checked').val() || 'queryCode',
+                v =encodeURI($('#txt_search_statu').val())  || "",
+            
+                data = {
+                    borrowType : self.type,
+                    page: self.page
+                },
+                defer = $.Deferred();
+                var url = "";
+              
+                    if(k=="queryCode"&&v){
+                        url = "/ByCode"
+                    }else{
+                        url = "/seek"
+                    }
+            data[k] = v;
+            $.ajax({
+                type: 'post',
+                url: url,
+                data:data,
+                success: function (res) {
+                    var result = res;
+                    defer.resolve(result);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    // console.log(xhr)
+                    // alert(XMLHttpRequest.status);
+                    //     alert(XMLHttpRequest.readyState);
+                    //     alert(textStatus);
+                    defer.reject()
+                }
+            });
+            return defer;
+        },
+        checkItem: function () {
             var dom = $('.selectContent').html('');
             $('.dropdown-menu>li.active').each(function () {
                 var span = $('<span class="badge"></span>');
                 span.text($(this).text());
                 dom.append(span);
                 $('.dropdown-menu').hide()
+                $('.select-icon').removeClass('icon-up')
             })
         },
         bindEvents: function () {
@@ -195,10 +345,13 @@
             $('.dropdown-toggle').click(function (e) {
                 $(this).find('.select-icon').toggleClass('icon-up')
                 $(this).siblings('.dropdown-menu').toggle();
+
             });
             $('.dropdown-menu').on('click', '>li', function (e) {
                 $(this).addClass('active').siblings('li').removeClass('active');
-                $(this).find('input[type="checkbox"]').prop('checked', $(this).hasClass('active'));
+                $('input[type="checkbox"]').each(function () {
+                    $(this).prop('checked', $(this).parent('li').hasClass('active'))
+                })
                 self.checkItem();
             });
             $('.dropdown').on('click', '.dropdown-toggle, .dropdown-menu', function (e) {
@@ -210,17 +363,16 @@
             });
             // 跳转
             $('#tb_project').on('click', 'tbody tr', function () {
+                if($(this).hasClass('no-item')){
+                    return false
+                }
                 var link = $(this).data('link')
                 location.href = link
             });
             // 搜索
+
             $('#btn_query').on('click', function () {
-                var c = $('input[type=checkbox]:checked').val() || 1
-                self.myTable.columns(c - 1)
-                    .search($('#txt_search_statu').val())
-                    .draw();
-                $("#Pagination").empty();
-                self.pageInit(self.myTable.page.info().recordsDisplay)
+                self.render('没有匹配结果')
             })
             // hover
 
@@ -234,13 +386,12 @@
         pageInit: function (data) {
             var self = this;
             $("#Pagination").pagination(data, {
-
-                num_edge_entries: 1,
-                num_display_entries: 4,
+                current_page: self.page - 1,
                 scrollTop: false,
                 items_per_page: 10,
                 callback: function (page_index, jq) {
-                    self.myTable.page(page_index).draw('page');
+                    self.page = page_index + 1;
+                    self.render()
                 }
             });
         }
@@ -249,6 +400,6 @@
         project.init();
     })
 </script>
-{% endif%}
+
 
 </html>

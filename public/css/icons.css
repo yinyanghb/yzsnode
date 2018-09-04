@@ -1,0 +1,292 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-m-ic-icon{
+  display: inline-block;
+  vertical-align: middle
+}
+.icon-m-ic-icon.m-ic-icon-app-logo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -160px -39px;
+  width: 80px;
+  height: 80px;
+}
+.icon-m-ic-icon.m-ic-icon-app {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -80px -39px;
+  width: 80px;
+  height: 81px;
+}
+.icon-m-ic-icon.m-ic-icon-contact {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -307px -120px;
+  width: 29px;
+  height: 30px;
+}
+.icon-m-ic-icon.m-ic-icon-detail {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -146px -241px;
+  width: 24px;
+  height: 24px;
+}
+.icon-m-ic-icon.m-ic-icon-detaillogo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: 0px -168px;
+  width: 61px;
+  height: 73px;
+}
+.icon-m-ic-icon.m-ic-icon-dlogo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -61px -168px;
+  width: 60px;
+  height: 72px;
+}
+.icon-m-ic-icon.m-ic-icon-dy-logo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -336px -120px;
+  width: 24px;
+  height: 29px;
+}
+.icon-m-ic-icon.m-ic-icon-dy-read {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -205px -218px;
+  width: 18px;
+  height: 21px;
+}
+.icon-m-ic-icon.m-ic-icon-email {
+  background-image: url(../images/sprite/icons.png);
+  background-position: 0px -241px;
+  width: 61px;
+  height: 50px;
+}
+.icon-m-ic-icon.m-ic-icon-f {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -332px -168px;
+  width: 21px;
+  height: 28px;
+}
+.icon-m-ic-icon.m-ic-icon-fixqr {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -266px -241px;
+  width: 22px;
+  height: 22px;
+}
+.icon-m-ic-icon.m-ic-icon-fixqrh {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -288px -241px;
+  width: 22px;
+  height: 22px;
+}
+.icon-m-ic-icon.m-ic-icon-footerlogo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: 0px -120px;
+  width: 131px;
+  height: 48px;
+}
+.icon-m-ic-icon.m-ic-icon-hot {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -303px -168px;
+  width: 29px;
+  height: 30px;
+}
+.icon-m-ic-icon.m-ic-icon-hotLine {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -61px -241px;
+  width: 61px;
+  height: 50px;
+}
+.icon-m-ic-icon.m-ic-icon-icon_aptitude_1 {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -194px -241px;
+  width: 24px;
+  height: 24px;
+}
+.icon-m-ic-icon.m-ic-icon-icon_aptitude_2 {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -242px -241px;
+  width: 24px;
+  height: 23px;
+}
+.icon-m-ic-icon.m-ic-icon-icon_aptitude_3 {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -301px -90px;
+  width: 24px;
+  height: 21px;
+}
+.icon-m-ic-icon.m-ic-icon-infoicon {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -303px -198px;
+  width: 22px;
+  height: 18px;
+}
+.icon-m-ic-icon.m-ic-icon-logo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: 0px 0px;
+  width: 360px;
+  height: 39px;
+}
+.icon-m-ic-icon.m-ic-icon-minus {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -240px -112px;
+  width: 24px;
+  height: 3px;
+}
+.icon-m-ic-icon.m-ic-icon-notice {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -181px -218px;
+  width: 24px;
+  height: 21px;
+}
+.icon-m-ic-icon.m-ic-icon-pd {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -170px -241px;
+  width: 24px;
+  height: 24px;
+}
+.icon-m-ic-icon.m-ic-icon-phone {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -122px -265px;
+  width: 13px;
+  height: 18px;
+}
+.icon-m-ic-icon.m-ic-icon-plogo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -270px -120px;
+  width: 37px;
+  height: 44px;
+}
+.icon-m-ic-icon.m-ic-icon-plus {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -122px -240px;
+  width: 24px;
+  height: 24px;
+}
+.icon-m-ic-icon.m-ic-icon-pro {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -325px -90px;
+  width: 24px;
+  height: 21px;
+}
+.icon-m-ic-icon.m-ic-icon-prologo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -121px -168px;
+  width: 60px;
+  height: 72px;
+}
+.icon-m-ic-icon.m-ic-icon-read {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -223px -218px;
+  width: 18px;
+  height: 21px;
+}
+.icon-m-ic-icon.m-ic-icon-right {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -352px -39px;
+  width: 7px;
+  height: 14px;
+}
+.icon-m-ic-icon.m-ic-icon-rikdown {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -325px -198px;
+  width: 22px;
+  height: 15px;
+}
+.icon-m-ic-icon.m-ic-icon-rikup {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -241px -218px;
+  width: 22px;
+  height: 15px;
+}
+.icon-m-ic-icon.m-ic-icon-risk {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -218px -241px;
+  width: 24px;
+  height: 24px;
+}
+.icon-m-ic-icon.m-ic-icon-serve {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -301px -39px;
+  width: 51px;
+  height: 51px;
+}
+.icon-m-ic-icon.m-ic-icon-site {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -242px -168px;
+  width: 61px;
+  height: 50px;
+}
+.icon-m-ic-icon.m-ic-icon-t-c {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -179px -120px;
+  width: 45px;
+  height: 48px;
+}
+.icon-m-ic-icon.m-ic-icon-t-l {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -224px -120px;
+  width: 46px;
+  height: 46px;
+}
+.icon-m-ic-icon.m-ic-icon-t-r {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -131px -120px;
+  width: 48px;
+  height: 48px;
+}
+.icon-m-ic-icon.m-ic-icon-tel {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -330px -241px;
+  width: 15px;
+  height: 16px;
+}
+.icon-m-ic-icon.m-ic-icon-up {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -307px -150px;
+  width: 22px;
+  height: 12px;
+}
+.icon-m-ic-icon.m-ic-icon-uph {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -329px -150px;
+  width: 20px;
+  height: 12px;
+}
+.icon-m-ic-icon.m-ic-icon-weChat {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -181px -168px;
+  width: 61px;
+  height: 50px;
+}
+.icon-m-ic-icon.m-ic-icon-weixin {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -310px -241px;
+  width: 20px;
+  height: 16px;
+}
+.icon-m-ic-icon.m-ic-icon-wx {
+  background-image: url(../images/sprite/icons.png);
+  background-position: 0px -39px;
+  width: 80px;
+  height: 81px;
+}
+.icon-m-ic-icon.m-ic-icon-xiangqlogo {
+  background-image: url(../images/sprite/icons.png);
+  background-position: -240px -39px;
+  width: 61px;
+  height: 73px;
+}

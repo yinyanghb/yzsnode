@@ -33,9 +33,6 @@
 
 .app-logo {
     position: absolute;
-    height: 80px;
-    width: 80px;
-    background: url(../images/app-logo.png);
     right: 50px;
     top: 50px;
 }

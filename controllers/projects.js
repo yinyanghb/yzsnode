@@ -13,9 +13,6 @@ module.exports = {
         projects: function (callback) {
           server.getById(appConfig.apiBasePath + Api.AssetInfoList, callback, id, req);
         },
-        // goodCategory: function (callback) {
-        //   server.get(appConfig.apiBasePath + Api.goodCategory, callback, req);
-        // }
       },
       function (err, results) {
         //渲染页面
@@ -23,7 +20,45 @@ module.exports = {
       }
     );
   },
+  seek:function(req,res){
+    var url = appConfig.apiBasePath +'/pc/queryAssetInfoList?';
+    var obj = req.body;
+    console.log(obj,'obj')
+    var str = '';
+    for(var k in obj){
+       str += k + '=' + obj[k] + '&'
+    }
+    str = str.slice(0, -1);
+    url = url +  str;
+    console.log(url,'url')
+    return async.parallel({
+      data :function(callback){
+        server.get( url, callback,  req);
+      }
+    },
+    function (err, results) {
+      //渲染页面
+      console.log(results.data)
+      res.json(results.data)
+    }
+  );
+ },
+ ByCode:function(req,res){
+   var  url = appConfig.apiBasePath +'/pc/queryAssetInfoByCode?borrowType='+req.body.borrowType+'&queryCode='+req.body.queryCode+'&page='+req.body.page;
+   console.log(url)
+   return async.parallel({
+    data :function(callback){
+      server.get( url, callback,  req);
+    }
+  },
+  function (err, results) {
+    //渲染页面
+    console.log(results.data)
+    res.json(results.data)
+  }
+);
 
+ },
   detailRender: function (res, req, projectId) {
     return async.parallel({
         // 标的详情
@@ -35,16 +70,6 @@ module.exports = {
             req
           );
         },
-
-
-        // customerSureinfo: function (callback) {
-        //   server.getById(
-        //     appConfig.apiBasePath + Api.customerSureinfo,
-        //     callback,
-        //     projectId,
-        //     req
-        //   );
-        // }
       },
       function (err, results) {
         //渲染页面

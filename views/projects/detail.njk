@@ -18,7 +18,7 @@
 
 <body>
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg" style="height: 520px;background-image: url(/images/organ_bg.png)">
+    <div class="container-fluid main-bg" style="height: 476px;background-image: url(/images/organ_bg.png)">
         <div class="main-bar" style="height: 88px;background: #3e505e"></div>
     </div>
     <div class="container detail-container">
@@ -26,7 +26,7 @@
             {% set type = params.type %}
             <div class="detail-sign">
                 <span class="before"></span>
-                <i class="dLogo"></i>
+                <i class="dLogo icon-m-ic-icon m-ic-icon-xiangqlogo"></i>
                 
                         <h2 class="porject-name red pull-left">
                             <span class="before"></span> {% if type==0%}资产登记项目{% elif type ==1%} 挂牌交易项目{% elif type ==2%}直融业务专区{%endif%}</h2>
@@ -35,7 +35,7 @@
                         <div class="">
                             <h3 class=" detail-title">
                                 <span class="vm">{{data.detail.data.borrow_name}}</span>
-                                <em class="vm"></em>
+                                <em class=" icon-m-ic-icon m-ic-icon-f "></em>
                             </h3>
                    
                             {% if type==0%}
@@ -57,11 +57,11 @@
                             <table class="text-table">
                                 <thead> 
                                     <tr>
-                                        <th>开始时间</th>
-                                      {%if data.detail.data.release_end_date%}  <th>结束时间</th>
+                                        <th width="100">开始时间</th>
+                                      {%if data.detail.data.release_end_date%}  <th width="100">结束时间</th>
                                       {%endif%}
-                                        <th>挂牌价格</th>
-                                        <th>状态</th>
+                                        <th width="100">挂牌价格</th>
+                                        <th width="100">状态</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,24 +81,24 @@
         </div>
 
             <div class="detail-portlet-head">
-                <h2>
-                    <i class="icon-list vm ml15"></i>
-                    <span class="vm">项目详情</span>
+                <h2 >
+                    <i class="icon-m-ic-icon m-ic-icon-pd   ml15"></i>
+                    <span class="vm f18">项目详情</span>
                 </h2>
             </div>
  
         
         
         <div class="detail-list">
-
+            <!-- {{data.detail.data | dump}} -->
             <ul class="detail-list-ul ">
                 {% if type == 0 %}
-                <!--  资产登记专区-->
+                <!--  资产登记专区 -->
                 <li class="detail-list-li clearfix ">
                         <div class=" pull-left detail-list-title text-right">项目编号</div>
                         <div class="detail-list-c">{{data.detail.data.borrow_no}}</div>
                     </li>
-                <li class="detail-list-li clearfix even">
+                <li class="detail-list-li clearfix "> 
                     <div class=" pull-left detail-list-title text-right">项目名称</div>
                     <div class="detail-list-c">{{data.detail.data.borrow_name}}</div>
                 </li>
@@ -106,7 +106,7 @@
                     <div class=" pull-left detail-list-title text-right">资产登记方</div>
                     <div class="detail-list-c">{{data.detail.data.asset_register}}</div>
                 </li>
-                <li class="detail-list-li clearfix even">
+                <li class="detail-list-li clearfix ">
                     <div class=" pull-left detail-list-title text-right">登记机构</div>
                     <div class="detail-list-c">{{data.detail.data.registration_name}}</div>
                 </li>
@@ -114,16 +114,16 @@
                     <div class=" pull-left detail-list-title text-right">登记期限</div>
                     <div class="detail-list-c">{{data.detail.data.borrow_deadline}}</div>
                 </li>
-                <li class="detail-list-li clearfix even">
+                <li class="detail-list-li clearfix ">
                     <div class=" pull-left detail-list-title text-right">登记规模</div>
                     <div class="detail-list-c">{{data.detail.data.borrow_balance}}</div>
                 </li>
 
                 {% if data.detail.data.asset_register_detail | safe %}
                 <li class="detail-list-li clearfix ">
-                    <div class=" pull-left detail-list-title text-right">资产登记方介绍</div>
+                    <div class=" pull-left detail-list-title text-right"><p class="pt15">资产登记方介绍</p></div>
                     <div class="detail-list-c">
-                        <div class="pt15"><p>{{data.detail.data.asset_register_detail | safe}}</p></div>
+                        <div class="pt15 pb15"><p>{{data.detail.data.asset_register_detail | safe}}</p></div>
                     </div>
                 </li>
                 {% endif%}
@@ -136,7 +136,7 @@
                     </li>
                     {%endif%}
                     {%if data.detail.data.borrow_name%}
-                <li class="detail-list-li clearfix even">
+                <li class="detail-list-li clearfix ">
                     <div class=" pull-left detail-list-title text-right">项目名称</div>
                     <div class="detail-list-c">{{data.detail.data.borrow_name}}</div>
                 </li>
@@ -148,7 +148,7 @@
                 </li>
                 {% endif %}
                 {%if data.detail.data.borrow_balance%}
-                <li class="detail-list-li clearfix even">
+                <li class="detail-list-li clearfix ">
                     <div class=" pull-left detail-list-title text-right">挂牌价格</div>
                     <div class="detail-list-c">{{data.detail.data.borrow_balance}}</div>
                 </li>
@@ -160,7 +160,7 @@
                 </li>
                 {%endif%}
                 {% if data.detail.data.year_interest_rate %}
-                <li class="detail-list-li clearfix  even">
+                <li class="detail-list-li clearfix  ">
                     <div class=" pull-left detail-list-title text-right">预期年化收益率</div>
                     <div class="detail-list-c">{{data.detail.data.year_interest_rate}}</div>
                 </li>
@@ -168,7 +168,7 @@
                 {%if data.detail.data.cash_way%}
                 <li class="detail-list-li clearfix ">
                     <div class=" pull-left detail-list-title pull-left text-right">兑付方式</div>
-                    <div class="detail-list-c"><div class="pt15"><p>{{data.detail.data.cash_way}}</p></div></div>
+                    <div class="detail-list-c">{{data.detail.data.cash_way}}</div>
                 </li>
                 {%endif%}
                 {%endif%}
@@ -182,4 +182,14 @@
     {% include 'common/footer.njk'%}
 </body>
 {% include "common/js.njk" %}
+<script>
+    $(function(){
+        $('.detail-list-li').each(function(i,e){
+            if(i%2!=0){
+                $(this).addClass('even')
+            }
+
+        })
+    })
+</script>
 </html>

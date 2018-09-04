@@ -31,9 +31,12 @@ module.exports = {
                 }
             },
             function (err, results) {
+               
                 //渲染页面
-
-                render("index", results, res, req);
+                if(!err){
+                    render("index", results, res, req);
+                }
+                
             }
         );
     }

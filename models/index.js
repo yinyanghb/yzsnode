@@ -31,19 +31,10 @@ module.exports = {
   },
 
   getHeaders: function (req, url, id) {
-    var params = req.query;
-    var str = ''
-    for (var k in params) {
-      str = k + '=' + params[k] + '&'
-    };
-    str = str.slice(0, -1);
-    id ? url += '&' + str : url += '?' + str
-
-
     return {
       url: id ? url.replace(/\$id/, id) : url.replace(/\$id/, ''),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json;charset=utf-8",
         "Service-Info": "Nodejs-request-brian.bai",
         "User-Agent": "request"
       }

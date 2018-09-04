@@ -14,11 +14,12 @@ module.exports = function (grunt) {
       dist: {
         src: [
           // 所引用的 js 参见 views/js_compress_before.html
+         
           'lib/jquery.running.min.js',
           'lib/pagination/jquery.pagination.js',
           'lib/jquery-viewer/jquery-viewer.js',
           'lib/sal.js',
-          'lib/jquery-dataTable/jquery-dataTable.js'
+          "js/commont.js"
         ], //需要合并的文件，注意顺序
         dest: 'js/dist/app.js', //合并文件
       },
@@ -27,6 +28,8 @@ module.exports = function (grunt) {
     uglify: {
       js: {
         files: {
+        
+      
           'js/dist/app.min.js': ['js/dist/app.js'], // 先执行 grunt concat,在执行 grunt uglify
         },
       },
@@ -41,12 +44,12 @@ module.exports = function (grunt) {
           // css压缩 app.min.css 为压缩后生成的文件,后面的数组为需要合并压缩的文件（同样注意顺序）
           // css 暂时不要压缩，因为有图片路径引用问题
           'css/app.min.css': [
+            'lib/bootstrap/css/bootstrap.min.css',
             'lib/pagination/pagination.css',
             'lib/jquery-viewer/viewer.css',
-            'lib/jquery-dataTable/jquery-dataTable.css',
             'lib/layui-v2.3.0/layui/css/layui.css',
             'css/common.css',
-           
+            'css/icons.css'
           ],
         },
       },
@@ -66,9 +69,26 @@ module.exports = function (grunt) {
         }, ],
       },
     },
+
+    // 精灵图
+    sprite:{
+      icIcons: {
+        src: ['images/sprite/*.png'], //素材图片
+       
+        dest: 'images/sprite/icons.png', // 默认雪碧图输出路径
+      
+        destCss: 'css/icons.css', // 雪碧图less输出路径，也支持输出css
+        imgPath: '../images/sprite/icons.png', //默认雪碧图在css中url引用路径
+        cssVarMap: function(sprite) {
+            sprite.name = 'm-ic-icon.m-ic-icon-' + sprite.name;  
+            //定义图标class名称，例如 del.png对应 m-ic-icon.m-ic-icon-del
+        }
+      }
+    }
   });
 
   //加载任务
+  grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -92,6 +112,7 @@ module.exports = function (grunt) {
 
   // default tasks to run
   grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+
   grunt.registerTask('development', ['jshint']);
   grunt.registerTask('production', [
     'jshint',
@@ -99,5 +120,6 @@ module.exports = function (grunt) {
     'uglify',
     'imagemin',
     'cssmin',
+    'sprite'
   ]);
 };

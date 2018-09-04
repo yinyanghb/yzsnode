@@ -1,8 +1,13 @@
 ﻿/* navbar */
 body,html{
-    /* font-family: "Microsoft YaHei" */
-    /* font-family: "Helvetica Neue",Helvetica,Arial, "Microsoft Yahei", sans-serif; */
     font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,\5FAE\8F6F\96C5\9ED1,sans-serif
+}
+.navbar-fixed-top{
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 0
 }
 input,
  select {
@@ -61,6 +66,9 @@ input,
 .pt15 {
     padding-top: 15px;
 }
+.pb15 {
+    padding-bottom: 15px;
+}
 
 .red {
     color: #db0610;
@@ -88,6 +96,10 @@ h4,
 h5,
 .h5 {
     font-size: 12px;
+}
+
+.f18{
+    font-size: 18px !important;
 }
 
 .header-top {
@@ -221,6 +233,9 @@ h5,
 .layui-nav .layui-this:after {
     height: 4px;
 }
+.layui-nav .layui-this:after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed:after {
+    height: 4px;
+}
 
 /*.layui-nav .layui-nav-item a:hover,
 .layui-nav .layui-this a,
@@ -239,7 +254,7 @@ h5,
 }
 
 .layui-nav-child {
-    top: 73px;
+    top: 68px;
     padding: 55px 0 30px;
 }
 
@@ -323,18 +338,16 @@ h5,
 /* 风险 */
 
 .risk {
-    /*min-height: 72px;*/
     border-bottom: 3px solid #e6d9b1;
-    /*margin-bottom: 50px*/
+   
     margin: 58px 0;
 }
 
 .risk-h>.after {
     display: inline-block;
-    height: 24px;
-    width: 24px;
+ 
     margin-right: 15px;
-    background: url(../images/risk.png) no-repeat center
+   
 }
 
 .risk-h {
@@ -355,12 +368,23 @@ h5,
     top: 50%;
     margin-top: -12px;
     border-left: 1px solid #ccc;
-    background-image:url(../images/rikdown.png) ;
-    background-repeat: no-repeat;
-    background-position: center right;
 }
-.risk-h.collapsed .icon-up{
-    background-image:url(../images/rikup.png) ;
+.risk-h .icon-up .icon-m-ic-icon{
+   
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -7px;
+}
+.risk-h .m-ic-icon-rikdown{
+    display: none
+}
+
+.collapsed.risk-h .icon-up .m-ic-icon-rikup{
+    display: none
+}
+.collapsed.risk-h .icon-up .m-ic-icon-rikdown{
+    display: block
 }
 .risk-h3 {
     display: inline-block;
@@ -391,6 +415,7 @@ h5,
 }
 
 .risk-well {
+    font-size: 12px;
     padding: 30px 35px;
     border: 1px solid rgb(218, 218, 218)
 }
@@ -454,14 +479,14 @@ h5,
 .footer-address-copyright {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 15px;
     font-size: 12px;
 }
 
 .custom-service {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 15px;
 }
 
 .code-list {
@@ -491,10 +516,6 @@ h5,
 }
 
 .custom {
-    display: inline-block;
-    width: 29px;
-    height: 30px;
-    background: url(../images/hot.png) no-repeat center ;
     margin-right: 24px;
 }
 
@@ -543,10 +564,7 @@ h5,
 
 .info-menu .before {
     position: absolute;
-    left: 0;
-    width: 60px;
-    height: 48px;
-    background: url(../images//infoicon.png) no-repeat center center
+    left: 18px;
 }
 
 .info-menu:hover {
@@ -696,13 +714,11 @@ table.dataTable {
 
 .fixed-icon {
     display: block;
-    width: 100%;
     height: 50px;
+    line-height: 50px
 }
 
-.fixed-icon-qrcode {
-    background: url(../images/fixqrh.png) no-repeat center
-}
+
 
 .fixed-icon-serve {
     background: url(../images/serve.png) no-repeat center
@@ -786,15 +802,6 @@ table.dataTable {
 
 .portlet-head h2 i {
     margin-right: 10px;
-}
-
-.icon-list {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background: url(../images/pro.png) no-repeat scroll center center;
-    -webkit-background-size: contain;
-    background-size: contain;
 }
 
 embad {
