@@ -14,7 +14,7 @@ module.exports = function (grunt) {
       dist: {
         src: [
           // 所引用的 js 参见 views/js_compress_before.html
-         
+          // 'lib/jquery.min.js',
           'lib/jquery.running.min.js',
           'lib/pagination/jquery.pagination.js',
           'lib/jquery-viewer/jquery-viewer.js',
@@ -51,6 +51,10 @@ module.exports = function (grunt) {
             'css/common.css',
             'css/icons.css'
           ],
+          'css/about.css': 'css/about.css',
+          'css/index.css' : 'css/index.css',
+          'css/information.css':'css/information.css',
+          'css/projects.css':'css/projects.css'
         },
       },
     },
@@ -59,15 +63,16 @@ module.exports = function (grunt) {
       /* 压缩图片大小 */
       dist: {
         options: {
-          optimizationLevel: 7, //定义 PNG 图片优化水平
+          optimizationLevel: 1, //定义 PNG 图片优化水平
         },
         files: [{
           expand: true,
           cwd: 'images/',
-          src: ['**/*.{png,jpg}'], // 优化 img 目录下所有 png/jpg/jpeg 图片
+          src: ['**/*.{jpg}'], // 优化 img 目录下所有 png/jpg/jpeg 图片
           dest: 'images/', // 优化后的图片保存位置，覆盖旧图片，并且不作提示
         }, ],
       },
+
     },
 
     // 精灵图

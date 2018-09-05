@@ -18,7 +18,7 @@
 
 <body>
     {% include "common/header.njk" %}
-    <div class="container-fluid main-bg" style="height: 476px;background-image: url(/images/organ_bg.png)">
+    <div class="container-fluid main-bg" style="height: 476px;background-image: url(/images/organ_bg.jpg)">
         <div class="main-bar" style="height: 88px;background: #3e505e"></div>
     </div>
     <div class="container detail-container">
@@ -169,6 +169,18 @@
                 <li class="detail-list-li clearfix ">
                     <div class=" pull-left detail-list-title pull-left text-right">兑付方式</div>
                     <div class="detail-list-c">{{data.detail.data.cash_way}}</div>
+                </li>
+                {%endif%}
+                {%if data.detail.data.trade_mode%}
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title pull-left text-right">交易方式</div>
+                    <div class="detail-list-c">{{data.detail.data.trade_mode}}</div>
+                </li>
+                {%endif%}
+                {%if data.detail.data.other_basic%}
+                <li class="detail-list-li clearfix ">
+                    <div class=" pull-left detail-list-title pull-left text-right">其他要素</div>
+                    <div class="detail-list-c">{{data.detail.data.other_basic}}</div>
                 </li>
                 {%endif%}
                 {%endif%}

@@ -142,7 +142,7 @@ h5,
     display: none;
     position: absolute;
     padding: 10px;
-    top: 34px;
+    top: 30px;
     background: #eee;
     color: #333;
     z-index: 1000;
@@ -519,16 +519,8 @@ h5,
     margin-right: 24px;
 }
 
-.icon {
-    display: inline-block;
-}
 
-.icon.icon-call {
-    height: 16px;
-    width: 16px;
-    vertical-align: middle;
-    background: url(../images/tel.png) no-repeat
-}
+
 
 .callNo {
     color: #fff
@@ -541,13 +533,7 @@ h5,
     vertical-align: middle;
 }
 
-.icon.icon-wx {
-    background: url(../images/weixin.png) no-repeat center
-}
 
-.icon-phone {
-    background: url(../images/phone.png) no-repeat center
-}
 
 /* menu */
 
@@ -720,13 +706,7 @@ table.dataTable {
 
 
 
-.fixed-icon-serve {
-    background: url(../images/serve.png) no-repeat center
-}
 
-.fixed-icon-up {
-    background: url(../images/up.png) no-repeat center
-}
 
 .fixed-download-goBack li:hover {
     color: #3e505e
